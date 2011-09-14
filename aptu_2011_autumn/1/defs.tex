@@ -1,8 +1,5 @@
 \documentclass[12pt,fleqn,a4paper]{article}
-% 
-% Packages used:
-%
-%\usepackage[english]{babel}
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -159,10 +156,18 @@
 \DeclareMathOperator*{\rk}{rk}
 
 
+
 \newcounter{curtask}
+
 \newenvironment{task}[1][ML]{
-	\fbox{\bf {#1} \arabic{curtask}.}
+	\noindent\fbox{\bf {#1} \arabic{curtask}.}
 }{
 	\addtocounter{curtask}{1}
 	%\vspace{1cm}
+}
+
+\newcommand{\mytitle}[2][Задание]{
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
 }
