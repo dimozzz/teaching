@@ -1,0 +1,59 @@
+\setcounter{curtask}{28}
+
+\mytitle{7 (на 5.04)}
+
+\begin{task}
+    Докажите, что если существует такая функция $f \in E$, что $H_{avg}(f)(n) \ge 2^{\epsilon n}$ при всех $n$, то $MA = NP$.
+\end{task}
+
+\begin{task}
+	Let $G: \{0, 1\}^{*} \rightarrow \{0, 1\}^{*}$ be an $S(l)$-length candidate pseudorandom generator that fails to derandomize
+    a particular $BPP$ algorithm $A$ on the average case. That is, letting $L \in BPP$ be the language such that $\Pr[A(x) = L(x)]
+    \ge \frac{2}{3}$, it holds for every sufficiently large $n$, with probability at least $\frac{1}{n}$ over choice $x \gets \{0,
+    1\}$, $\Pr[A(x, G(U_{l(n)}))] \le \frac{1}{2}$ (we let $l(n)$ be such that $S(l(n)) = m(n)$ where $m(n)$ denotes the length of
+    random tape that used by $A$ on inputs of length $n$). Prove that there exists a probabilistic polynomial-time algorithm $D$
+    that on input $1^{n}$ outputs a circuit $D_n$ such that with probability at least $\frac{1}{2n}$ over randomness of $D$,
+    $|E[D_n(G(U_{l(n)}))] - E[D_n(U_{m(n)})]| \ge 0.1$.
+\end{task}
+
+
+\breakline
+
+
+\begin{ptask}{19}
+    Пусть $M[X, X]$~--- $0 / 1$-матрица, которая содержит перестановочную матрицу размера $|X|$ (т.е. ее перманент над
+    $\mathbb{R}$ не ноль). б) Докажите при помощи этой техники, что $L(MOD_2) = \Omega(n^2)$.
+\end{ptask}
+
+\begin{ptask}{21}
+    Пусть $f_1(x_{1 1}, \dots, x_{1 n_1}), f_2(x_{2 1}, \dots, x_{2 n_2}), \dots, f_m(x_{m 1}, \dots, x_{m n_m})$~--- произвольные
+    булевы функции, зависящие от непересекающегося множества переменных. Докажите, что выполняется неравенство:\\
+    $L(f_1(x_{1 1}, \dots, x_{1 n_1}) \oplus f_2(x_{2 1}, \dots, x_{2 n_2}) \oplus \dots \oplus f_m(x_{m 1}, \dots, x_{m n_m}))
+    \ge \frac{1}{2} \sum\limits_{i} L(f_i)$, где $L(f)$~--- минимальное количество гейтов в формуле $\{\land, \lor, \neg\}$,
+    вычисляющей $f$.
+\end{ptask}
+
+\begin{ptask}{26}
+    Пусть $E_1: \{0, 1\}^n \rightarrow \Sigma^m$ и $E_2: \Sigma \rightarrow \{0, 1\}^k$~--- это два кода с локальными списочными
+    декодерами. Декодер кода $E_1$ выдает список размера $l_1$ и обрабатывает $1 - \epsilon_1$ ошибок. Декодер для кода $E_2$
+    выдает список размера $l_2$ и обрабатывает $\frac{1}{2} - \epsilon_2$ ошибок. Докажите, что у каскадного кода $E_1 \cdot E_2$
+    существует локальный списочный декодер, который обрабатывает $\frac{1}{2} - \epsilon_1 \epsilon_2 l_2$ ошибок и выдает список
+    размера $l_1 l_2$.
+\end{ptask}
+
+\begin{ptask}{27}
+    а) Покажите, что существует полиномиальный от $n$ алгоритм $A$, который получает вход, распределенный согласно распределению
+    $X$ с $H_{\infty}(X) \ge n^{100}$ и имеет оракульный доступ к функции $f: \{0, 1\}^n \rightarrow \{0, 1\}$, который
+    удовлетворяет следующим свойствам:
+    \begin{itemize}
+        \item если $E[f(u_n)] \ge \frac{2}{3}$, то $A$ отвечает $1$ с вероятностью хотя бы $0.99$;
+        \item если $E[f(u_n)] \le \frac{1}{3}$, то $A$ отвечает $0$ с вероятностью хотя бы $0.99$;
+	\end{itemize}
+
+    Такой алгоритм будем называть аппроксиматором функции.
+
+    б) Покажите, что не существует аппроксиматора без доступа к случайным битам.
+
+    в) Покажите, что если распределение $X$ находится на расстоянии более $\frac{1}{5}$ от каждого распределения $Y$ с $H(Y) \ge
+    \frac{n}{2}$, то не существует аппроксиматора, вход которого распределен согласно $X$.
+\end{ptask}
