@@ -9,6 +9,8 @@
 \usepackage{fullpage}
 \usepackage[english,russian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{newfile}
 %%\advance\textwidth by 3mm
 %%\advance\textheight by 1mm
 %\usepackage{ulem}
@@ -84,6 +86,8 @@
 \newcommand{\PP}{\class{PP}}
 \newcommand{\IP}{\class{IP}}
 \newcommand{\PSPACE}{\class{PSPACE}}
+\newcommand{\DSpace}{\class{DSpace}}
+\newcommand{\NSpace}{\class{NSpace}}
 %
 \newcommand{\EXP}{\class{EXP}}
 \newcommand{\MIP}{\class{MIP}}
@@ -101,71 +105,23 @@
 \newcommand{\Retc}{Й\;Ф.\;Д.}
 \newcommand{\poly}{\mathrm{poly}}
 %
-\newcommand{\substd}{16d\log^2_*n}
-\newcommand{\substf}{17d\log_*^2n}
-%{33d'\log_*^2n}
-\newcommand{\substk}{12 d' \ln (16 d\log_*^2n)} % could be 8
-%{12d\ln(64d'\log_*^2n)}  %or d'?
-\newcommand{\substl}{(3.03\cdot 10^4)\cdot f\cdot\ln (16kd\log_*^2n)} % could be 2
-%2\cdot10^4\cdot f\ln(64d'k\log_*^2n)} %or l=8..?
-%
-\newcommand{\errfhigh}{\frac1{0.99f}}
-\newcommand{\errhighsubst}{\frac1{16d\log_*^2n}} %CO% 17*0.99
-\newcommand{\errmiddle}{\frac1{\errf}}
-\newcommand{\inverrlowsubst}{18d\log_*^2n}
-\newcommand{\errlowsubst}{\frac1{\inverrlowsubst}}
-\newcommand{\testerrflowproved}{\frac1{1.01f}}
-\newcommand{\testerrflowused}{\frac1{1.011f}}
-%
-\newcommand{\seperrfhigh}{\frac1{0.99f}}
-\newcommand{\seperrhighsubst}{\frac1{16d\log_*^2n}} %CO% 17*0.99
-\newcommand{\seperrmiddle}{\frac1{\errf}}
-\newcommand{\sepinverrlowsubst}{18d\log_*^2n}
-\newcommand{\seperrlowsubst}{\frac1{\inverrlowsubst}}
-\newcommand{\septesterrflowproved}{\frac1{1.01f}}
-\newcommand{\septesterrflowused}{\frac1{1.011f}}
-%
-\newcommand{\testerrrej}{e^{-\frac{l}{3.03\cdot 10^4\cdot f}}}
-\newcommand{\testerracc}{e^{-\frac{l}{2\cdot 10^4\cdot f}}}
-%
-\newcommand{\septesterrrej}{e^{-\frac{l}{3.03\cdot 10^4\cdot f}}}
-\newcommand{\septesterracc}{e^{-\frac{l}{2\cdot 10^4\cdot f}}}
-%
-\newcommand{\certerrrej}{e^{-\frac{k}{12d'}} + k\cdot \testerrrej}
-\newcommand{\certerracc}{e^{-\frac{k}{8d'}}  + k\cdot \testerracc}
-%
-\newcommand{\sepcerterrrej}{2e^{-\frac{k}{12d'}} + 2k\cdot \septesterrrej}
-\newcommand{\sepcerterracc}{2e^{-\frac{k}{8d'}}  + 2k\cdot \septesterracc}
-%
-\newcommand{\certerrrejsubst}{\frac1{8 d\log_*^2n}} 
-\newcommand{\certerraccsubst}{\frac1{8 d\log_*^2n}} %CO% 
-%
-\newcommand{\sepcerterrrejsubst}{\frac1{8 d\log_*^2n}} 
-\newcommand{\sepcerterraccsubst}{\frac1{8 d\log_*^2n}} %CO% 
 %
 \newcommand{\hps} {heuristic proof system\xspace}
 \newcommand{\hpss}{heuristic proof systems\xspace}
 \newcommand{\ahps}{automatizable \hps}
 \newcommand{\Nat}{\mathbb{N}}
-%
-\newcommand{\ournote}[1]{\ref{?}\footnote{\selectlanguage{russian}#1}}
-\newcommand{\ourcomment}[1]{\par\fbox{\begin{minipage}{14cm}\small
-	{\bfseries Calculations (to be removed):}\\ #1\end{minipage}}\par}
-\DeclareMathOperator*{\supp}{supp}
-\DeclareMathOperator*{\Exp}{E}
-\DeclareMathOperator*{\rk}{rk}
 
 
 
 \newcounter{curtask}
 
-\newenvironment{task}[1][C]{
+\newenvironment{task}[1][ML]{
 	\noindent\fbox{\bf {#1} \arabic{curtask}.}
 }{
 	\addtocounter{curtask}{1}
 }
 
-\newenvironment{ptask}[2][C]{
+\newenvironment{ptask}[2][ML]{
 	\noindent\fbox{\bf {#1} {#2}.}
 }{
 }

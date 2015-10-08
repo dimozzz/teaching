@@ -1,19 +1,19 @@
 mkdir tmp
-for i in *; do
-	if typeset -i "$i" 2> /dev/null; then
-		echo -n
-	else
-		if test -d "$i"; then
-			cp main.tex "$i"
-			cd "$i"
-			pdflatex --output-directory ../tmp -jobname "$i" main.tex
-			pdflatex --output-directory ../tmp -jobname "$i" main.tex
-			rm main.tex
-			cd ..	
-		fi
+touch tmp/number.txt
+echo "\setcounter{curtask}{1}" > tmp/number.txt
+cd series
+for i in *.tex; do
+	cp ../main.tex .
+	if [ "$i" != 'main.tex' ]; then
+		sed -i -- "s/curseries/"$i"/g" main.tex
+		cat "../tmp/number.txt"
+		pdflatex --output-directory ../tmp -jobname "${i::-4}" main.tex
 	fi
 done
 
-cd tmp
+rm main.tex
+
+cd ../tmp
 rm *.log
 rm *.aux
+rm *.txt
