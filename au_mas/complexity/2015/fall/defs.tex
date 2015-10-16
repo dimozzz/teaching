@@ -88,9 +88,12 @@
 \newcommand{\PSPACE}{\class{PSPACE}}
 \newcommand{\DSpace}{\class{DSpace}}
 \newcommand{\NSpace}{\class{NSpace}}
+\newcommand{\DTime}{\class{DTime}}
+\newcommand{\NTime}{\class{NTime}}
 %
 \newcommand{\EXP}{\class{EXP}}
 \newcommand{\MIP}{\class{MIP}}
+\newcommand{\NE}{\class{NE}}
 \newcommand{\NEXP}{\class{NEXP}}
 \newcommand{\coNEXP}{\class{{\co}NEXP}}
 %
@@ -115,13 +118,13 @@
 
 \newcounter{curtask}
 
-\newenvironment{task}[1][ML]{
+\newenvironment{task}[1][CC]{
 	\noindent\fbox{\bf {#1} \arabic{curtask}.}
 }{
 	\addtocounter{curtask}{1}
 }
 
-\newenvironment{ptask}[2][ML]{
+\newenvironment{ptask}[2][CC]{
 	\noindent\fbox{\bf {#1} {#2}.}
 }{
 }
