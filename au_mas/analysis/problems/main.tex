@@ -1,0 +1,15 @@
+\input{../defs.tex}
+
+\begin{document}
+
+	\input{../tmp/number.txt}
+	\input{curseries}
+
+   	\newoutputstream{stream}
+    \openoutputfile{number.txt}{stream}
+    \addtostream{stream}{
+		\protect\setcounter{curtask}{\arabic{curtask}}
+	}
+	\closeoutputstream{stream}
+    
+\end{document}
