@@ -1,0 +1,53 @@
+\begin{task}
+    Покажите, что для случайной функции $f: \{-1, 1\}^n \to \{-1, 1\}$ выполняется $\Exp[\Inf_i^{(1 - \delta)}[f]] =
+    \frac{(1 - \delta / 2)^n}{2 - \delta}$.
+\end{task}
+
+\begin{task}
+    Для непустого $S$ вычислите $\Inf_i^{(1 - \delta)}[\chi_S]$.
+\end{task}
+
+
+\begin{task}
+    Покажите, что если функция $f:\{-1, 1\}^n \to \{-1, 1\}$ отлична от константы и зависит только от $k$ переменных, то
+    $\Inf_i^{(1 - \delta)}[f] \ge (\frac{1}{2} - \frac{\delta}{2})^{k - 1} / k$ хотя бы для одного $i$.
+\end{task}
+
+
+Функция $f: \{-1, 1\} \to \mathbb{R}$ называется $\epsilon$-регулярной, если для всех $S \neq \emptyset$ выполняется $|\hat f(S)|
+\le \epsilon$.
+
+\begin{task}
+    Пусть для $f: \{-1, 1\} \to \mathbb{R}$ выполняется $\Inf_i[f] \le \epsilon$ для всех $i$. Покажите, что $f$ является
+    $\sqrt{\epsilon}$-регулярной.
+\end{task}
+
+
+\begin{task}
+    Покажите, что для всех четных $n$ существует функция $f: \{-1, 1\}^n \to \{-1, 1\}$, которая является
+    $2^{-\frac{n}{2}}$-регулярной, но найдется $i$, что $\Inf_i[f] \ge \frac{1}{2}$.
+\end{task}
+
+\begin{task}
+	Покажите, что существует функция $f: \{-1, 1\}^n \to \{-1, 1\}$, которая является $((1 - \delta)^n, \delta)$-квазислучайной,
+    но которая не является $\epsilon$-регулярной ни для какого $\epsilon < 1$.
+\end{task}
+
+
+\begin{task}
+    Рассмотрим функцию $f: \{-1, 1\}^{n + 1} \to \{-1, 1\}$, котрая определена так: $f(x_0, x_1, \dots, x_n) = x_0 Maj_n(x_1, x_2,
+    \dots, x_n)$.
+
+    Покажите, что:
+    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)]  $\Inf_0^{1-\delta}[f]=\Stab_{1-\delta}[Maj_n]$ для всех $\delta\in (1,1)$;
+        \item [б)] $f$ не вляется $(\epsilon, \delta)$-квазислучайной, если $\epsilon<1-\sqrt{\delta}$;
+		\item [в)] $f$ является $\frac{1}{\sqrt{n}}$-регулярной.
+	\end{enumerate}
+\end{task}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
