@@ -1,0 +1,73 @@
+\newcommand\vhdef2
+\newcommand{\hdef}[1]{{\renewcommand\vhdef2{\bfseries{#1}}\renewcommand\vhdef1}}
+\newcommand{\class}[1]{{\ifnum\vhdef=2\mathbf{#1}\else\mathrm{#1}\fi}}
+\newcommand{\co}{
+\ifnum\vhdef=2\mathbf{co\,}\else\mathrm{co\hspace{2pt}}\fi
+\ifnum\vhdef=2\textbf{-}\else\textrm{-}\fi
+}
+\newcommand{\Img}{\mathop{\mathrm{Im}}}
+%
+\newcommand{\lang}[1]{\mathtt{#1}}
+\newcommand{\SAT}{\lang{SAT}}
+\newcommand{\MAJSAT}{\lang{MAJ}\mbox{\tt-}\lang{SAT}}
+\newcommand{\QBF}{\lang{QBF}}
+%
+\newcommand{\DSPACE}{\class{DSpace}}
+\newcommand{\NSPACE}{\class{NSpace}}
+\newcommand{\DTIME}{\class{DTime}}
+\newcommand{\RTIME}{\class{RTime}}
+\newcommand{\UTIME}{\class{UTime}}
+\newcommand{\OTIME}{\class{\oplus Time}}
+\newcommand{\NTIME}{\class{NTime}}
+\newcommand{\BPTIME}{\class{BPTime}}
+\newcommand{\BQTIME}{\class{BQTime}}
+%
+\renewcommand{\P}{\class{P}}
+\newcommand{\Ppoly}{\class{P}/\class{poly}}
+\newcommand{\LOG}{\class{LOG}}
+\newcommand{\ZPP}{\class{ZPP}}
+\newcommand{\RP}{\class{RP}}
+\newcommand{\coRP}{\class{{\co}RP}}
+\newcommand{\UP}{\class{UP}}
+\newcommand{\coUP}{\class{{\co}UP}}
+%
+\newcommand{\NP}{\class{NP}}
+\newcommand{\coNP}{\class{{\co}NP}}
+\newcommand{\SigmaP}[1]{\Sigma^{#1}\class{P}}
+\newcommand{\NC}{\class{NC}}
+%
+\newcommand{\PiP}[1]{\Pi^{#1}\class{P}}
+\newcommand{\DeltaP}[1]{\Delta^{#1}\class{P}}
+\newcommand{\BPP}{\class{BPP}}
+\newcommand{\EQP}{\class{EQP}}
+\newcommand{\RQP}{\class{RQP}}
+\newcommand{\BQP}{\class{BQP}}
+\newcommand{\PH}{\class{PH}}
+\newcommand{\PCP}{\class{PCP}}
+%
+\newcommand{\OP}{\class{\oplus P}}
+\newcommand{\AWPP}{\class{AWPP}}
+\newcommand{\PP}{\class{PP}}
+\newcommand{\IP}{\class{IP}}
+\newcommand{\PSPACE}{\class{PSPACE}}
+%
+\newcommand{\EXP}{\class{EXP}}
+\newcommand{\MIP}{\class{MIP}}
+\newcommand{\NEXP}{\class{NEXP}}
+\newcommand{\coNEXP}{\class{{\co}NEXP}}
+%
+\newcommand{\BPO}{\class{BP}\cdot}
+\newcommand{\OPO}{\class{OP}\cdot}
+%
+%
+\newcommand{\poly}{\mathrm{poly}}
+%
+\DeclareMathOperator*{\supp}{supp}
+\DeclareMathOperator*{\Exp}{E}
+\DeclareMathOperator*{\rk}{rk}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

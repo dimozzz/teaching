@@ -1,0 +1,29 @@
+\newcounter{curtask}
+
+\newenvironment{task}[1][ML]{
+	\noindent\fbox{\bf {#1} \arabic{curtask}.}
+}{
+	\addtocounter{curtask}{1}
+}
+
+\newenvironment{ptask}[2][ML]{
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2][Задание]{
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\newcommand{\breakline}[1][0.5cm]{
+	\vspace{#1}
+    \hrule
+    \vspace{#1}
+}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
