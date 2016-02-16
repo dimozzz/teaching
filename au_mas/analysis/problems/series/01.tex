@@ -32,9 +32,19 @@
 
 \begin{task}
     Для функции $f: \{-1, 1\}^n \to \{-1, 1\}$ докажите, что:
-   \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\D[f] = 4 dist(f, 1) \cdot dist(f, -1)$;
-        \item [б)] $2 \epsilon \le \D[f] \le 4 \epsilon$, где $\epsilon = \min \{dist(f, 1), dist(f, -1)\}$.
+	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] $\Var[f] = 4 dist(f, 1) \cdot dist(f, -1)$;
+        \item [б)] $2 \epsilon \le \Var[f] \le 4 \epsilon$, где $\epsilon = \min \{dist(f, 1), dist(f, -1)\}$.
+	\end{enumerate}
+\end{task}
+
+
+\begin{task}
+    Для функции $f: \{-1, 1\}^n \to \{-1, 1\}$ докажите, что:
+   	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] если $\W^{1} = 1$, то $f(x) = \pm \chi_{S}$ для некоторого $S$, $|S| = 1$;
+        \item [б)] если $\W^{\le 1} = 1$, то $f(x)$ зависит не более, чем от одной координаты;
+        \item [б)] если $\W^{\le 2} = 1$, то верно ли, что $f(x)$ зависит не более, чем от двух координат.
 	\end{enumerate}
 \end{task}
 
