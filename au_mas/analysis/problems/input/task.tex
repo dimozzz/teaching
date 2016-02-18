@@ -1,19 +1,19 @@
 \newcounter{curtask}
 
-\newenvironment{task}[1][ML]{
+\newenvironment{task}[1][ABF]{
 	\noindent\fbox{\bf {#1} \arabic{curtask}.}
 }{
 	\addtocounter{curtask}{1}
 }
 
-\newenvironment{ptask}[2][ML]{
+\newenvironment{ptask}[2][ABF]{
 	\noindent\fbox{\bf {#1} {#2}.}
 }{
 }
 
 \newcommand{\mytitle}[2][Задание]{
   \begin{center}
-      \bf {#1} {#2}.
+      \textbf{{#1} {#2}}.
   \end{center}
 }
 
