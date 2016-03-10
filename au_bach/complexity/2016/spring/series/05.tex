@@ -1,0 +1,65 @@
+\mytitle{5 (на 16.03)}
+
+
+\begin{task}
+	Приведите пример разрешимого языка из $\Ppoly$, который не лежит в $\P$. 
+\end{task}
+
+\begin{task}
+	Докажите, что $\NTime[n] \neq \PSpace$.
+\end{task}
+
+\begin{task}
+	Докажите, что $\DSpace[n] \neq \NP$.
+\end{task}
+
+\begin{task}
+	Обозначим $\lang{UCYCLE}$ множество всех неориентрованных графов, в которых есть цикл. Докажите, что $\lang{UCYCLE}$
+    принадлежит классу $\Ll$. 
+\end{task}
+
+
+
+
+
+\breakline
+
+
+\begin{ptask}{20}
+	Постройте примеры полных задач относительно сведений по Карпу в классах:
+    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] $\EXP, \NEXP$;
+        \item [б)] $\class{NE} = \bigcup\limits_{c > 0} \NTime[2^{cn}]$.
+	\end{enumerate}
+\end{ptask}
+
+\begin{ptask}{21}(подсказка: вспомните задачу $\P = \NP \Rightarrow \EXP = \NEXP$)
+    Пусть $\NP \subseteq \DTime[n^{\log(n)}]$, докажите, что $\PH \subseteq \bigcup\limits_{k} \DTime[n^{\log^k(n)}]$.
+\end{ptask}
+
+\begin{ptask}{23}
+    Докажите, что:
+    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] $\Ll \subseteq \P$;
+        \item [б)] если $\SAT \in \Ll$, то $\NP \subseteq \Ll$.
+	\end{enumerate}
+\end{ptask}
+
+\begin{ptask}{24}
+    Докажите, что:
+    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] задача проверки графа на сильную связность лежит в $\NL$;
+        \item [б)] задача проверки графа на сильную связность является полной в классе $\NL$ (относительно сведений по Карпу,
+            использующих логарифмическую память).
+	\end{enumerate}
+\end{ptask}
+
+
+\begin{ptask}{26}(подсказка: $\NEXP^{\NEXP} vs. \NEXP$)
+    Докажите, что если $\P = \NP$, то существует язык из $\EXP$, схемная сложность которого не меньше $\frac{2^n}{10 n}$.
+\end{ptask}
+
+\begin{ptask}{27}
+	Докажите, что существует язык, для которого любой алгоритм, работающий время $O(n^2)$ решает его правильно на менее, чем на
+    половине входов какой-то длины, но этот язык распознается алгоритмом, работающим время $O(n^3)$.
+\end{ptask}
