@@ -1,0 +1,55 @@
+\mytitle{8 (на 06.04)}
+
+\begin{task}
+    Покажите, что:
+	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] если $\BPTime[f(n)] = \BPTime[g(n)]$, то $\BPTime[f(h(n))] = \BPTime[g(h(n))]$, где $f, g, h$~---
+			конструктивные по времени, $f(n), g(n) \ge \log n$, $h(n) \ge n$~--- возрастающая функция;
+        \item [б)] $\DTime[f(n)] \subseteq \BPTime[f(n)] \subseteq \DTime[2^{O(f(n))}]$;
+        \item [в)] $\BPP \subseteq \BPTime[n^{\log n}] \subsetneq \BPTime[2^n]$.
+    \end{enumerate}    
+\end{task}
+
+
+\begin{task}
+    Определим язык $\lang{QNR} = \{(y, m) \mid \text{$y$ не является квадратичным вычетом по модулю $m$}\}$, докажите, что
+    $\lang{QNR} \in \IP$.
+\end{task}
+
+\begin{task}
+    $\BPL_H$~--- это класс языков, для которых существует вероятностная машина Тьюринга $M$, которая использует логарифмическую
+    память, останавливается с вероятностью $1$, и для всех $x$ выполняется, что $\Pr[M(x) = L(x)] \ge \frac{2}{3}$. Покажите, что
+    $\BPL_H \subseteq \P$.
+\end{task}
+
+\begin{task}
+    Докажите, что $\BPP = \BPP^{\BPP}$.
+\end{task}
+
+\begin{task}
+    Докажите, что $\BPP/\class{poly} \subseteq \Ppoly$ ($\BPP/\class{poly}$~--- класс языков, которые разрешаются вероятностными
+    (есть специальные гейты, куда подаются случайные биты) схемами полиномиального размера).
+\end{task}
+
+
+
+
+
+\breakline
+
+\begin{ptask}{26}(подсказка: $\NEXP^{\NP} vs. \NEXP$)
+    Докажите, что если $\P = \NP$, то существует язык из $\EXP$, схемная сложность которого не меньше $\frac{2^n}{10 n}$.
+\end{ptask}
+
+\begin{ptask}{37} (подсказка: представьте формулу, как дерево и найдите ``среднюю'' вершину)
+    Покажите, что язык можно разрешить булевой формулой размера $s$ тогда и только тогда, когда этот язык можно разрешить булевой
+    схемой глубина $O(\log(s))$.
+\end{ptask}
+
+\begin{ptask}{40}
+    Докажите, что если $\NP \subseteq \BPP$, то $\NP = \RP$.
+\end{ptask}
+
+\begin{ptask}{43}(подсказка: понизьте ошибку)
+	Докажите, что $\MA \subseteq \AM$.
+\end{ptask}
