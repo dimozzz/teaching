@@ -1,0 +1,65 @@
+\mytitle{9 (на 04.05)}
+
+Пусть $B \in \mathbb{R}$. Назовем случайную величину $X$ $B$-reasonable если $E[X^4] \le B E[X^2]^2$.
+
+\begin{task}
+    Для любого $1 < b < B$ покажите, что существует случайная $b$-reasonable величина $X$, что случайная величина $1 + X$ не
+    $B$-reasonable.
+\end{task}
+
+
+\begin{task}
+    Покажите, что KKL теорема не верная для функций $f: \{-1, 1\} \to [-1, 1]$, даже если $\Var[f] \ge \Omega(1)$.
+\end{task}
+
+\begin{ptask}{25}
+    Пусть $f: \{-1, 1\}^n \to \mathbb{R}$. Докажите, что $||f||_4 \le s^{\frac{1}{4}} ||f||_2$, где $s$~--- число ненулевых
+    коэффициентов Фурье.
+\end{ptask}
+
+\begin{task}
+    Пусть $f: \{-1, 1\}^n \to \mathbb{R}$ имеет степень не более $1$. $x_i$~--- независимые $3$-reasonable случайные
+    величины и $E[x_i] = E[x_i^3] = 0$. Покажите, что $f(x)$ является $3$-reasonable.
+\end{task}
+
+\begin{task}
+    Пусть $f: \{-1, 1\}^n \to \mathbb{R}$ и для любого $i \in [m]$ выполенено $Pr[f(x) = i] = \frac{1}{m}$. Пусть $0 \le \rho
+    \le 1$ и $(x, y)$~--- $\rho$-скоррелированы. Покажите, что $\Pr[f(x) = f(y)] \le (\frac{1}{m})^{\frac{1 - \rho}{1 + \rho}}$.
+\end{task}
+
+
+
+\breakline
+
+\begin{ptask}{25}
+    Пусть функция $f: \{-1, 1\}^n \to \{-1, 1\}$ считается схемой глубины $d$ и размера $s$. Докажите, что $\I[f] \le
+    (\log(s))^{d - 1}$
+\end{ptask}
+
+
+
+\begin{ptask}{27}
+    Пусть $f:\{-1, 1\}^n \to \{-1, 1\}$ вычислима ДНФ размера $s$. Докажите, что:
+   	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
+        \item [а)] существует $S \subseteq [n]$, что $|S| \le \log(s) + O(1)$ и $\hat{f}(S) \ge \Omega(\frac{1}{s})$;
+        \item [б)] функцию $f$ можно выучить (в классе ДНФ формул размера не более $s$) с ошибкой $\frac{1}{2} -
+            \Omega(\frac{1}{s})$ за время $\poly(n, s)$.
+	\end{enumerate}
+\end{ptask}
+
+\begin{ptask}{48}
+    Для любого $k \in \mathbb{N}_{+}$ покажите, что существует $PTF$ степени не более $k$, что $\W^{\le k} \le
+    \frac{1}{2^{k - 1}}$.
+\end{ptask}
+
+\begin{ptask}{49}
+    Пусть $f: \{-1, 1\}^n \to \{-1, 1\}$ можно вычислить ДНФ размера $s$, докажите, что $f$ можно представить в виде $PTF$ с
+    $O(n s^2)$ мономами.
+\end{ptask}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
