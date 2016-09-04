@@ -18,14 +18,7 @@
 
 \begin{document}
 
-	\input{../tmp/number.txt}
-	\input{curseries}
+	\input{curseries.tex}
 
-   	\newoutputstream{stream}
-    \openoutputfile{number.txt}{stream}
-    \addtostream{stream}{
-		\protect\setcounter{curtask}{\arabic{curtask}}
-	}
-	\closeoutputstream{stream}
     
 \end{document}
