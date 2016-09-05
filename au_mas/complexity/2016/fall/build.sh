@@ -1,5 +1,3 @@
-#!/bin/bash
-
 IFS=$'\n'
 file=curseries.tex
 mkdir tmp
@@ -15,7 +13,7 @@ break=true
 for line in `grep '[^[:blank:]]' ../series.txt`; do
 	if [ $title = true ]; then
 		echo $title
-		echo -e "\setmathstyle{АУ}{$line}{DM \& ML, 1 курс}\n" >> $file
+		echo -e "\setmathstyle{АУ}{$line}{Complexity, 5 курс}\n" >> $file
 		title=false
 		continue
 	fi
