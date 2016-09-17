@@ -1,3 +1,5 @@
+#!/bin/bash
+
 IFS=$'\n'
 file=curseries.tex
 mkdir tmp
@@ -13,7 +15,7 @@ break=true
 for line in `grep '[^[:blank:]]' ../series.txt`; do
 	if [ $title = true ]; then
 		echo $title
-		echo -e "\setmathstyle{АУ}{$line}{Complexity, 5 курс}\n" >> $file
+		echo -e "\setmathstyle{АУ}{$line}{CC, 5 курс}\n" >> $file
 		title=false
 		continue
 	fi
@@ -24,6 +26,12 @@ for line in `grep '[^[:blank:]]' ../series.txt`; do
 		rm $file
 	else
 		for i in `echo $line | tr ',' '\n' | tr -d ' '`; do
+			if [[ ${i:0:1} == "d" ]] ; then
+				echo "\begin{definition}" >> $file
+				echo -e "\input{../../../base/definitions/"${i:1:15}".tex}" >> $file
+				echo "\end{definition}" >> $file
+				continue
+			fi
 			if [ "${tasks[$i]}" = "" ]; then
 				tasks[$i]=$task
 				let "task += 1"
@@ -36,7 +44,7 @@ for line in `grep '[^[:blank:]]' ../series.txt`; do
 			fi
 			echo -e "\setcounter{curtask}{${tasks["$i"]}}\n\n" >> $file
 			echo "\begin{task}" >> $file
-			echo -e "\input{../../../base/problems/"$i".tex}\n\n" >> $file
+			echo -e "\input{../../../base/problems/"$i".tex}" >> $file
 			echo "\end{task}" >> $file
 		done
 		pdflatex -jobname "$(printf "%02d" $ser)" main.tex
