@@ -59,4 +59,3 @@ rm *.log
 rm *.out
 rm *.aux
 rm *.txt
-

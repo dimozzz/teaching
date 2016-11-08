@@ -20,6 +20,8 @@ for line in `grep '[^[:blank:]]' ../series.txt`; do
 		continue
 	fi
 	if [ $line = "F" ]; then
+		echo -e "\input{../people.tex}" >> $file
+		pdflatex -jobname "$(printf "%02d" $ser)" main.tex
 		let "ser += 1"
 		break=true
 		title=true
@@ -47,9 +49,7 @@ for line in `grep '[^[:blank:]]' ../series.txt`; do
 			echo -e "\input{../../base/problems/"$i".tex}" >> $file
 			echo "\end{task}" >> $file
 		done
-		pdflatex -jobname "$(printf "%02d" $ser)" main.tex
 	fi
-		
 done
 
 rm main.tex
