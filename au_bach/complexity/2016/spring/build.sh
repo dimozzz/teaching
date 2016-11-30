@@ -17,3 +17,4 @@ cd ../tmp
 rm *.log
 rm *.aux
 rm *.txt
+rm *.out
