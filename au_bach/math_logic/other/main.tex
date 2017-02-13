@@ -1,0 +1,72 @@
+\documentclass[a4paper, 12pt]{article}
+% math symbols
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{mathseries}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+
+\usepackage[margin = 2cm]{geometry}
+
+\tolerance = 1000
+\emergencystretch = 0.74cm
+
+\newcolumntype{?}[1]{!{\vrule width #1}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline} 
+
+\renewcommand{\coursetitle}{ML}
+
+\newcommand{\separ}{~\vdash~}
+
+
+\pagestyle{empty}
+\parindent = 0mm
+\setlength{\extrarowheight}{20pt}
+
+\begin{document}
+
+
+	\Huge
+
+
+    \begin{tabularx}{\textwidth}{?{2pt}Y|Y?{2pt}}
+		\hlinewd{2pt}
+		Аксиомы & Правило сечения \\
+		\hline
+		$\frac{}{\Gamma, A \separ A, \Delta}$ & $\frac{\Gamma \separ \Delta, A ~~~ A, \Gamma \separ \Pi}{\Gamma \separ
+	        \Delta, \Pi}$ \\ [20pt]  
+        \hlinewd{2pt}
+        <<Левые>> правила & <<Правые>> правила \\
+        \hline
+        $\frac{\Gamma, A, B \separ \Delta}{\Gamma, A \land B \separ \Delta}$ & $\frac{\Gamma \separ A, B, \Delta}{\Gamma
+            \separ A \lor B, \Delta}$ \\ [20pt]
+        \hline
+		$\frac{\Gamma, A \separ \Delta ~~~ \Gamma, B \separ \Delta}{\Gamma, A \lor B \separ \Delta}$ & $\frac{\Gamma \separ
+            A, \Delta ~~~ \Gamma \separ B, \Delta}{\Gamma \separ A \land B, \Delta}$\\ [20pt]
+        \hline
+		$\frac{\Gamma \separ A, \Delta ~~~ \Gamma, B \separ \Delta}{\Gamma, A \to B \separ \Delta}$ & $\frac{\Gamma, A
+            \separ B, \Delta}{\Gamma \separ  A \to B, \Delta}$\\ [20pt]
+        \hline
+		$\frac{\Gamma \separ A, \Delta}{\Gamma, \neg A \separ \Delta}$ & $\frac{\Gamma, A \separ \Delta}{\Gamma \separ
+            \neg A, \Delta}$ \\ [20pt]
+        \hline
+        \hlinewd{2pt}
+        \multicolumn{2}{?{2pt}c?{2pt}}{Правила ослабления}\\
+        \hline
+        $\frac{\Gamma \separ \Delta}{\Gamma, A \separ \Delta}$ & $\frac{\Gamma \separ \Delta}{\Gamma \separ A, \Delta}$\\
+	        [20pt]
+        \hlinewd{2pt}
+	\end{tabularx}
+
+
+    
+
+    
+\end{document}
