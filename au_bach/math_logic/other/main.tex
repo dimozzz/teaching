@@ -58,12 +58,26 @@
             \neg A, \Delta}$ \\ [20pt]
         \hline
         \hlinewd{2pt}
-        $\frac{\Gamma, A(t \diagup x) \separ \Delta}{\Gamma, \forall x A \separ \Delta}$ & $\frac{\Gamma \separ A(y \diagup
-            x), \Delta}{\Gamma \separ \forall x A, \Delta}$\\ [20pt]
+        $\frac{\Gamma, A(t \diagup x), \forall x A \separ \Delta}{\Gamma, \forall x A \separ \Delta}$ &
+            $\frac{\Gamma \separ A(y \diagup x), \Delta}{\Gamma \separ \forall x A, \Delta}$)\\ [20pt] 
         \hline
-        $\frac{\Gamma, A(y \diagup x) \separ \Delta}{\Gamma, \exists x A \separ \Delta}$ & $\frac{\Gamma \separ A(t \diagup
-            x), \Delta}{\Gamma \separ \exists x A, \Delta}$\\ [20pt]
+	    $\frac{\Gamma, A(y \diagup x) \separ \Delta}{\Gamma, \exists x A \separ \Delta}$)& 
+			$\frac{\Gamma \separ A(t \diagup x), \exists x A, \Delta}{\Gamma \separ \exists x A, \Delta}$\\ [20pt]
         \hlinewd{2pt}
 	\end{tabularx}
+
+    \normalsize
+    
+    \paragraph{Примечания:}
+    \begin{enumerate}
+        \item $A(t \diagup x)$ обозначает, что в формуле $A$ переменная $x$ заменяется на терм $t$, при
+            этом для каждого вхождения переменной $x$ никакие переменные терма $t$ не должны попасть в
+            область действия кванторов по одноименным переменным (в формуле $A$). Например, для формулы
+            $\forall y~P(x, y)$ вместо $x$ нельзя подставить $f(y)$.
+        \item $A(y \diagup x)$ означает, что в формуле $A$ мы заменили все вхождения $x$ на переменную
+            $y$, при этом переменная $y$ должна быть свежей то есть не входить ни в $A$, ни в другие
+            формулы из секвенции.
+    \end{enumerate}
+    
 
 \end{document}
