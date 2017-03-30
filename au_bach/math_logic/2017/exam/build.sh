@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir tmp
-python exam.py problems.tex output.tex 15 2 2 1 0 1 1
+python exam.py problems.tex output.tex 15 2 1 1 1
 pdflatex --output-directory="tmp" main.tex
 pdflatex --output-directory="tmp" main.tex
 mv output.tex tmp

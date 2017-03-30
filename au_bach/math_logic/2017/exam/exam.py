@@ -68,7 +68,7 @@ def main():
         for i in range(tickets_count):
             selected_questions = select_questions(questions_set, parts)
 
-            exam_file.write(u'\section{Задание %d}' % (i + 1) + os.linesep)
+            exam_file.write(u'\section*{Задание %d}' % (i + 1) + os.linesep)
             exam_file.write(u'\setcounter{curtask}{1}' + os.linesep * 2)
 
             for q in selected_questions:
