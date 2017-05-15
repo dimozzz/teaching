@@ -19,6 +19,7 @@ for line in `grep '[^[:blank:]]' ../series.txt`; do
 		title=false
 		continue
 	fi
+	task=1
 	if [ $line = "F" ]; then
 		let "ser += 1"
 		break=true
@@ -44,7 +45,11 @@ for line in `grep '[^[:blank:]]' ../series.txt`; do
 			fi
 			echo -e "\setcounter{curtask}{${tasks["$i"]}}\n\n" >> $file
 			echo "\begin{task}" >> $file
-			echo -e "\input{../../../base/exam/"$i".tex}" >> $file
+			if [[ ${i:0:1} == "p" ]] ; then
+				echo -e "\input{../../../base/problems/"${i:1:15}".tex}" >> $file
+			else
+				echo -e "\input{../../../base/exam/"$i".tex}" >> $file
+			fi
 			echo "\end{task}" >> $file
 		done
 		pdflatex -jobname "$(printf "%02d" $ser)" main.tex
