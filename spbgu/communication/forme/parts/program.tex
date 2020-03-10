@@ -1,0 +1,116 @@
+\centerline{\textsc{This plan includes some parts that were not presented on the lectures}}
+
+\centerline{\textsc{Lecture 1}}
+
+\begin{enumerate}
+    \item Model. Two words about motivation. Functions and relations (promise problems).
+    \item Deterministic protocols. Trivial bounds ($\log |X| + \log |Z|, \dots$) $f: X \times Y \to Z$.
+    \item Examples:
+        \begin{itemize}
+            \item $D(\Parity) = 2$;
+            \item Pointer Chasing. $D \le k \log n$.
+            \item Clique and Ind. Set. $D \le \log^2 n$ (important problem!) [Yan. 91].
+            \item \skp Median of multiset. $D \le \log^2 n$ (Can you do better?).
+            \item Equality. $D \le n + 1$.
+            \item Greater Than. $D \le n + 1$.
+            \item Disjointness. $D \le n + 1$.                
+        \end{itemize}
+    \item Randomized protocols. Two and one-sided errors. Public and private randomness (focus on public
+        bits). (Can we consider worst-case on random bits?)
+    \item Error reduction.
+    \item Examples:
+        \begin{itemize}
+            \item Equality. $R \le O\left(\log \frac{1}{\varepsilon}\right)$. One-sided!
+            \item Greater Than. $R \le O(\log n \log\log n)$. Better? (Nissan?)
+            \item Disjointness. $R \le O(n)$.      
+        \end{itemize}
+    \item Applications ($\Search_{\varphi}$):
+        \begin{itemize}
+            \item $\DPLL$ algorithms;
+            \item \skp $\DPLL(\oplus)$ algorithms.
+        \end{itemize}
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 2}}
+
+\begin{enumerate}
+    \item Deterministic protocols. Formal Definition (trees). Size and depth.
+    \item Rectangles and tilings. Th. Protocols gives $2^{C_p}$ tiling.
+        Discussion about $\Search_{\varphi}$.
+    \item Balancing protocols.
+    \item $\EQ, \GT$ lower bounds.
+    \item $D \le O(\log^2 \chi)$ (covering!).
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 3}}
+
+\begin{enumerate}
+    \item $D \le O(\min( \log^2 \chi_0, \log^2 \chi_1))$ (tiling).
+    \item Karchmer--Wigderson relation.
+    \item Monotone Karchmer--Wigderson is a complete relation.
+\end{enumerate}
+
+\centerline{\textsc{Lecture 4}}
+
+\begin{enumerate}
+    \item Fooling sets. $\chi$.
+        \begin{itemize}
+            \item $\GT$.
+            \item $\DISJ$. $\{x, \bar{x}\}$.
+        \end{itemize}
+    \item Rectangle size. $\mu(R) \le \delta \Rightarrow \chi \ge \frac{1}{\delta}$.
+        \begin{itemize}
+            \item $\IP$. ($|A| \times |B| \le 2^n$).
+            \item $\DISJ$. ($|A| + |B| \le n$).
+        \end{itemize}
+    \item Fooling set of a random function.
+    \item Rank technique (over $\mathbb{R}$). $\log(2 \rk(M_f) - 1)$ ($M$ and $\bar{M}$).
+        \begin{itemize}
+            \item $\IP$. ($M_f^2$).
+            \item $\DISJ$.
+                $\begin{pmatrix}
+                    1 & 1\\
+                    1 & 0
+                \end{pmatrix}^{\oplus n}$
+        \end{itemize}
+    \item Rank of random function.
+    \item $D(f) \le \rk(M_f)$.
+    \item Rank over any field $\Rightarrow$ Fooling set. ($A \bigodot A^T$). No fooling set for $\IP$.
+\end{enumerate}
+
+
+
+\centerline{\textsc{Lecture 5}}
+
+\begin{enumerate}
+    \item Non-deterministic communication. Three definitions and equivalence.
+    \item $\P = \NP \cap \coNP$.
+    \item $C^a(f) = O\left(\frac{n}{RS^a(f)}\right)$
+    \item $\DISJ^k$.
+    \item Randomized protocols.
+    \item $\EQ$. Public and private random bits.
+    \item $D(f) \le 2^{R_{\varepsilon}(f)} \left( \log(\frac{1}{2} - \varepsilon)^{-1} +
+        R_{\varepsilon}(f) \right)$ (private).
+    \item Newman's Theorem. 
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 6}}
+
+\begin{enumerate}
+    \item Applications. Critical block sensitivity.
+\end{enumerate}
+
+\centerline{\textsc{Lecture 7}}
+
+\begin{enumerate}
+    \item Randomized and distributional. On the way to lower bounds for $\DISJ$.
+\end{enumerate}
+
+\centerline{\textsc{Lecture 8}}
+
+\begin{enumerate}
+    \item Corruption.
+\end{enumerate}

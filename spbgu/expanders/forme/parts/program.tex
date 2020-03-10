@@ -1,0 +1,32 @@
+\centerline{\textsc{Lecture 1}}
+
+\begin{enumerate}
+    \item Зачем нужны экспандеры? Задача о суперконцентраторе. Задача о понижении ошибки в
+        $\RP$. Случайные блуждания.
+    \item Двудольные и общие экспандеры.
+    \item Magical graphs (параметры).
+    \item Хранение множества $S \subseteq [n]$ размера $n$ с запросом в $1$ бит.
+    \item Понижение ошибки в $\RP$ без доп. случайных битов. Явные и сильно явные конструции.
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 2}}
+
+\begin{enumerate}
+    \item Конструкция суперконцентратора.
+    \item Матрица смежности графа. Лапласиан графа (хотим полином $x^T M x = \sum\limits_{(i, j) \in E} (x_i - x_j)^2$).
+    \item Свойства матрицы смежности:
+        \begin{itemize}
+            \item симм., следовательно есть собственный базис над $\mathbb{R}$;
+            \item $(1, \dots, 1)$~--- максимальный собственный вектор.
+            \item $\lambda_k = 1$ тогда и только тогда, когда есть $k$ комп. связности.
+            \item $\lambda_n = -1$ тогда и только тогда, когда есть двудольная компонента.
+            \item $\sum \lambda_i$~--- число петель.
+        \end{itemize}
+    \item Собственные числа, как оптимизационная задача. $\lambda_2 = \max\limits_{...} \frac{|x^T A x|}{\norm{x}^2}$
+    \item Cheeger's inequality. $\frac{1 - \alpha}{2} \le \varphi(S) \le \sqrt{2 (1 - \alpha)}$
+        \begin{itemize}
+            \item Док-во. Рассмотрим $x = |\bar{S}| 1_S - |S| 1_{\bar{S}}$.
+        \end{itemize}
+    \item Mixing Lemma.
+\end{enumerate}

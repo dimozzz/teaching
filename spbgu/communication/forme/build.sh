@@ -1,5 +1,5 @@
 dir=pdf
-files=("en")
+files=("communication")
 mkdir $dir
 for i in "${files[@]}"; do
     pdflatex --output-directory $dir $i.tex
