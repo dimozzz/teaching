@@ -10,5 +10,6 @@ done
 
 cd ../$dir
 rm *.log
+rm *.out
 rm *.aux
 rm *.txt

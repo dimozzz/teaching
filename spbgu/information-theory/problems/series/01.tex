@@ -1,11 +1,27 @@
 \input{../main.tex}
 
-\setmathstyle{1}{2}{3}
+\setmathstyle{Апрель 9}{Теория информации}{2 курс}
 
 
 \begin{document}
 
-\libproblem{inf-theory-ru}{find-n}
+\libproblem{inf-theory}{find-n}
+\libproblem{inf-theory}{volume-3-dim}
+\libproblem{inf-theory}{volume-4-dim}
+\libproblem{inf-theory}{i-dont-know}
+\libproblem{inf-theory}{entropy-infinite}
+
+\begin{definition*}
+    Будем называть \deftext{кодом} функцию $C: \{a_1, \dots, a_n\} \to \{0, 1\}^*$, сопоставляющую буквам
+    некоторого алфавита \deftext{кодовые слова}. Если любое сообщение, которое получено применением кода
+    $C$, декодируется однозначно (т.е. только единственным образом разрезается на образы $C$), то такой
+    код называется \deftext{однозначно декодируемым}.
+
+    Код называется \deftext{префиксным (беспрефиксным, prefix-free)}, если никакое кодовое слово не
+    является префиксом другого кодового слова.
+\end{definition*}
+
+\libproblem{inf-theory}{prefix-codes}
 
 \end{document}
 
