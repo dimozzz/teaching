@@ -1,0 +1,39 @@
+\input{../main.tex}
+
+\setmathstyle{Дедлайн: 19.05}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\libproblem{inf-theory}{secret-not-ideal-2}
+\libproblem{cc}{clique-ind}
+
+\begin{definition*}
+    Пусть $f: X \times Y \to Z$ и $\mu$~--- распределение на $X \times Y$. Заметим, что для любого
+    коммуникационного протокола $\Pi$ для функции $f$ распределение $\mu$ индуцирует распределение на
+    листьях данного протокола естественным образом. \deftext{Внутренней информационной стоимостью} (или
+    \deftext{внутрениим информационным разглашением}) протокола $\Pi$ по распределению $\mu$ будем называть
+    величину:
+    $$\ICint[\mu](\Pi) \coloneqq I(\Pi(X, Y) : X \mid Y) + I(\Pi(X, Y) : Y \mid X).$$
+    Также определим внешнюю информационную сложность самой функции
+    $\ICint[\mu](f) \coloneqq \min\limits_{\Pi} \ICint[\mu](\Pi)$.
+\end{definition*}
+
+\libproblem{cc}{inner-inf-upper}
+\libproblem{cc}{fooling-limits}
+
+
+\libproblem{circuit-complexity}{or-composition}
+\libproblem{circuit-complexity}{maj-lower-formula}
+\libproblem{inf-theory}{find-n-distribution}
+\libproblem{cc}{one-way-avg}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
