@@ -1,5 +1,5 @@
 dir=pdf
-compiler=xelatex
+compiler=pdflatex
 
 mkdir $dir
 touch $dir/number.txt
