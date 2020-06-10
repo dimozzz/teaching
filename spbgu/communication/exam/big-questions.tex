@@ -1,0 +1,48 @@
+\input{../../../main.tex}
+
+\newlang{\MED}{MED}
+\newlang{\CIS}{CIS}
+
+\begin{document}
+
+\setmathstyle{2020}{Communication complexity}{Exam questions}
+
+\begin{enumerate}
+    \item Deterministic protocols. Trivial bounds. Examples: Pointer Chasing, $\CIS$,
+        $\MED$. $\Search_{\varphi}$ and $\DPLL$ algorithms.
+    \item Deterministic protocols. Rectangles and tilings. Balancing.
+        Lower bounds:
+        \begin{itemize}
+            \item fooling set: $\GT$, $\DISJ$;
+            \item rectangle size: $\IP$, $\DISJ$;
+            \item rank: $\IP$, $\DISJ$.
+        \end{itemize}
+    \item Tilings and coverings. $D(f) \le O(\log^2 \chi(f))$.
+        $D \le O(\min( \log^2 \chi_0, \log^2 \chi_1))$.
+    \item Fooling set of a random function. Rank of a random function. No fooling set for $\IP$.
+    \item Karchmer--Wigderson game. $\KW$ and formulas. $\KWm$ as a complete problem.
+    \item Non-deterministic communication. Three definitions and equivalence. $\P = \NP \cap
+        \coNP$. $C^a(f) = O\left(\frac{n}{\mathrm{RS}^a(f)}\right)$.
+    \item Deterministic and (co)nondeterministic communication complexity of $\DISJ^k$.
+    \item Randomized protocols: $\EQ$ and $\GT$.
+        $D(f) \le 2^{R_{\varepsilon}(f)} \left( \log(\frac{1}{2} - \varepsilon)^{-1} + R_{\varepsilon}(f)
+        \right)$.
+    \item Newman's Theorem.
+    \item Efficient randomized protocol for the $\DISJ^k$.
+    \item The notion of ``critical block sensitivity''. Critical block sensitivity of Tseitin
+        formulas.
+    \item (Big question) $R(S \times \mathrm{VER}) \ge \mathrm{cbs}(S)$.
+    \item Randomized and distributional complexity. Discrepancy. $R(\IP) = \Omega(n)$.
+    \item Disjointness over product distributions. Lower bound.
+    \item Disjointness over product distributions. Upper bound.
+    \item Corruption bound.
+    \item (Big question) Corruption of $\DISJ$.    
+    \item Information theory. $\Ind$ lower and upper bound.
+    \item Internal and external information complexity of a protocol. $D(f) \ge \ICext(f) \ge \ICint(f)$.
+        Public random bits.
+    \item Direct sum of information complexity.
+    \item (Big question) Lower bounds for the $\DISJ$.
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,41 @@
+\input{../main.tex}
+
+%\setmathstyle{Апрель 9}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\setcounter{curtask}{25}
+
+
+\libproblem{expanders}{sampler-bool}
+
+\begin{definition*}
+    Хиттером называется вероятностный алгоритм $H^f(n, \varepsilon, \delta)$, который получает оракульный
+    доступ к функции $f \in F_{n, \varepsilon}$ и удовлетворяет следующему свойству: $\Pr[f(H^f(n, \varepsilon,
+    \delta)) = 1] \ge 1 - \delta$, где $F_{n, \varepsilon}$~--- множество всех функций $g\colon \{0, 1\}^n \to
+    \{0, 1\}$, для которых $|g^{-1}(1)| \ge \varepsilon 2^n$.
+\end{definition*}
+
+\libproblem{expanders}{sampler-to-hitter}
+\libproblem{expanders}{random-walk-entropy}
+\libproblem{expanders}{vertex-expansion}
+
+
+\breakline
+
+\libproblem[11]{expanders}{all-graphs-eigenvalue}
+\libproblem[14]{expanders}{random-ind-set}
+\libproblem[21]{expanders}{big-con-component}
+\libproblem[22]{expanders}{error-bpp}
+\libproblem[24]{expanders}{path-eigenvalue}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,20 +1,70 @@
-\input{input/defs.tex}
+\input{../../../main.tex}
 
 \begin{document}
 \thispagestyle{empty}
 \selectlanguage{russian}
 
-\centerline{\large \textsc{\textbf{Экспандеры и коды исправляющие ошибки}}}
 
-%\centerline{\textsc{(Лектор: Д. О. Соколов)}}
-\bigskip
+\subsection*{Кодирование с ошибками}
+
+Пусть $ p_1,\dots,p_k $ --- вероятности, с которыми встречаются буквы в алфавите. Будем рассматривать слова фиксированной длины $n$, которые будут кодироваться в слова заданной длины $ L_n $. Пусть нам даны функции кодирования и декодирования: 
+$$ E\colon [k]^n\to\{0,1\}^{L_n},\qquad D\colon\{0,1\}^{L_n}\to[k]^n. $$
+При этом мы отказываемся от условия, что код декодируется однозначно, но требуем, чтобы вероятность $ 
+\varepsilon_n = \Pr[D(E(w))\ne w] $ стремилась к нулю при $ n\to\infty $.
+\begin{theorem}[Шеннон]
+    \begin{enumerate}
+        \item Если $ L_n=\lceil h\cdot n\rceil $, где $ h>h(p) $, то существуют такие функции $ E, D$, что $\varepsilon_n \to 0$.
+        \item Если $ L_n=\lceil h\cdot n\rceil $, где $ h<h(p) $, то для любых $ E,D $ последовательность $ \varepsilon_n $ стремится к единице. 
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Пусть $ w $ --- слово. Будем говорить, что буква $ i $ \textit{$\delta$-типична}, если $
+    |n_i / n - p_i| \le \delta$ где $ n_i $ --- количество букв $ i $ в $ w $. Соответственно, $ w $ называется \textit{$\delta$-типичным}, если это неравенство выполняется для всех букв $ i $. Зафиксируем $\delta \coloneqq n^{-0.49}$ и рассмотрим случайную величину $X_{ij}$ --- характеристическую функцию того, что в позиции $j$ находится буква $i$. Тогда для случайной величины $X_i\coloneqq \sum_j X_{ij}$ мы
+    можем написать неравенство Чебышёва:
+    \[\Pr[|X_i-\mu|\ge \delta n]\le\frac{\D X_i}{(\delta n)^2}=\frac{np_i(1-p_i)}{(\delta n)^2}=O(n^{-0.02}),\] где $\mu\coloneqq \E[X_i] = np_i$. Таким образом, доля слов, в которых буква $i$ нетипична стремится к нулю, а поскольку число букв фиксировано мы можем заключить, что и в целом доля нетипичных слов стремится к нулю. 
+    
+    Число слов с заданным количеством вхождений каждой буквы равно
+    \[N = \frac{n!}{n_1!n_2!\dots n_k!}=h(p)\cdot n+o(n),\] где $n_i = p_in$.\footnote{Это тождество было на практике.}
+    
+    Известно, что $ n!=\operatorname{poly}(n)\cdot (n/e)^n $. Тогда
+    \[ \log{N} =
+        \log\left(\left(\frac{n}{n_1}\right)^{n_1}\left(\frac{n}{n_2}\right)^{n_2}\!\ldots\;\left(\frac{n}{n_k}\right)^{n_k}\right)
+        + O(\log(n)). \]
+
+    Оценим это выражение:
+    \begin{multline*}
+        \log\left(\left(\frac{n}{n_1}\right)^{n_1}\left(\frac{n}{n_2}\right)^{n_2}\!\ldots\;\left(\frac{n}{n_k}\right)^{n_k}\right)
+        = \sum n(p_i+\delta_i)\log\frac{1}{p_i+\delta_i}\\
+        \le n h(p)+O(\delta_in) < h\cdot n.
+    \end{multline*}
+    
+    Так как это типичное слово, то $|\delta_i| = |n_i - np_i| \le \delta n$ и следовательно количество
+    типичных слов не превосходит 
+    $$ 2^{nh(p)+O(\delta) n + O(\log(n))} < 2^{h\cdot n}. $$
+
+    Теперь перейдем к доказательству второго случая: $h < h(p)$.
+    
+    Пусть $\varepsilon_n'$ вероятность ошибки при декодировании $\delta$-типичных слов. Нам
+    достаточно показать, что $\varepsilon_n' \to 1$, поскольку $|\varepsilon'_n - \varepsilon|$ не
+    превосходит вероятности того, что слово нетипично, т.е. не более $O\left(n^{-0.02}\right)$.
+    
+    Давайте рассмотрим конкретное $\delta$-типичное слово $w$. Оценим вероятность появления $w$:
+    $$ \Pr[w] = p_1^{n_1} \cdot \dots \cdot p_k^{n_k}
+        = 2^{-\sum n_i \log\frac{1}{p_i}} \le 2^{-\sum (p_i + \delta_i) \log\frac{1}{p_i} \cdot n}.
+    $$
+
+    Всего мы можем корректно закодировать не более $2^{L_n}$ различных $\delta$-типичных слов,
+    т.е. вероятность корректно декодировать $\delta$-типичное слово
+    $$ 1 - \varepsilon'_n \le 2^{L_n} \cdot 2^{-h(\alpha)\cdot n + O(\delta\cdot n)} \le
+            2^{h \cdot n - h(\alpha) \cdot n + O(\delta \cdot n)} 
+            \to 0.
+    $$
+\end{proof}
 
 
-\input{parts/program.tex}
 
-
-\nocite{*}
-\printbibliography
+%\nocite{*}
+%\printbibliography
 
 \end{document}
 

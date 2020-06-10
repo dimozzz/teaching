@@ -1,6 +1,8 @@
-Пусть $f: \{0, 1\}^n \to \{0, 1\}$ некоторая булева функция. Определим функцию $\left( \vee \circ f^m
-\right): \{0, 1\}^{m \times n} \to \{0, 1\}$ следующим образом:
-$$\left( \vee \circ f^m \right)(x_1, x_2, \dots, x_m) \coloneqq f(x_1) \lor f(x_2) \lor \dots \lor f(x_m),$$2
+Пусть $f\colon \{0, 1\}^n \to \{0, 1\}$ некоторая булева функция. Определим функцию $\left( \vee \circ f^m
+\right)\colon \{0, 1\}^{m \times n} \to \{0, 1\}$ следующим образом:
+$$
+    \left( \vee \circ f^m \right)(x_1, x_2, \dots, x_m) \coloneqq f(x_1) \lor f(x_2) \lor \dots \lor f(x_m),
+$$
 где $x_i \in \{0, 1\}^n$. Докажите, что $L\left( \vee \circ f^m \right) = m \cdot L(f)$ (где $L$~---
 формульная сложность в базисе де Моргана).
 \tags{формульная сложность, схемная схожность, коммуникационная сложность, теория информации}
