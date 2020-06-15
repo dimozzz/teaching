@@ -1,5 +1,6 @@
-Пусть $G = (V, E)$~--- $(n, d, 1 - \varepsilon)$-экспандер, а $f \colon V \rightarrow \mathbb{C}$~---
-функция. Определим оператор $|\nabla f| \colon V \rightarrow \mathbb{C}$ следующим образом:
-$|\nabla f(v)| \coloneqq (\sum\limits_{w \in V: \{v, w\} \in E} |f(w) - f(v)|^2)^{1 / 2}$. Покажите, что
-если среднее значение $f$ равно нуля, то выполнено следующее неравенство
-$\| \nabla f \|^2 \ge 2 d \epsilon \| f \|^2$.
+Пусть $G \coloneqq (V, E)$~--- $(n, d, 1 - \varepsilon)$-экспандер, а $f \colon V \rightarrow
+\mathbb{C}$~--- функция. Определим оператор $\abs{\nabla f} \colon V \rightarrow \mathbb{C}$
+следующим образом: $\abs{\nabla f(v)} \coloneqq
+(\sum\limits_{\{w \in V \mid \{v, w\} \in E\}} |f(w) - f(v)|^2)^{1 / 2}$. Покажите, что если среднее
+значение $f$ равно нуля, то выполнено следующее неравенство $\norm{\nabla f}^2 \ge
+2 d \varepsilon \norm{f}^2$.
