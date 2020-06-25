@@ -1,0 +1,45 @@
+\input{../main.tex}
+
+%\setmathstyle{Апрель 9}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\setcounter{curtask}{9}
+
+\libproblem{computability}{kolmogorov-empty}
+\libproblem{computability}{hor-ver-cuts}
+\libproblem{computability}{non-separable}
+\libproblem{computability}{universal-enumerable}
+\libproblem{computability}{uncomputable-limit}
+
+\begin{definition*}
+    Назовем алгоритмы $\alg{A}$ и $\alg{B}$ \deftext{эквивалентными} если:
+    \begin{itemtask}
+        \item $\forall x\  \alg{A}(x)$ останавливается $\Leftrightarrow \alg{B}(x)$ останавливается;
+        \item $\forall x$ если $\alg{A}(x)$ останавливается, то и $\alg{A}(x) = \alg{B}(x)$.
+    \end{itemtask}
+
+    Такую же эквивалентность можно ввести на множестве натуральных чисел $a \equiv b \Leftrightarrow
+    \avg{a} \sim \avg{b}$. Множество $S \subseteq \mathcal{N}$ назовем \deftext{инвариантным}, если
+    $\forall a \in S, b \in \mathbb{N} \setminus S, a \not\equiv b$.    
+\end{definition*}
+
+
+\libproblem{computability}{uspensky-rice}
+\libproblem{complexity}{2-sat-p}
+\libproblem{complexity}{horn-sat-p}
+
+\breakline
+
+\libproblem[8]{complexity}{two-tapes}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
