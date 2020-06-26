@@ -1,0 +1,61 @@
+\input{../main.tex}
+
+%\setmathstyle{Апрель 9}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\setcounter{curtask}{52}
+
+\libproblem{complexity}{bpl-in-p-hard}
+
+\begin{definition*}
+    Язык $L \in \MA$, если  существует такая полиномиальная вероятностная машина $V$ и полином $p$, что:
+    \begin{itemize}
+        \item если $x \in L$, то найдется такая строка $y \in \{0, 1\}^{p(n)}$, что $\Pr[V(x, y) = 1] \ge
+            \frac{2}{3}$;
+        \item если $x \notin L$, то для любой строки $y \in \{0, 1\}^{p(n)}$ выполняется $\Pr[V(x, y) =
+            1] < \frac{1}{3}$.
+    \end{itemize}
+\end{definition*}
+
+\libproblem{complexity}{ma-perfect-compl}
+
+
+\begin{definition*}
+    Язык $L \in \AM$, если  существует такая детерминированная машина $V$ и полином $p$, что:
+    \begin{itemize}
+        \item если $x \in L$, то:
+            $$
+                \Pr\limits_{z \gets \{0, 1\}^{p(n)}}[\exists y \in \{0, 1\}^{p(n)}: V(x, z, y) = 1] \ge
+                \frac{2}{3};
+            $$
+        \item если $x \notin L$, то
+            $$
+                \Pr\limits_{z \gets \{0, 1\}^{p(n)}}[\exists y \in \{0, 1\}^{p(n)}: V(x, z, y) = 1] <
+                \frac{1}{3}.
+            $$
+            
+    \end{itemize}
+\end{definition*}
+
+\libproblem{complexity}{ma-in-am}
+\libproblem{complexity}{ma-in-sigma-2}
+
+
+\breakline
+
+
+\libproblem[47]{complexity}{unary-np-complete}
+\libproblem[48]{complexity}{ucycle-logspace}
+\libproblem[51]{complexity}{bpl-in-p}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

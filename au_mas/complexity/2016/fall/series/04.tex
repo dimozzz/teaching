@@ -9,7 +9,31 @@
 
 \libproblem{computability}{uspensky-rice-kleene}
 
-\libproblem{computability}{kleene-th}
+\begin{definition*}
+    Вычислимую функцую $U(n, x)$ будем называть \deftext{универсальной вычислимой функцией} для вычислимых
+    функций одного аргумента, если для любой другой вычислимой функции $f$ найдется такое число $m$, что
+    $f(x) = U(m, x)$.
+
+    Не все универсальные вычислимые функции задают то, что мы понимаем под языками
+    программирования. Требуется более сильное свойство. Вычислимую функцию $U(n, x)$ будем называть
+    \deftext{главной нумерацией}, если для любой вычислимой функции $V(n, x)$ найдется такая всюду
+    определенная вычислимая функция $s$, что $V(n, x) = U(s(n), x)$.
+\end{definition*}
+
+\libproblem{computability}{main-numbering-kleene}
+\libproblem{computability}{enumerable-ariphmetic}
+
+\begin{definition*}
+    Ассоциативным исчислением будем называть конечный набор правил вида $\{s_i \to t_i\}_{i \in I}$, где
+    $s_i, t_i$~--- строчки. Говорят, что строка $y$ выводится из строки $x$, если из строки $x$ можно
+    получить строку $y$, заменяя несколько раз подстроку $s_i$ на $t_i$. Ассоциативное исчисление
+    называется двусторонним, если наряду с правилом $s \to t$ есть и правило $t \to s$.
+\end{definition*}
+
+\libproblem{computability}{associative-calculus}
+\libproblem{computability}{taut-enumerable}
+\libproblem{complexity}{horn-sat-np}
+\libproblem{complexity}{diagonalization-half}
 
 
 \breakline

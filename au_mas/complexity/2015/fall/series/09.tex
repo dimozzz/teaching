@@ -1,56 +1,22 @@
-\mytitle{8 (на 17.11)}
+\input{../main.tex}
 
+\setmathstyle{17.11}{}{}
 
-\begin{task}
-    Докажите, что если $\NP \subseteq \BPP$, то $\NP = \RP$.
-\end{task}
+\begin{document}
 
+\setcounter{curtask}{43}
 
-\begin{task}
-    Пусть $\ZPP$~--- это класс языков, которые принимаются вероятностной машиной Тьюринга без ошибки, математическое ожидание
-    времени работы которых полиномиально. Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $L \in \ZPP$ тогда и только тогда, когда существует полиномиальная по времени вероятностная машина Тьюринга
-			$M$, которая выдает $\{0, 1, ?\}$, что для всех $x \in \{0, 1\}^*$ с вероятностью $1$, $M(x) \in \{L(x), ?\}$ и 
-            $\Pr[M(x) = {?}] \le \frac{1}{2}$;
-        \item [б)] $\ZPP = \RP \cap \coRP$.
-    \end{enumerate}
-\end{task}
-
-\begin{task}
-    $\BPL$~--- это класс языков, для которых существует вероятностная машина Тьюринга $M$, которая использует логарифмическую
-    память, останавливается при всех последовательностях случайных битов и для всех $x$ выполняется, что $\Pr[M(x) = L(x)] \ge
-    \frac{2}{3}$. Покажите, что $\BPL \subseteq \P$. 
-\end{task}
-
+\libproblem{complexity}{np-rp}
+\libproblem{complexity}{zpp-definitions}
+\libproblem{complexity}{bpl-in-p}
 
 \breakline
 
-\begin{ptask}{8}
-    Покажите, что каждый язык, который принимается $k$-ленточной недетерминированной машиной Тьюринга за время $f(n)$, может быть
-    принят на $2$-ленточной машине Тьюринга за время $O(f(n))$.
-\end{ptask}
+\libproblem[8]{complexity}{two-tapes}
+\libproblem[32]{complexity}{hierarchy-quasipoly}
+\libproblem[35]{complexity}{ne-complete}
+\libproblem[39]{complexity}{dspace-neq-np}
+\libproblem[41]{complexity}{unary-np-complete}
+\libproblem[42]{complexity}{ucycle-logspace}
 
-
-\begin{ptask}{32}
-	Докажите, что если $\NP \subseteq \DTime[n^{\log n}]$, то $\PH \subseteq \bigcup\limits_{k \ge 1} \DTime[n^{\log^k n}]$    
-\end{ptask}
-
-
-\begin{ptask}{35}
-	Постройте примеры полных задач относительно сведений по Карпу в классах $\EXP, \NEXP$ и классе $\NE = \bigcup\limits_{c > 0}
-    \NTime[2^{cn}]$.
-\end{ptask}
-
-\begin{ptask}{39}
-	Докажите, что $\DSpace[n] \neq \NP$.
-\end{ptask}
-
-
-\begin{ptask}{41}
-    Докажите, что если унарный язык $\NP$-полный, то $\P = \NP$.
-\end{ptask}
-
-\begin{ptask}{42}
-	Обозначим UCYCLE множество всех неориентрованных графов, в которых есть цикл. Докажите, что UCYCLE принадлежит классу $\LL$. 
-\end{ptask}
+\end{document}

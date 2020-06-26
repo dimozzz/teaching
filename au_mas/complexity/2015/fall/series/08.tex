@@ -1,38 +1,21 @@
-\mytitle{8 (на 10.11)}
+\input{../main.tex}
 
+\setmathstyle{08.11}{}{}
 
-\begin{task}
-    Покажите, что если $\P^A = \NP^A$, то $\PH^A = \NP^A$.
-\end{task}
+\begin{document}
 
-\begin{task}
-    Докажите, что если унарный язык $\NP$-полный, то $\P = \NP$.
-\end{task}
+\setcounter{curtask}{40}
 
-\begin{task}
-	Обозначим UCYCLE множество всех неориентрованных графов, в которых есть цикл. Докажите, что UCYCLE принадлежит классу $\LL$. 
-\end{task}
-
+\libproblem{complexity}{collapse-relativization}
+\libproblem{complexity}{unary-np-complete}
+\libproblem{complexity}{ucycle-logspace}
 
 
 \breakline
 
-\begin{ptask}{8}
-    Покажите, что каждый язык, который принимается $k$-ленточной недетерминированной машиной Тьюринга за время $f(n)$, может быть
-    принят на $2$-ленточной машине Тьюринга за время $O(f(n))$.
-\end{ptask}
+\libproblem[8]{complexity}{two-tapes}
+\libproblem[32]{complexity}{hierarchy-quasipoly}
+\libproblem[35]{complexity}{ne-complete}
+\libproblem[39]{complexity}{dspace-neq-np}
 
-
-\begin{ptask}{32}
-	Докажите, что если $\NP \subseteq \DTime[n^{\log n}]$, то $\PH \subseteq \bigcup\limits_{k \ge 1} \DTime[n^{\log^k n}]$    
-\end{ptask}
-
-
-\begin{ptask}{35}
-	Постройте примеры полных задач относительно сведений по Карпу в классах $\EXP, \NEXP$ и классе $\NE = \bigcup\limits_{c > 0}
-    \NTime[2^{cn}]$.
-\end{ptask}
-
-\begin{ptask}{39}
-	Докажите, что $\DSpace[n] \neq \NP$.
-\end{ptask}
+\end{document}

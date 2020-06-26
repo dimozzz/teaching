@@ -1,25 +1,63 @@
-\documentclass[a4paper, 12pt]{article}
-% math symbols
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathrsfs}
-\usepackage{mathseries}
+\input{../../../../main.tex}
 
+\renewcommand{\coursetitle}{\textsc{CC}}
+\setcounter{curtask}{1}
 
-\usepackage[margin = 2cm]{geometry}
+\let\IP\undefined
+\newlang{\IP}{\lang{IP}}
 
-\tolerance = 1000
-\emergencystretch = 0.74cm
+%\setmathstyle{Апрель 9}{Теория информации}{2 курс}
 
-\renewcommand{\coursetitle}{CC}
-
-
-\pagestyle{empty}
-\parindent = 0mm
 
 \begin{document}
 
-	\input{curseries.tex}
+\libproblem{computability}{enumerable-output}
+\libproblem{computability}{enumerable-graphic}
 
-    
+\begin{definition*}
+    Действительное число $\alpha$ будем называть вычислимым, если существует вычислимая функция $a$,
+    которая по любому рациональному $\varepsilon > 0$ дает рациональное приближение к $\alpha$ с ошибкой
+    не более $\varepsilon$, т.е. $|\alpha - a(\epsilon)| \le \epsilon$ для любого рационального $\epsilon
+    > 0$.
+\end{definition*}
+
+\libproblem{computability}{subset-le}
+\libproblem{computability}{computable-digits}
+\libproblem{computability}{computable-number-approx}
+\libproblem{computability}{computable-number-ariph}
+\libproblem{computability}{computable-number-limit}
+\libproblem{computability}{enumerable-number}
+\libproblem{computability}{enumerable-number-comp}
+\libproblem{computability}{computable-cuts}
+\libproblem{computability}{universal-diagonal}
+\libproblem{computability}{prime-div}
+\libproblem{computability}{sup-points}
+\libproblem{computability}{enum-uncomp-numbers}
+
+\begin{definition*}
+    Пусть фиксирована главная универсальная функция для класса вычислимых функций одного
+    аргумента. Рассмотрим нумерацию вычислимых действительных чисел в соответствии с определением:
+    номером числа $\alpha$ является любой номер любой функции, которая по рациональному $\varepsilon > 0$
+    дает $\varepsilon$-приближение к $\alpha$.
+\end{definition*}
+
+\libproblem{computability}{sum-comp-numbers}
+\libproblem{computability}{comp-numbers-zero}
+\libproblem{computability}{alg-comp-digits}
+\libproblem{computability}{i-print-succ-i}
+\libproblem{computability}{reverse-kleene}
+\libproblem{computability}{composition-kleene}
+\libproblem{computability}{hierarchy-basic-prop}
+\libproblem{computability}{set-injections}
+\libproblem{computability}{set-surjections}
+\libproblem{computability}{non-separable}
+\libproblem{computability}{inf-non-separable}
+
 \end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

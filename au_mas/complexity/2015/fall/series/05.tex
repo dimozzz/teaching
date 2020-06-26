@@ -1,92 +1,36 @@
-\mytitle{5 (на 13.10)}
+\input{../main.tex}
 
+\setmathstyle{13.10}{}{}
 
-\textbf{Определение.} $\Sigma_0 = \Pi_0$~--- множество разрешимых предикатов на множестве натуральных чисел. $\Sigma_{k + 1}$~---
-это множество предикатов, которые представляются в виде $\exists y P(x,y)$, где $P \in \Pi_{k}$, а предикаты из $\Pi_{k + 1}$
-представляются в виде $\forall y P(x, y)$, где $P \in \Sigma_{k}$. Последовательность $\Sigma_k$ (и $\Pi_k$) называется
-арифметической иерархией. 
+\begin{document}
 
-\begin{task}
-    Покажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\Sigma_1$~--- это множество перичислимых предикатов, а $\Pi_1$~--- коперечислимых;
-        \item [б)] $Q \in \Sigma_k$ тогда и только тогда, когда $Q$ можно представить в виде: $Q(x) = \exists y_1 \forall y_2
-		    \exists y_3 \dots P(x, y_1, y_2, \dots, y_n)$, где $P$~--- разрешимый предикат (соответственно $Q \in \Pi_k
-            \Leftrightarrow Q(x) = \forall y_1 \exists y_2 \forall y_3 \dots P(x, y_1, y_2, \dots, y_n)$);
-        \item [в)] $\Sigma_k \cup \Pi_k \subseteq \Sigma_{k + 1} \cap \Pi_{k + 1}$;
-        \item [г)] каждый арифметичный предикат содержится в $\Sigma_k$ для некоторого $k$;
-    	\item [д)] все предикаты из $\Sigma_k$ являются арифметичными.
-    \end{enumerate}
-\end{task}
+\setcounter{curtask}{27}
 
+\begin{definition*}
+    $\Sigma_0 = \Pi_0$~--- множество разрешимых предикатов на множестве натуральных чисел.
+    $\Sigma_{k + 1}$~--- это множество предикатов, которые представляются в виде $\exists y P(x, y)$, где
+    $P \in \Pi_{k}$, а предикаты из $\Pi_{k + 1}$ представляются в виде $\forall y P(x, y)$, где $P \in
+    \Sigma_{k}$. Последовательность $\Sigma_k$ (и $\Pi_k$) будем называть \deftext{арифметической иерархией}.
+\end{definition*}
 
+\libproblem{computability}{ariphmetic-hierarchy}
 
-\textbf{Определение.} Множество $A$ $m$-сводится к множеству $B$, если существует такая вычислимая всюду определенная функция
-$f$, что  $x \in A \Leftrightarrow f(x) \in B$. Обозначение: $A \le_m B$.
+\begin{definition*}
+    Множество $A$ $m$-сводится к множеству $B$, если существует такая вычислимая всюду определенная
+    функция $f$, что $x \in A \Leftrightarrow f(x) \in B$. Обозначение: $A \le_m B$.
+\end{definition*}
 
-\begin{task}
-    Покажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] если $A {\le}_{m} B$, $B$~--- разрешимо, то $A$~--- разрешимо;
-        \item [б)] если $A {\le}_{m} B$, $B$~--- перечислимо, докажите, что $A$~--- перечислимо;
-        \item [в)] $A {\le}_{m} B \Leftrightarrow \mathbb{N} \setminus A \le_m \mathbb{N} \setminus B$;
-        \item [г)] $A {\le}_{m} B$, $B \in \Sigma_k$ докажите, что $A \in \Sigma_k$.
-    \end{enumerate}
-\end{task}
-
-
-\begin{task}
-    Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] существует универсальное перечислимое множество. Т.е. такое перечислимое множество пар $U$, что для любого
-		    перечислимого множества $A$ найдется элемент $a$, что $A = \{x \mid (a, x) \in U\}$. если $A {\le}_{m} B$, $B$~---
-            разрешимо, то $A$~--- разрешимо;
-        \item [б)] для всех $k \ge 1$ существует универсальное множество в $\Sigma_k$ и $\Pi_k$;
-        \item [в)] универсальное множество для $\Sigma_k$ не содержится в $\Pi_k$;
-        \item [г)] $\Sigma_k \subsetneq \Sigma_{k + 1}$.
-    \end{enumerate}
-\end{task}
-
-
-\begin{task}
-	Пусть $T$~--- это множество номеров замкнутых формул в сигнатуре $\{+, \times, =\}$, которые истинны в естественной
-    интерпретации на множестве натуральных чисел. Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] для любого $P \in \Sigma_k$ выполняется $P \le_m T$;
-        \item [б)] (теорема Тарского) $T$ не является арифметичным;
-        \item [в)] (теорема Геделя о неполноте) Покажите, что $T$ не является перечислимым.
-    \end{enumerate}
-\end{task}
-
-
-\begin{task}
-	Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-		\item [а)] $\DSpace[n^2] \subsetneq \DSpace[n^3]$;
-        \item [б)] $\NSpace[n^2] \subsetneq \NSpace[n^3]$.
-    \end{enumerate}
-\end{task}
+\libproblem{computability}{m-reduction}
+\libproblem{computability}{sigma-k-universal}
+\libproblem{computability}{tarsky-godel}
+\libproblem{complexity}{space-hierarchy}
 
 
 \breakline
 
-\begin{ptask}{8}
-    Покажите, что каждый язык, который принимается $k$-ленточной недетерминированной машиной Тьюринга за время $f(n)$, может быть
-    принят на $2$-ленточной машине Тьюринга за время $O(f(n))$.
-\end{ptask}
+\libproblem[8]{complexity}{two-tapes}
+\libproblem[23]{computability}{enumerable-ariphmetic}
+\libproblem[24]{computability}{associative-calculus}
+\libproblem[25]{computability}{taut-enumerable}
 
-\begin{ptask}{23}
-	Докажите, что любой перечислимый предикат арифметичен. 
-\end{ptask}
-
-\begin{ptask}{24}
-	б) двустороннее ассоциативное исчисление, для которого вопрос о выводимости строки $x$ из строки $y$ является алгоритмически
-    неразрешимым.
-\end{ptask}
-
-
-\begin{ptask}{25}
-	а) Покажите, что для любой конечной (или перечислимой) сигнатуры множество тавтологий в этой сигнатуре перечислимо. б)
-    Покажите, что если в сигнатуре есть достаточное количество функциональных и предикатных символов арности 1 и 2, то множество
-    тавтологий в этой сигнатуре неразрешимо.
-\end{ptask}
+\end{document}

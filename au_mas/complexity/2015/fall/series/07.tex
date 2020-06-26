@@ -1,52 +1,24 @@
-\mytitle{7 (на 27.10)}
+\input{../main.tex}
 
+\setmathstyle{27.10}{}{}
 
-\begin{task}
-	Докажите, что существует язык, для которого любой алгоритм, работающий время $O(n^2)$ решает его правильно на менее, чем на
-    половине входов какой-то длины, но этот язык распознается алгоритмом, работающим время $O(n^3)$.
-\end{task}
+\begin{document}
 
-\begin{task}
-	Докажите, что ${\NTime}[n] \neq \PSPACE$.
-\end{task}
+\setcounter{curtask}{36}
 
-\begin{task}
-	Приведите пример разрешимого языка в $\P/poly$, который не лежит в $\P$. 
-\end{task}
+\libproblem{complexity}{diagonalization-half}
+\libproblem{complexity}{ntime-neq-pspace}
+\libproblem{complexity}{ppoly-notin-p}
+\libproblem{complexity}{dspace-neq-np}
 
-\begin{task}
-	Докажите, что $\DSpace[n] \neq \NP$.
-\end{task}
 
 
 \breakline
 
-\begin{ptask}{8}
-    Покажите, что каждый язык, который принимается $k$-ленточной недетерминированной машиной Тьюринга за время $f(n)$, может быть
-    принят на $2$-ленточной машине Тьюринга за время $O(f(n))$.
-\end{ptask}
+\libproblem[8]{complexity}{two-tapes}
+\libproblem[23]{computability}{enumerable-ariphmetic}
+\libproblem[30]{computability}{tarsky-godel}
+\libproblem[32]{complexity}{hierarchy-quasipoly}
+\libproblem[35]{complexity}{ne-complete}
 
-\begin{ptask}{23}
-	Докажите, что любой перечислимый предикат арифметичен. 
-\end{ptask}
-
-
-\begin{ptask}{30}
-	Пусть $T$~--- это множество номеров замкнутых формул в сигнатуре $\{+, \times, {=\}}$, которые истинны в естественной
-    интерпретации на множестве натуральных чисел. Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] для любого $P \in \Sigma_k$ выполняется $P \le_m T$;
-        \item [б)] (теорема Тарского) $T$ не является арифметичным;
-        \item [в)] (теорема Геделя о неполноте) Покажите, что $T$ не является перечислимым.
-    \end{enumerate}
-\end{ptask}
-
-\begin{ptask}{32}
-	Докажите, что если $\NP \subseteq \DTime[n^{\log n}]$, то $\PH \subseteq \bigcup\limits_{k \ge 1} \DTime[n^{\log^k n}]$    
-\end{ptask}
-
-
-\begin{ptask}{35}
-	Постройте примеры полных задач относительно сведений по Карпу в классах $\EXP, \NEXP$ и классе $\NE = \bigcup\limits_{c > 0}
-    \NTime[2^{cn}]$.
-\end{ptask}
+\end{document}

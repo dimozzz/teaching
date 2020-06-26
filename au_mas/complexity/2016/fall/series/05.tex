@@ -1,0 +1,49 @@
+\input{../main.tex}
+
+%\setmathstyle{Апрель 9}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\setcounter{curtask}{29}
+
+\begin{definition*}
+    $\Sigma_0 = \Pi_0$~--- множество разрешимых предикатов на множестве натуральных чисел.
+    $\Sigma_{k + 1}$~--- это множество предикатов, которые представляются в виде $\exists y P(x, y)$, где
+    $P \in \Pi_{k}$, а предикаты из $\Pi_{k + 1}$ представляются в виде $\forall y P(x, y)$, где $P \in
+    \Sigma_{k}$. Последовательность $\Sigma_k$ (и $\Pi_k$) будем называть \deftext{арифметической иерархией}.
+\end{definition*}
+
+\libproblem{computability}{ariphmetic-hierarchy}
+
+\begin{definition*}
+    Множество $A$ $m$-сводится к множеству $B$, если существует такая вычислимая всюду определенная
+    функция $f$, что $x \in A \Leftrightarrow f(x) \in B$. Обозначение: $A \le_m B$.
+\end{definition*}
+
+\libproblem{computability}{m-reduction}
+\libproblem{computability}{sigma-k-universal}
+\libproblem{computability}{tarsky-godel}
+\libproblem{complexity}{space-hierarchy}
+
+
+\breakline
+
+\libproblem[8]{complexity}{two-tapes}
+\libproblem[18]{computability}{kleene-app}
+\libproblem[21]{complexity}{p-np-exp-nexp}
+\libproblem[25]{computability}{associative-calculus}
+\libproblem[26]{computability}{taut-enumerable}
+\libproblem[27]{complexity}{horn-sat-np}
+\libproblem[28]{complexity}{diagonalization-half}
+
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

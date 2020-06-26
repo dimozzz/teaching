@@ -1,23 +1,27 @@
-\mytitle{12 (на 08.12)}
+\input{../main.tex}
 
+\setmathstyle{08.12}{}{}
 
-\begin{task}
-    Покажите, что $\AM[k] = \AM$ при $k \ge 2$.
-\end{task}
+\begin{document}
 
+\setcounter{curtask}{53}
 
-\begin{task}
+\libproblem{complexity}{am-k-rounds}
+
+\task{
     Покажите, что:
-	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] если $\BPTime[f(n)] = \BPTime[g(n)]$, то $\BPTime[f(h(n))] = \BPTime[g(h(n))]$, где $f, g, h$~---
-			конструктивные по времени, $f(n), g(n) \ge \log n$, $h(n) \ge n$~--- возрастающая функция;
-        \item [б)] $\DTime[f(n)] \subseteq \BPTime[f(n)] \subseteq \DTime[2^{O(f(n))}]$;
-        \item [в)] $\BPP \subseteq \BPTime[n^{\log n}] \subsetneq \BPTime[2^n]$.
-    \end{enumerate}    
-\end{task}
+	\begin{enumcyr}
+        \item если $\BPTIME[f(n)] = \BPTIME[g(n)]$, то $\BPTIME[f(h(n))] = \BPTIME[g(h(n))]$, где $f, g,
+            h$~--- конструктивные по времени, $f(n), g(n) \ge \log n$, $h(n) \ge n$~--- возрастающая функция;
+        \item $\DTIME[f(n)] \subseteq \BPTIME[f(n)] \subseteq \DTIME[2^{O(f(n))}]$;
+        \item $\BPP \subseteq \BPTIME[n^{\log n}] \subsetneq \BPTIME[2^n]$.
+    \end{enumcyr}
+}
 
+\dzcomment{
+    Не добавлял в базу, в задаче было что-то не так.
+}
 
-\begin{task}
-    Покажите, что существует такой оракул $A$ и язык $L \in NP^A$, что $L$ не сводится по Тьюрингу к $3SAT$, даже если сведение
-    может использовать оракул $A$.
-\end{task}
+\libproblem{complexity}{reduction-oracle-3-sat}
+
+\end{document}

@@ -1,15 +1,7 @@
-\input{../defs.tex}
+\input{../../../../../main.tex}
 
-\begin{document}
+\renewcommand{\coursetitle}{\textsc{CC}}
+\setcounter{curtask}{1}
 
-	\input{../tmp/number.txt}
-	\input{curseries}
-
-   	\newoutputstream{stream}
-    \openoutputfile{number.txt}{stream}
-    \addtostream{stream}{
-		\protect\setcounter{curtask}{\arabic{curtask}}
-	}
-	\closeoutputstream{stream}
-    
-\end{document}
+\let\IP\undefined
+\newlang{\IP}{\lang{IP}}
