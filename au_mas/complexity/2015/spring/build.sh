@@ -1,19 +1,15 @@
-mkdir tmp
-for i in *; do
-	if typeset -i "$i" 2> /dev/null; then
-		echo -n
-	else
-		if test -d "$i"; then
-			cp main.tex "$i"
-			cd "$i"
-			pdflatex --output-directory ../tmp -jobname "$i" main.tex
-			pdflatex --output-directory ../tmp -jobname "$i" main.tex
-			rm main.tex
-			cd ..	
-		fi
-	fi
+dir=pdf
+compiler=xelatex
+
+mkdir $dir
+touch $dir/number.txt
+cd series
+for i in *.tex; do
+	$compiler --output-directory ../$dir -jobname "${i::-4}" $i
 done
 
-cd tmp
+cd ../$dir
 rm *.log
+rm *.out
 rm *.aux
+rm *.txt

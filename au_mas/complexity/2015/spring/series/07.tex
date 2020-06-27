@@ -1,0 +1,30 @@
+\input{../main.tex}
+
+\setmathstyle{05.05}{}{}
+\setcounter{curtask}{28}
+
+\begin{document}
+
+\libproblem{complexity}{avg-hard-ma-collapse}
+
+\task{
+    Let $G\colon \{0, 1\}^{*} \to \{0, 1\}^{*}$ be an $S(\ell)$-length candidate pseudorandom generator
+    that fails to derandomize a particular $\BPP$ algorithm $\alg{A}$ on the average case. That is,
+    letting $L \in \BPP$ be the language such that $\Pr[\alg{A}(x) = L(x)] \ge \frac{2}{3}$, it holds for
+    every sufficiently large $n$, with probability at least $\frac{1}{n}$ over choice $x \gets \{0, 1\}$,
+    $\Pr[\alg{A}(x, G(U_{\ell(n)}))] \le \frac{1}{2}$ (we let $\ell(n)$ be such that $S(\ell(n)) = m(n)$
+    where $m(n)$ denotes the length of random tape that used by $A$ on inputs of length $n$). Prove that
+    there exists a probabilistic polynomial-time algorithm $\alg{D}$ that on input $1^{n}$ outputs a
+    circuit $D_n$ such that with probability at least $\frac{1}{2n}$ over randomness of $\alg{D}$,
+    $|\Exp[D_n(G(U_{\ell(n)}))] - E[D_n(U_{m(n)})]| \ge 0.1$.
+}
+
+\breakline
+
+\libproblem[19]{cc}{kw-parity-comb}
+\libproblem[20]{combinatorics}{binomial-distr-dist}
+\libproblem[21]{complexity}{or-composition-2}
+\libproblem[26]{error-correcting}{local-list-composition}
+\libproblem[27]{complexity}{approximator-existence}
+
+\end{document}

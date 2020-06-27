@@ -1,0 +1,10 @@
+Для множеств $A, B \subseteq \{0, 1\}^n$ обозначим через $H(A, B)$~--- множество пар соседей $\{(a, b)
+\in A \times B \mid \rho(a, b) = 1\}$, где $\rho$~--- расстояние Хемминга. Определим $\measure{K}_{AB}
+\coloneqq \frac{|H(A, B)|^2}{|A| \cdot |B|}$ и $\measure{K}(f) \coloneqq \max \{\measure{K}_{AB} \mid A
+\subseteq f^{-1}(1), B \subseteq f^{-1}(0)\}$. Докажите, что:
+\begin{enumcyr}
+    \item $\measure{K}(f)$~--- формальная мера сложности;
+    \item (теорема Храпченко) $L(f) \ge \measure{K}(f)$;
+    \item $\measure{K}(f) \le n^2$;
+    \item $L(\MAJ) = \Omega(n^2)$.
+\end{enumcyr}

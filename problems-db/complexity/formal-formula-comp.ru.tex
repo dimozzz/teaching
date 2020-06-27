@@ -1,0 +1,15 @@
+\deftext{Формальной мерой сложности} $\measure{FC}$ на множестве $B_n$ булевых функций от $n$ аргументов
+назовем называется отображение $\measure{FC}\colon B_n \to \mathbb{N}$, обладающее следующими свойствами:
+\begin{itemize}
+    \item $\measure{FC}(x_i) = 1$;
+    \item $\measure{FC}(f) = \mathrm{FC}(\neg f)$;
+    \item $\measure{FC}(f \lor g) \le \measure{FC}(f) + \measure{FC}(g)$.
+\end{itemize}
+
+Докажите, что:
+\begin{enumcyr}
+    \item $\measure{FC}(f \land g) \le \measure{FC}(f) + \measure{FC}(g)$;
+    \item $L(f)$~--- это формальная мера сложности;
+    \item для любой формальной меры сложности $\mathrm{FC}$ выполняется неравенство: $\measure{FC}(f) \le
+        L(f)$ (лемма Патерсона).
+\end{enumcyr}
