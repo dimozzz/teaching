@@ -1,51 +1,23 @@
-\mytitle{6 (на 31.03)}
+\input{../main.tex}
 
-\begin{task}
-	Пусть $f: \{-1, 1\}^{n} \to \{-1, 1\}$ монотонная функция. Покажите, что если $f$ является $(\epsilon, 1)$-регулярной, то $f$
-    является $\epsilon$-регулярной и для всех $i$ выполняется $\Inf_i[f] \le \epsilon$.
-\end{task}
+\setmathstyle{}{}{}
 
-\begin{task}
-    Пусть $\phi: \mathbb{F}_2^n \to \mathbb{R}_+$~--- вероятностная плотность
-    равномерного распределения на носителе функции $IP_n: \mathbb{F}_2^n \to \{0,
-    1\}$ (носитель~--- это прообраз $1$). Покажите, что $\phi$ является
-    $\epsilon$-регулярной для $\epsilon = 2^{-n / 2}/(1 - 2^{-n / 2})$, но ни для
-    какого меньшего $\epsilon$ не является.
-\end{task}
+\begin{document}
 
+\setcounter{curtask}{41}
 
-\begin{task}
-    Пусть $\phi: \mathbb{F}_2^n \to \mathbb{R}_+$~--- вероятностная плотность некоторого распределения и $\phi$ является
-    $\epsilon$-регулярной. Покажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\Exp[|\phi(x) - 1|] \le \epsilon 2^{\frac{n}{2}}$;
-        \item [б)] для любого $x$ выполняется $|\phi(x) - 1| \le \epsilon 2^{n}$.
-	\end{enumerate}
-\end{task}
-
-
+\libproblem{boolean-analysis}{monotone-regularity-inf}
+\libproblem{boolean-analysis}{ip-dist-regularity}
+\libproblem{boolean-analysis}{regularity-expectation}
 
 
 \breakline
 
-\begin{ptask}{25}
-    Пусть функция $f: \{-1, 1\}^n \to \{-1, 1\}$ считается схемой глубины $d$ и размера $s$. Докажите, что $\I[f] \le
-    (\log(s))^{d - 1}$
-\end{ptask}
+\libproblem[25]{boolean-analysis}{ckt-influence}
+\libproblem[26]{boolean-analysis}{kkl-symmetric-corollary}
+\libproblem*[27]{boolean-analysis}{dnf-learning}
 
-\begin{ptask}{26}(можно пользоваться KKL теоремой)
-    Докажите, что если $f:\{-1, 1\}^n \to \{-1, 1\}$ транзитивно-симметрична и $\Var[f] \ge \Omega(1)$, то $\I[f] \ge \log(n)$. 
-\end{ptask}
-
-
-\begin{ptask}{27}
-    Пусть $f:\{-1, 1\}^n \to \{-1, 1\}$ вычислима ДНФ размера $s$. Докажите, что:
-   	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] существует $S \subseteq [n]$, что $|S| \le \log(s) + O(1)$ и $\hat{f}(S) \ge \Omega(\frac{1}{s})$;
-        \item [б)] функцию $f$ можно выучить (в классе ДНФ формул размера не более $s$) с ошибкой $\frac{1}{2} -
-            \Omega(\frac{1}{s})$ за время $\poly(n, s)$.
-	\end{enumerate}
-\end{ptask}
+\end{document}
 
 
 %%% Local Variables:

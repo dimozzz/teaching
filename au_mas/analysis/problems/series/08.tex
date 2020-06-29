@@ -1,59 +1,24 @@
-\mytitle{8 (на 27.04)}
+\input{../main.tex}
 
-\begin{task}
-    Пусть $f = sgn(a_0 + a_1 x_1 + a_2 x_2 + \dots + a_n x_n)$~--- $LTF$.
-    Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] если $a_0 = 0$, то $E[f] = 0$;
-        \item [б)] если $a_0 \ge 0$, то $E[f] \ge 0$;
-        \item [в)] если $E[f] = 0$, то $f$ можно представить в виде: $sgn(a'_1 x_1 + a'_2 x_2 + \dots + a'_n x_n)$.
-	\end{enumerate}
-\end{task}
+\setmathstyle{27.04}{}{}
 
-\begin{task}
-	Пусть $f = sgn(a_0 + a_1 x_1 + a_2 x_2 + \dots + a_n x_n)$~--- $LTF$, $|a_1| \ge |a_2| \ge |a_3| \ge \dots$. Докажите,
-    что $\Inf_1[f] \ge \Inf_2[f] \ge \Inf_3[f] \ge \dots$.
-\end{task}
+\begin{document}
 
-\begin{task}
-    Пусть $f: \{-1, 1\}^n \to \{-1, 1\}$~--- сбалансированный $LTF$. Покажите, что $\Inf_i[f] \ge \frac{1}{\sqrt{2 n}}$ для
-    некоторого $i$.
-\end{task}
+\setcounter{curtask}{44}
 
-\begin{task}
-    Пусть $n \ge 2$ и $f: \{-1, 1\}^n \to \{-1, 1\}$~--- случайная функция. Покажите, что модуль максимального коэффициента
-    Фурье не превосходит $2 \sqrt{n} 2^{-\frac{n}{2}}$ с вероятностью не менее $1 - 2^{-n}$.
-\end{task}
-
-\begin{task}
-    Для любого $k \in \mathbb{N}_{+}$ покажите, что существует $PTF$ степени не более $k$, что $\W^{\le k} \le
-    \frac{1}{2^{k - 1}}$.
-\end{task}
-
-\begin{task}
-    Пусть $f: \{-1, 1\}^n \to \{-1, 1\}$ можно вычислить ДНФ размера $s$, докажите, что $f$ можно представить в виде $PTF$ с
-    $O(n s^2)$ мономами.
-\end{task}
-
-
+\libproblem{boolean-analysis}{ltf-expectation}
+\libproblem{boolean-analysis}{ltf-influence}
+\libproblem{boolean-analysis}{balanced-ltf-influence}
+\libproblem{boolean-analysis}{rand-func-max-coef}
+\libproblem{boolean-analysis}{ptf-exists-weight}
+\libproblem{boolean-analysis}{dnf-to-ptf}
 
 \breakline
 
-\begin{ptask}{25}
-    Пусть функция $f: \{-1, 1\}^n \to \{-1, 1\}$ считается схемой глубины $d$ и размера $s$. Докажите, что $\I[f] \le
-    (\log(s))^{d - 1}$
-\end{ptask}
+\libproblem[25]{boolean-analysis}{ckt-influence}
+\libproblem*[27]{boolean-analysis}{dnf-learning}
 
-
-
-\begin{ptask}{27}
-    Пусть $f:\{-1, 1\}^n \to \{-1, 1\}$ вычислима ДНФ размера $s$. Докажите, что:
-   	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] существует $S \subseteq [n]$, что $|S| \le \log(s) + O(1)$ и $\hat{f}(S) \ge \Omega(\frac{1}{s})$;
-        \item [б)] функцию $f$ можно выучить (в классе ДНФ формул размера не более $s$) с ошибкой $\frac{1}{2} -
-            \Omega(\frac{1}{s})$ за время $\poly(n, s)$.
-	\end{enumerate}
-\end{ptask}
+\end{document}
 
 
 %%% Local Variables:

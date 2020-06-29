@@ -1,0 +1,10 @@
+Предположим, что у нас есть оракульный доступ к двум функциям $\ell\colon \field_2^n \to \field_2$ и
+$q\colon \field_2^{n \times n} \to \field_2$. Предложите $4$-запросовый тестирующий алгоритм, который
+обладает следующими свойствами:
+\begin{itemize}
+    \item если $\ell = \chi_{\gamma}$ и $q = \chi_{\gamma \gamma^T}$, то тест принимает с вероятностью
+        $1$;
+    \item если тест принимает с вероятностью хотя бы $1 - \lambda \varepsilon$, то существует некоторое
+        $\gamma \in \field_2^n$, что $\ell$ является $\varepsilon$-близким к $\chi_\gamma$, а $q$
+        является $\varepsilon$-близким к $\chi_{\gamma \gamma^T}$.
+\end{itemize}
