@@ -1,0 +1,40 @@
+\input{../main.tex}
+
+\setmathstyle{}{}{}
+
+\begin{document}
+
+\libproblem{discrete-math}{mon-func-mon-formula}
+\libproblem{discrete-math}{peirce-arrow}
+
+\begin{definition*}
+    Рассмотрим пропозициональные формулы, которые используют константу $1$, конъюнкцию $\land$ и сумму по
+    модулю два $\oplus$ (приоритет $\land$ выше, чем $\oplus$). \deftext{Мономом} будем называть
+    константу $1$ и конъюнкцию нескольких переменных. \deftext{Многочленом Жегалкина} назовем формулу
+    вида $m_1 \oplus m_2 \oplus \dots \oplus m_k$, где $m_i$~--- различные мономы, $k \ge 0$. Пример:
+    $x_1 x_2 \oplus x_2 \oplus 1$.
+\end{definition*}
+
+\libproblem{discrete-math}{polynomial-representation}
+
+\begin{definition*}
+    Булеву функцию будем называть \deftext{самодвойственной}, если выполняется равенство $f(1 - x_1, 1 -
+    x_2, \dots, 1 - x_n) = 1 - f(x_1, \dots, x_n)$. Булеву функцию будем называть \deftext{линейной},
+    если она имеет вид $f(x) = a_0 + a_1 x_1 + a_2 x_2 + \dots + a_nx_n \bmod 2$, где $a_i \in \{0,
+    1\}$.
+\end{definition*}
+
+\libproblem{discrete-math}{post-th-basis}
+\libproblem{math-logic}{propositional-common-vars}
+\libproblem{complexity}{cnf-dnf-size-easy}
+\libproblem{discrete-math}{and-or-swap-eq}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
