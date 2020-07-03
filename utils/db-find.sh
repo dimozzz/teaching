@@ -82,7 +82,7 @@ if [ "$name" = false ] ; then
         curtask=$(echo -e "${tasks[$i]%:*}" | awk '$1=$1')
         head=$(echo -e "${curtask%,*}" | awk '$1=$1')
         tail=$(echo -e "${curtask#*,}" | awk '$1=$1')
-        db-print-problem $head $tail $file $force
+        db-print-problem $head ${tail::-3} $file $force
     done
 else
     IFS=' ' read -ra names <<< "$params"

@@ -7,6 +7,8 @@ touch aux/unique-tags.txt
 
 
 cat "../main.tex" <(echo) > aux/main.tex
+echo "\renewcommand{\coursetitle}{ALL}" >> aux/main.tex
+echo "\setmathstyle{\date}{script-build}{}" >> aux/main.tex
 echo "\begin{document}" >> aux/main.tex
 echo "\tagsmode" >> aux/main.tex
 echo "\teachermode" >> aux/main.tex
