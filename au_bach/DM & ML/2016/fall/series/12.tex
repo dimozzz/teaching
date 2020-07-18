@@ -1,0 +1,52 @@
+\input{../main.tex}
+
+\setmathstyle{}{}{}
+\setcounter{curtask}{95}
+
+\begin{document}
+
+\begin{definition*}
+    Назовем \deftext{вероятностной булевой схемой} такую схему, часть входов которой называются
+    случайными битами. Пусть схема $C$ имеет $n + m$ входов, первые $n$ входов мы будем понимать как
+    непосредственно входы, оставшиеся $m$ входов как случайные биты. Будем говорить, что схема $C$
+    вычисляет функцию $f\colon \{0, 1\}^n \to \{0, 1\}$ с ограниченной ошибкой, если для каждого $x \in
+    \{0, 1\}^n$ выполняется $\Pr\limits_{r}[f(x) = C(x, r)] \ge \frac{2}{3}$, где вероятность берется по
+    случайной строке $r$, которая принимает все значения из множества $\{0, 1\}^m$ с равными
+    вероятностями.
+\end{definition*}
+
+\libproblem{complexity}{prob-ckt-to-det-ckt}
+\libproblem{combinatorics}{vasya-illness}
+\libproblem{probabilistic}{variable-eq-0-var}
+\libproblem{discrete-math}{ind-set-naive-max-size}
+\libproblem{boolean-analysis}{unit-combination-upper}
+
+\begin{definition*}
+    Каждому $a \in \{0, 1\}^n$ сопоставим линейную функцию $f_a\colon \field_2^n \to \field_2$,
+    определяемую следующим образом:
+    $$
+    f_a(x_1 x_2 \dots x_n) \coloneqq \sum\limits_{i = 1}^n a_i x_i.
+    $$
+
+    \deftext{Кодом Уолша--Адамара} строки $a \in \{0, 1\}^n$ назовем таблицу значений функции $f_a$ и
+    обозначим $\funccplx{WH}(a)$. Заметим, что длина строки $\funccplx{WH}(a)$ равняется $2^n$. 
+\end{definition*}
+
+\libproblem{error-correcting}{wh-local-correction}
+
+\breakline
+
+
+\libproblem[75]{discrete-math}{connectivity-dec-tree}
+\libproblem[81]{complexity}{m-clauses-2-3-sat}
+\libproblem[91]{inf-theory}{family-set-size-freq}
+\libproblem[94]{combinatorics}{independ-subsets-basic}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
