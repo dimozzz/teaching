@@ -1,19 +1,23 @@
-\input{input/defs.tex}
+\input{../../../main.tex}
+\usepackage[
+    sorting = ydnt,
+    style = alphabetic,
+    maxbibnames = 99,
+    backend = biber
+    ]{biblatex}
+\addbibresource{references.bib}
+
 
 \begin{document}
-\thispagestyle{empty}
-\selectlanguage{russian}
 
-\centerline{\large \textsc{\textbf{Теория информации}}}
+\setmathstyle{}{Теория информации}{}
 
-%\centerline{\textsc{(Лектор: Д. О. Соколов)}}
-\bigskip
 
 
 \input{parts/program.tex}
 
 
-\nocite{*}
+%\nocite{*}
 \printbibliography
 
 \end{document}

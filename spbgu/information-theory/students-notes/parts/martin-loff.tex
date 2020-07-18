@@ -169,13 +169,14 @@ a_1a_2\ldots a_k$. Тогда $k \leq \log \Kolm(x)$ и $\KolmP(x) \le \Kolm(x) 
 \begin{proof}
     Пусть в $x_1 \dots x_n$ всего $p_n \cdot n$ единиц и $(1 - p_n) \cdot n$ нулей.
     $$
-        \KolmP(x_1 \dots x_n) \le \Kolm(x_1 \dots x_n) + \bigO{\log n} \le h(p) \cdot n + \bigO{\log n}.
+        \KolmP(x_1 \dots x_n) \le \Kolm(x_1 \dots x_n) + \bigO{\log n} \le \entropy(p) \cdot n +
+        \bigO{\log n}.
     $$
 
     
-    Пусть $p \coloneqq \frac{1}{2} + \delta_n$. Разложим $h(p)$ в ряд в окрестности $\frac{1}{2}$:
+    Пусть $p \coloneqq \frac{1}{2} + \delta_n$. Разложим $\entropy(p)$ в ряд в окрестности $\frac{1}{2}$:
     $$ 
-        h(1 / 2 + \delta_n) \cdot n = (1 - c_H \cdot \delta_n^2 + o(\delta_n^2)) \cdot n \le
+        \entropy(1 / 2 + \delta_n) \cdot n = (1 - c_H \cdot \delta_n^2 + o(\delta_n^2)) \cdot n \le
         (1 - c'_H \cdot \delta_n^2) \cdot n.
     $$
     Таким образом для случайной последовательности (т.е. с вероятностью 1):

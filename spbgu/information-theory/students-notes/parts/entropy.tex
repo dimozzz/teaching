@@ -2,10 +2,11 @@
 
 \subsection{Определение и свойства}
 В прошлом разделе мы увидели ряд проблем, возникающих при работе с информацией по Хартли. С одной
-стороны, у нас есть задача про $27$ монет и $3$ взвешивания, которую мы не понимаем как решать. С другой~
---- определение <<условной информации>> $(\chi_{Y \mid X}(A))$ плохо описывает наше множество. Например, для
-следующих множеств выполнено равенство $\chi_{y \mid x}(A) = \chi_{y \mid x}(B)$, хотя сами множества
-ничем не похожи друг на друга (даже с точки знания количества объектов в них).  
+стороны, у нас есть задача про $27$ монет и $3$ взвешивания, которую мы не понимаем как решать. С
+другой~--- определение <<условной информации>> $(\chi_{Y \mid X}(A))$ плохо описывает наше
+множество. Например, для следующих множеств выполнено равенство
+$\chi_{y \mid x}(A) = \chi_{y \mid x}(B)$, хотя сами множества ничем не похожи друг на друга (даже с
+точки знания количества объектов в них).
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[h]{0.4\textwidth}
@@ -55,7 +56,7 @@ $\mu$ будет задаваться уже не на множестве, а н
 \begin{definition}
     Для случайной величины $\alpha$ с вероятностями событий $(p_1, p_2, \dots)$ меру
     $$
-        h(\alpha) \coloneqq \sum p_i \log \frac{1}{p_i}.
+        \entropy(\alpha) \coloneqq \sum p_i \log \frac{1}{p_i}.
     $$
     мы будем называть \deftext{энтропия} и обозначать $h$ (иногда $H$).
 \end{definition}
@@ -65,24 +66,25 @@ $\mu$ будет задаваться уже не на множестве, а н
 \begin{enumerate}
     \item Равномерное распределение: вероятность выпадения каждого элемента равна $\frac{1}{n}$.
         $$
-            h(U_n) = \sum_{k = 1}^n \frac{1}{n} \log n = \log n.
+            \entropy(U_n) = \sum_{k = 1}^n \frac{1}{n} \log n = \log n.
         $$
     \item Нечестная монетка:
         $$
-        h(B_p) = p \log \frac{1}{p} + (1 - p) \log \frac{1}{1 - p}
+            \entropy(B_p) = p \log \frac{1}{p} + (1 - p) \log \frac{1}{1 - p}
         $$
-        --- \textit{бинарная энтропия}. Её часто обозначают через $h(p)$.
+        --- \textit{бинарная энтропия}. Её часто обозначают через $\entropy(p)$.
 \end{enumerate}
 
 
 Поскольку теорему Шеннона мы оставили без доказательства, то нужно проверить, что энтропия удовлетворяет
 нашим аксиомам.
 \begin{proposition}
-    Энтропия $h(\alpha)$ обладает следующими свойствами:
+    Энтропия $\entropy(\alpha)$ обладает следующими свойствами:
     \begin{enumerate}
-        \item $h(\alpha) \le \log |\alpha|$, где $\alpha$~--- произвольное распределение и $|\alpha|$~---
-            размер носителя;
-        \item $h(\alpha, \beta) \le h(\alpha) + h(\beta)$, где $\alpha, \beta$~--- произвольные распределения.
+        \item $\entropy(\alpha) \le \log |\alpha|$, где $\alpha$~--- произвольное распределение и
+            $|\alpha|$~--- размер носителя;
+        \item $\entropy(\alpha, \beta) \le \entropy(\alpha) + \entropy(\beta)$, где $\alpha, \beta$~---
+            произвольные распределения.
     \end{enumerate}
 \end{proposition}
 
@@ -91,7 +93,7 @@ $\mu$ будет задаваться уже не на множестве, а н
     \begin{enumerate}
         \item Распишем по определению и применим неравенство:
             $$
-                h(\alpha) = \sum_{i = 1}^n p_i \log \frac{1}{p_i} \le
+                \entropy(\alpha) = \sum_{i = 1}^n p_i \log \frac{1}{p_i} \le
                 \log\left(\sum_{i = 1}^n p_i \frac{1}{p_i} \right) = \log{n}
                 = \log |\alpha|.
             $$
@@ -105,25 +107,25 @@ $\mu$ будет задаваться уже не на множестве, а н
 
             В этих терминах мы можем описать энтропию пары:
             $$
-                h(\alpha, \beta) = \sum_{i, j} p_{ij} \cdot \log \frac{1}{p_{ij}},
+                \entropy(\alpha, \beta) = \sum_{i, j} p_{ij} \cdot \log \frac{1}{p_{ij}},
             $$
             а также выразить сумму энтропий:
             $$
-                h(\alpha) + h(\beta) = \sum_i p_{i \cdot} \cdot \log \frac{1}{p_{i \cdot}} +
-                \sum_j p_{\cdot j} \log\frac{1}{p_{\cdot j}} =
+                \entropy(\alpha) + \entropy(\beta) = \sum_i p_{i \cdot} \cdot \log \frac{1}{p_{i \cdot}}
+                + \sum_j p_{\cdot j} \log\frac{1}{p_{\cdot j}} =
                 \sum_{ij} \left(p_{ij} \cdot \log \frac{1}{p_{i\cdot}} +
                 p_{ij} \cdot \log \frac{1}{p_{\cdot j}} \right).
             $$
 
             Тогда по неравенству Йенсена:
             $$
-                h(\alpha, \beta) - h(\alpha) - h(\beta) =
+                \entropy(\alpha, \beta) - \entropy(\alpha) - \entropy(\beta) =
                 \sum_{ij} p_{ij} \log \frac{p_{i \cdot} p_{\cdot j}}{p_{ij}} \le
                 \log\left( \sum_{i, j} p_{i \cdot} p_{\cdot j} \right) = \log 1 = 0.
             $$
 
             Отметим, что если $\alpha$ и $\beta$ независимы, то $p_{i \cdot} p_{\cdot j} = p_{ij}$, и мы
-            получаем равенство $h(\alpha, \beta) = h(\alpha) + h(\beta)$. 
+            получаем равенство $\entropy(\alpha, \beta) = \entropy(\alpha) + \entropy(\beta)$. 
     \end{enumerate}
 \end{proof}
 
@@ -133,15 +135,16 @@ $\mu$ будет задаваться уже не на множестве, а н
     \deftext{Энтропией $\alpha$ при $\beta = b$} мы будем называть энтропию распределения $\alpha$ при
     условии, что $\beta = b$, то есть следующую величину:
     $$
-        h(\alpha \mid \beta = b) \coloneqq \sum_{i} \Pr[\alpha = i \mid \beta = b] \cdot \log
+        \entropy(\alpha \mid \beta = b) \coloneqq \sum_{i} \Pr[\alpha = i \mid \beta = b] \cdot \log
         \frac{1}{\Pr[\alpha = i \mid \beta = b]}
     $$ 
     
    	Тогда \deftext{энтропией $\alpha$ при условии $\beta$} мы назовем среднее значение по $b$ энтропии
     $\alpha$ при $\beta = b$. Таким образом:
     $$
-        h(\alpha \mid \beta) \coloneqq \Exp\limits_{b \sim \beta}[h(\alpha \mid \beta = b)] = \sum_b
-        h(\alpha \mid \beta = b) \cdot \Pr[\beta = b].
+        \entropy(\alpha \mid \beta) \coloneqq
+        \Exp\limits_{b \sim \beta}[\entropy(\alpha \mid \beta = b)] =
+        \sum_b \entropy(\alpha \mid \beta = b) \cdot \Pr[\beta = b].
     $$
 \end{definition}
 
@@ -149,9 +152,9 @@ $\mu$ будет задаваться уже не на множестве, а н
 
 \begin{proposition}
     \begin{enumerate}
-        \item $h(\alpha X \mid \beta) \ge 0$, $h(f(\alpha) \mid Y) = 0$.
-        \item $h(\alpha, \beta) = h(\alpha) + h(\beta \mid \alpha)$.
-        \item $h(\alpha) \ge h(\alpha \mid \beta)$.
+        \item $\entropy(\alpha X \mid \beta) \ge 0$, $\entropy(f(\alpha) \mid Y) = 0$.
+        \item $\entropy(\alpha, \beta) = \entropy(\alpha) + \entropy(\beta \mid \alpha)$.
+        \item $\entropy(\alpha) \ge \entropy(\alpha \mid \beta)$.
     \end{enumerate}
 \end{proposition}
 
@@ -159,7 +162,8 @@ $\mu$ будет задаваться уже не на множестве, а н
 \begin{proof}
     По неравенству Йенсена для логарифма:
     $$
-        h(\alpha \mid \beta) - h(\alpha) = \sum_{i, j} \left( p_{ij} \log \frac{1}{p_{i \mid j}} -
+        \entropy(\alpha \mid \beta) - \entropy(\alpha) =
+        \sum_{i, j} \left( p_{ij} \log \frac{1}{p_{i \mid j}} - 
         p_{ij} \log\frac{1}{p_{i\cdot}} \right) =
         \sum_{i,j} p_{ij}\cdot\log\frac{p_{i\cdot}}{p_{i \mid j}} \le 0,
     $$
@@ -168,13 +172,13 @@ $\mu$ будет задаваться уже не на множестве, а н
 
 Данное свойство обобщается естественным образом на условную энтропию.
 \begin{exercise}
-	Докажите, что $h(\alpha \mid \beta) \ge h(\alpha \mid \beta, \gamma)$.
+	Докажите, что $\entropy(\alpha \mid \beta) \ge \entropy(\alpha \mid \beta, \gamma)$.
 \end{exercise}
 
 \subsection{Применение энтропии}
 
-\paragraph{Еще немного о взвешивании.} Вернемся к последней задаче из раздела \ref{sec:fake-coin}. Теперь мы
-готовы решить про $14$ монеток и $3$ взвешивания.
+\paragraph{Еще немного о взвешивании.} Вернемся к последней задаче из раздела \ref{sec:fake-coin}. Теперь
+мы готовы решить про $14$ монеток и $3$ взвешивания.
 
 Предположим, что в стратегии при трёх равенствах мы получаем монету с номером $i$. Как мы помним, нельзя
 определить, тяжелее она или легче других монет, в то время как для всех остальных монет это узнать
@@ -195,17 +199,17 @@ $$
 равномерное распределение на листьях $\ell$. С другой стороны мы знаем, что лист дерева определяется  
 результатами трёх взвешиваний, назовём их $q_1, q_2, q_3$. Таким образом:
 \begin{align*}
-  h(\ell) &= 3 \log 3\\
-  h(\ell \mid q_1, q_2, q_3) &= 0.
+  \entropy(\ell) &= 3 \log 3\\
+  \entropy(\ell \mid q_1, q_2, q_3) &= 0.
 \end{align*}
 
 Скомбинируем все вместе:
 $$
-    3\log 3 = h(\ell) \le h(q_1, q_2, q_3) +h(\ell \mid q_1, q_2, q_3) = h(q_1, q_2, q_3) \le h(q_1) +
-    h(q_2) + h(q_3).
+    3\log 3 = \entropy(\ell) \le \entropy(q_1, q_2, q_3) +\entropy(\ell \mid q_1, q_2, q_3) =
+    \entropy(q_1, q_2, q_3) \le \entropy(q_1) + \entropy(q_2) + \entropy(q_3).
 $$
     
-Однако $h(q_j) \le \log 3$, так как мы выбираем из трёх вариантов, а энтропия не превосходит
+Однако $\entropy(q_j) \le \log 3$, так как мы выбираем из трёх вариантов, а энтропия не превосходит
 логарифма размера носителя. Таким образом, единственная возможность, когда неравенство выполнено, это
 когда все три исхода равновероятны. А это значит, что на первом шаге мы с равной вероятностью идём по
 трём разным веткам от вершины дерева.
@@ -224,21 +228,21 @@ $$
     \label{prop:binomial-coef}
 	Для произвольного $n$ и $k \le n / 2$ выполнено неравенство
     $$
-        C = \sum_{i = 0}^k \binom{n}{i} \le 2^{nh\left(\frac{k}{n}\right)}.
+        C = \sum_{i = 0}^k \binom{n}{i} \le 2^{n \entropy\left(\frac{k}{n}\right)}.
     $$
 \end{proposition}
 
 \begin{proof}
     Рассмотрим $n$ объектов, из них выберем не более, чем $k$ штук. Пусть $X$ соответствует равномерному
-    распределению по таким множествам. Как следствие $h(X) = \log C$. При этом:
+    распределению по таким множествам. Как следствие $\entropy(X) = \log C$. При этом:
     $$
-        h(X) \le h\left(\sum X_i\right) \le \sum h(X_i),
+        \entropy(X) \le \entropy\left(\sum X_i\right) \le \sum \entropy(X_i),
     $$
     где $X_i$~--- вероятность того, что мы выбрали $i$-ый элемент (проекция распределения $X$ на $i$
-    координату). По построению все эти распределения одинаковы, таким образом $h(X) \le nh(X_1)$. Но
-    заметим, что вероятность, с которой мы можем выбрать первый элемент, не больше, чем $\frac{k}{n}$, то
-    есть $h(X_1) = h\left(\frac{k}{n}\right)$ (так как мы берём распределение на множествах мощности не
-    более $k$). Откуда следует искомое неравенство.
+    координату). По построению все эти распределения одинаковы, таким образом $\entropy(X) \le
+    n\entropy(X_1)$. Но заметим, что вероятность, с которой мы можем выбрать первый элемент, не больше,
+    чем $\frac{k}{n}$, то есть $\entropy(X_1) = h\left(\frac{k}{n}\right)$ (так как мы берём
+    распределение на множествах мощности не более $k$). Откуда следует искомое неравенство.
 \end{proof}
 
 
@@ -255,30 +259,32 @@ $$
 \begin{proof}
     Пусть $X, Y, Z$~--- случайные величины, соответствующие первой, второй и третьей вершине треугольника
     в равномерном распределении на треугольниках соответственно. Тогда
-    $h(X, Y, Z) = \log |\pmb{\triangle}|$. С другой стороны:
+    $\entropy(X, Y, Z) = \log |\pmb{\triangle}|$. С другой стороны:
     $$
-        h(X, Y, Z) = h(X) + h(Y, Z \mid X) = h(X) + h(Y \mid X) + h(Z \mid X, Y).
+        \entropy(X, Y, Z) = \entropy(X) + \entropy(Y, Z \mid X) = \entropy(X) + \entropy(Y \mid X) +
+        \entropy(Z \mid X, Y).
     $$
-    Заметим, что если убрать $X$ из $h(Z \mid X, Y)$, то энтропия только возрастёт. Следовательно:
+    Заметим, что если убрать $X$ из $\entropy(Z \mid X, Y)$, то энтропия только возрастёт. Следовательно:
     $$
-        h(X, Y, Z) \le h(X) + h(Y \mid X) + h(Z \mid Y).
+        \entropy(X, Y, Z) \le \entropy(X) + \entropy(Y \mid X) + \entropy(Z \mid Y).
     $$
     Картинка симметрична (можно получить одно распределение из другого циклическим сдвигом), поэтому
-    $h(Y \mid X) = H(Z \mid Y)$ и 
+    $\entropy(Y \mid X) = \entropy(Z \mid Y)$ и 
     $$
-        h(X, Y, Z) \le h(X) + 2h(Y \mid X).
+        \entropy(X, Y, Z) \le \entropy(X) + 2\entropy(Y \mid X).
     $$
     Определим распределение на углах. Выбираем вершину с той же вероятностью, с которой она является
     первой вершиной некоторого треугольника, обозначаем её через $x$. Выбираем равновероятно какой-то
     треугольник с вершиной $x$, проводим ребро и обозначаем вторую вершину $y$. Потом ещё раз независимо
     выбираем треугольник и проводим ребро в $z$. Посчитаем энтропию:
     $$
-        h(X, Y, Z) = h(X) + h(Y \mid X) + h(Z \mid X,Y).
+        \entropy(X, Y, Z) = \entropy(X) + \entropy(Y \mid X) + \entropy(Z \mid X,Y).
     $$
-    Поскольку при известном $X$ величины $Y$ и $Z$ независимы, то $h(Z \mid X, Y) = h(Z \mid
-    X)$. Поскольку $Y$ и $Z$ выбираются одинаковым образом, $h(Y \mid X) = h(Z \mid X)$. Таким образом,
+    Поскольку при известном $X$ величины $Y$ и $Z$ независимы, то $\entropy(Z \mid X, Y) = \entropy(Z \mid
+    X)$. Поскольку $Y$ и $Z$ выбираются одинаковым образом, $\entropy(Y \mid X) = \entropy(Z \mid
+    X)$. Таким образом,
     $$
-    h(X, Y, Z) = h(X) + 2h(Y \mid X).
+    \entropy(X, Y, Z) = \entropy(X) + 2\entropy(Y \mid X).
     $$
     Осталось заметить, что в обоих распределениях $X$ выбирается одинаковым образом, и $Y$ при
     известном $X$ тоже выбирается также. Значит, энтропия некоторого распределения на углах не менее

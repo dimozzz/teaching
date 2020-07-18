@@ -6,8 +6,8 @@ $$
 $$ 
 где $y_x$~--- $x$-ый бит числа $y$. Рассмотрим следующую коммуникационную задачу, в которой Алиса
 получает на вход число $x \in [n]$, а Боб получает $y \in \{0,1\}^n$. Им нужно найти
-$\Ind(x, y)$. Нетрудно показать, что коммуникационная сложность этой задачи равна $\bigO{\log n}$, так как
-Алиса может послать $x$, и по $x$ Боб может сказать бит, стоящий в $x$-ой позиции.
+$\Ind(x, y)$. Нетрудно показать, что коммуникационная сложность этой задачи равна $\bigO{\log n}$, так
+как Алиса может послать $x$, и по $x$ Боб может сказать бит, стоящий в $x$-ой позиции.
 
 Усложним задачу. Пусть биты может посылать только Боб. Тогда коммуникационная сложность этой задачи
 становится $\bigO{n}$, так как в итоге Боб должен послать информацию про все биты своего числа. Иначе у
@@ -21,18 +21,18 @@ $\bigO{\delta^2 n}$.
 
 Рассмотрим коммуникационный протокол $\pi$, решающий нашу задачу. Заметим, что $\DCC^1(\pi) \ge \log
 \abs{M}$, где $M$~--- множество листьев, а $\DCC^1$~--- коммуникационная сложность задачи, в 
-которой только Боб может посылать биты. Рассмотрим энтропию $h(M)$ распределения на листьях, которая 
+которой только Боб может посылать биты. Рассмотрим энтропию $\entropy(M)$ распределения на листьях, которая 
 получается естественным способом из распределения на входах. Тогда нетрудно получить следующие
 неравенства: 
 $$
-    \log{\abs{M}} \ge h(M) \ge I(M:y).
+    \log{\abs{M}} \ge \entropy(M) \ge I(M:y).
 $$ 
 По \textit{chain rule} мы получаем, что:
 \begin{align*}
     I(M:y) &= \sum_i I(M:y_i \mid y_{x_{< i}})\\
-           &= \sum_i h(y_i \mid y_{x_{< i}}) - h(y_i \mid M, y_{x_{\le i}})\\
-           &= \sum_i h(y_i) - h(y_i \mid M, y_{x < i}) & \text{так как все $y_i$ независимы}\\
-           &\ge \sum_i h(y_i) - h(y_i \mid M)\\
+           &= \sum_i \entropy(y_i \mid y_{x_{< i}}) - \entropy(y_i \mid M, y_{x_{\le i}})\\
+           &= \sum_i \entropy(y_i) - \entropy(y_i \mid M, y_{x < i}) & \text{так как все $y_i$ независимы}\\
+           &\ge \sum_i \entropy(y_i) - \entropy(y_i \mid M)\\
            &\ge \sum_i I(M : y_i).
 \end{align*}
 
@@ -44,19 +44,19 @@ $\Exp\limits_{i, m}[r_i^m] \le \frac{1}{2} - \delta$.
 сообщение Боба <<почти ничего>> не сообщает об $i$-ом бите и, как следствие, если у Алисы $x = i$, мы
 получим ошибку с вероятностью примерно $\frac{1}{2}$. Попробуем формализовать эту стратегию.
 \begin{align*}
-  I(M : y_i) &= h(y_i) - h(y_i \mid M)\\
-           &= 1 - h(y_i \mid M) & \text{поскольку распределение равномерное}\\
-           &= 1 - \Exp_m[h(y_i \mid M = m)]\\
-           &= 1 - \Exp_m[h(y_i \mid M = m, x = i)] & \text{$y_i$ и $M$ независимы относительно $x$}\\
-           &= 1 - \Exp_m[h(r^m_i)].
+  I(M : y_i) &= \entropy(y_i) - \entropy(y_i \mid M)\\
+           &= 1 - \entropy(y_i \mid M) & \text{поскольку распределение равномерное}\\
+           &= 1 - \Exp_m[\entropy(y_i \mid M = m)]\\
+           &= 1 - \Exp_m[\entropy(y_i \mid M = m, x = i)] & \text{$y_i$ и $M$ независимы относительно $x$}\\
+           &= 1 - \Exp_m[\entropy(r^m_i)].
 \end{align*}
 Теперь попробуем оценить всю сумму:
 \begin{align*}
-  \sum_i I(M : y_i) &= \sum_i 1 - \Exp_m[h(r^m_i)]\ge & \text{неравенство Йенсена}\\
-                  &\ge \sum_i 1 - h\left(\Exp_m[r^m_i]\right) \\
-                  &= n - n \sum_i\frac{1}{n} h\left(\Exp_m[r_i^m]\right) \ge & \text{неравенство Йенсена} \\
-                  &\ge n - n h\left(\Exp_{i, m}[r_i^m]\right) \\
-                  &\ge n \left(1 - h \left(\frac{1}{2} - \delta\right)\right)\\
+  \sum_i I(M : y_i) &= \sum_i 1 - \Exp_m[\entropy(r^m_i)]\ge & \text{неравенство Йенсена}\\
+                  &\ge \sum_i 1 - \entropy\left(\Exp_m[r^m_i]\right) \\
+                  &= n - n \sum_i\frac{1}{n} \entropy\left(\Exp_m[r_i^m]\right) \ge & \text{неравенство Йенсена} \\
+                  &\ge n - n \entropy\left(\Exp_{i, m}[r_i^m]\right) \\
+                  &\ge n \left(1 - \entropy \left(\frac{1}{2} - \delta\right)\right)\\
                   &= \Omega(\delta^2n).
 \end{align*}
 
@@ -74,7 +74,7 @@ $\Exp\limits_{i, m}[r_i^m] \le \frac{1}{2} - \delta$.
     Также определим внешнюю информационную сложность самой функции
     $\ICext[\mu](f) \coloneqq \min\limits_{\Pi} \ICext[\mu](\Pi)$.
 
-    По аналогии мы может рассмотреть и \deftext{внутреннее информационное разшлашение} (или 
+    По аналогии мы может рассмотреть и \deftext{внутреннее информационное разглашение} (или 
     \deftext{внутренюю информационную стоимость}).
     $$
         \ICint[\mu](\Pi) \coloneqq I(\Pi(X, Y) : X \mid Y) + I(\Pi(X, Y) : Y \mid X).
@@ -91,8 +91,8 @@ $\Exp\limits_{i, m}[r_i^m] \le \frac{1}{2} - \delta$.
 \end{theorem}
 
 \begin{proof}
-    $\DCC(\pi) \ge \log(M) \ge h(\pi) \ge I(\pi : X, Y)$, где $h(\pi)$~--- энтропия от распределения на
-    листьях. Откуда следует первое неравенство.
+    $\DCC(\pi) \ge \log(M) \ge \entropy(\pi) \ge I(\pi : X, Y)$, где $\entropy(\pi)$~--- энтропия от
+    распределения на листьях. Откуда следует первое неравенство.
     
     Теперь докажем второе: $I(\pi : X, Y) \ge I(\pi : X \mid Y) + I(\pi : Y \mid X)$. По chain rule мы
     получаем, что $I(\pi : X, Y) = \sum\limits_i I(\pi_i : X, Y \mid \pi_{< i})$, где $\pi_i$~--- это
@@ -137,9 +137,9 @@ $\Exp\limits_{i, m}[r_i^m] \le \frac{1}{2} - \delta$.
     Определим распределение $\mu$: равномерное распределение на парах $(x, x \oplus e_i) $, по всем $x
     \in \oplus_n^{-1}(1)$ (по всем $x$, в записи которых нечётное число единиц). Тогда:
     \begin{align*}
-        I(\pi : Y \mid X) &= I(\pi: x \oplus e_I \mid X) = I(\pi : e_I \mid X) = h(e_I \mid X) - h(\pi
-                            \mid X, e_I) \\
-        &= h(e_I \mid X) = h(e_I) = \log n.
+        I(\pi : Y \mid X) &= I(\pi: x \oplus e_I \mid X) = I(\pi : e_I \mid X) = \entropy(e_I \mid X) -
+                            \entropy(\pi \mid X, e_I) \\
+        &= \entropy(e_I \mid X) = \entropy(e_I) = \log n.
     \end{align*}
     Аналогично со вторым слагаемым.
 \end{proof}

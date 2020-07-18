@@ -75,7 +75,7 @@
 \begin{theorem}[Шеннон]
     Для любого распределения $p$ и однозначно декодируемого кода выполнено неравенство
     $$
-        \sum_i p_i\abs{c_i} \ge h(p),
+        \sum_i p_i\abs{c_i} \ge \entropy(p),
     $$
     где $p_i$~--- вероятность, с которой встречается буква $i$, а $c_i$~--- её код. 
 \end{theorem}
@@ -83,7 +83,7 @@
 \begin{proof}
     Доказательство следует из неравенства Йенсена и неравенства Крафта--Макмиллана, 
     $$
-        h(p) - \sum_i p_i\abs{c_i} = \sum_i p_i \cdot \log\frac{2^{-\abs{c_i}}}{p_i}
+        \entropy(p) - \sum_i p_i\abs{c_i} = \sum_i p_i \cdot \log\frac{2^{-\abs{c_i}}}{p_i}
             \le \log\left(\sum_i p_i \cdot \frac{2^{-\abs{c_i}}}{p_i} \right) \le 0,
     $$
     что и требовалось.
@@ -93,7 +93,7 @@
     \label{th:prefix-code}
     Для любого распределения $p$ существует такой префиксный код, что
     $$
-        \sum_i p_i\abs{c_i} \le h(p) + 1.
+        \sum_i p_i\abs{c_i} \le \entropy(p) + 1.
     $$
 \end{theorem}
 
@@ -126,7 +126,7 @@ $$
 \begin{exercise}
     Для кода Шеннона--Фано выполнено равенство:
     $$
-    \sum_{i = 1}^n p_i\abs{c_i} = h(p) + O(1), \qquad n \to \infty.
+    \sum_{i = 1}^n p_i\abs{c_i} = \entropy(p) + O(1), \qquad n \to \infty.
     $$
 \end{exercise}
 
@@ -141,7 +141,7 @@ $p_n$. Заменим указанные символы на новый симв
     Для кода Хаффмана выполнено неравенство:
     \begin{equation}
         \label{eq:haffman-code-1}
-        \sum_i p_i \abs{c_i} \le h(p) + 1,
+        \sum_i p_i \abs{c_i} \le \entropy(p) + 1,
     \end{equation}
     и для любого другого однозначно декодируемого кода $c_i'$ выполнено неравенство
     \begin{equation}
@@ -195,7 +195,7 @@ $$
 \begin{proposition}
     Для арифметического кода выполняется неравенство:
     $$
-        \sum_i p_i\abs{v_i}\le h(p)+2.
+        \sum_i p_i\abs{v_i} \le \entropy(p) + 2.
     $$
 \end{proposition}
 \begin{proof}
@@ -206,7 +206,7 @@ $$
     Отсюда следует, что ${k + 1} \le \log \frac{8}{p_i}$, а значит
     $\abs{v_i} = k \le \log\frac{1}{p_i} + 2$, и
     $$
-        \sum_i p_i \abs{v_i} \le h(p) + 2(p_1 + p_2 + \dots + p_n) \le h(p) + 2.
+        \sum_i p_i \abs{v_i} \le \entropy(p) + 2(p_1 + p_2 + \dots + p_n) \le \entropy(p) + 2.
     $$
 \end{proof}
 
@@ -225,9 +225,9 @@ $
 
 \begin{theorem}[Шеннон]
     \begin{enumerate}
-        \item Если $ L_n = \lceil h\cdot n\rceil$, где $h > h(p)$, то существуют такие функции $E, D$,
-            что $\varepsilon_n \to 0$.
-        \item Если $L_n = \lceil h \cdot n \rceil$, где $h < h(p)$, то для любых $E, D$
+        \item Если $ L_n = \lceil h\cdot n\rceil$, где $h > \entropy(p)$, то существуют такие функции $E,
+            D$, что $\varepsilon_n \to 0$.
+        \item Если $L_n = \lceil h \cdot n \rceil$, где $h < \entropy(p)$, то для любых $E, D$
             последовательность $\varepsilon_n$ стремится к единице.
     \end{enumerate}
 \end{theorem}
@@ -249,7 +249,7 @@ $
     
     Число слов с заданным количеством вхождений каждой буквы равно:
     $$
-        N = \frac{n!}{n_1!n_2!\dots n_k!} = h(p) \cdot n + o(n),
+        N = \frac{n!}{n_1!n_2!\dots n_k!} = \entropy(p) \cdot n + o(n),
     $$
     где $n_i = p_in$.\footnote{Это тождество было на практике.}
     
@@ -266,16 +266,16 @@ $
         \log\left(\left(\frac{n}{n_1}\right)^{n_1} \left(\frac{n}{n_2}\right)^{n_2}
           \!\ldots\;\left(\frac{n}{n_k}\right)^{n_k} \right)
         = \sum n(p_i + \delta_i) \log\frac{1}{p_i + \delta_i}\\
-        \le n h(p) + \bigO{\delta_i n} < h \cdot n.
+        \le n \entropy(p) + \bigO{\delta_i n} < h \cdot n.
     \end{multline*}
     
     Так как это типичное слово, то $|\delta_i| = |n_i - np_i| \le \delta n$ и следовательно количество
     типичных слов не превосходит
     $$
-        2^{n h(p) + \bigO{\delta n} + \bigO{\log n}} < 2^{h \cdot n}.
+        2^{n \entropy(p) + \bigO{\delta n} + \bigO{\log n}} < 2^{h \cdot n}.
     $$
 
-    Теперь перейдем к доказательству второго случая: $h < h(p)$.
+    Теперь перейдем к доказательству второго случая: $h < \entropy(p)$.
     
     Пусть $\varepsilon_n'$ вероятность ошибки при декодировании $\delta$-типичных слов. Нам достаточно
     показать, что $\varepsilon_n' \to 1$, поскольку $|\varepsilon'_n - \varepsilon|$ не 
@@ -290,7 +290,7 @@ $
     Всего мы можем корректно закодировать не более $2^{L_n}$ различных $\delta$-типичных слов,
     т.е. вероятность корректно декодировать $\delta$-типичное слово
     $$
-        1 - \varepsilon'_n \le 2^{L_n} \cdot 2^{-h(\alpha) \cdot n + \bigO{\delta \cdot n}} \le
-        2^{h \cdot n - h(\alpha) \cdot n + \bigO{\delta \cdot n}} \to 0.
+        1 - \varepsilon'_n \le 2^{L_n} \cdot 2^{-\entropy(\alpha) \cdot n + \bigO{\delta \cdot n}} \le
+        2^{h \cdot n - \entropy(\alpha) \cdot n + \bigO{\delta \cdot n}} \to 0.
     $$
 \end{proof}
