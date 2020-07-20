@@ -1,20 +1,15 @@
-mkdir tmp
-touch tmp/number.txt
-echo "\setcounter{curtask}{1}" > tmp/number.txt
+dir=pdf
+compiler=xelatex
+
+mkdir $dir
+touch $dir/number.txt
 cd series
 for i in *.tex; do
-	cp ../main.tex .
-	if [ "$i" != 'main.tex' ]; then
-		sed -i -- "s/curseries/"$i"/g" main.tex
-		cat "../tmp/number.txt"
-		pdflatex --output-directory ../tmp -jobname "${i::-4}" main.tex
-	fi
+	$compiler --output-directory ../$dir -jobname "${i::-4}" $i
 done
 
-rm main.tex
-
-cd ../tmp
+cd ../$dir
 rm *.log
+rm *.out
 rm *.aux
 rm *.txt
-rm *.out

@@ -1,70 +1,16 @@
+\input{../main.tex}
+
 \setmathstyle{АУ}{Остаток}{2 курс}
 
+\begin{document}
 
-\begin{ptask}{44}
-    Покажите, что:
-	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [в)] $\BPP \subseteq \BPTime[n^{\log n}] \subsetneq \BPTime[2^n]$.
-    \end{enumerate}
-\end{ptask}
+\libproblem*[49]{complexity}{kasteleyn-matrix}
+\libproblem[54]{struct-complexity}{usat-up}
+\libproblem[55]{struct-complexity}{reduction-oracle-3-sat}
+\libproblem[57]{struct-complexity}{am-perfect-compl}
+\libproblem[59]{struct-complexity}{pspace-collapse-ma}
+\libproblem[61]{struct-complexity}{am-in-pi-2}
+\libproblem[62]{struct-complexity}{permanent-oracle-rand}
+\libproblem[64]{struct-complexity}{gni-npc-collapse}
 
-\begin{ptask}{45}
-    Определим язык $\lang{QNR} = \{(y, m) \mid \text{$y$ не является квадратичным вычетом по модулю $m$}\}$, докажите, что
-    $\lang{QNR} \in \IP$.
-\end{ptask}
-
-
-\begin{ptask}{49}
-    Покажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [в)] если граф представляет собой шахматную доску с выбитыми клетками
-            (вершины~--- клетки, ребра соединяют соседние клетки), то существует
-            полиномиальный алгоритм, который считает число полных паросочетаний
-            (подсказка: иногда вес ребра удобно взять комплексным).
-    \end{enumerate}
-\end{ptask}
-
-
-\begin{ptask}{54}
-    Докажите, что: 
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] (снято, но если вдруг решили, то +3 задачи) язык простых чисел лежит в классе $\UP$.
-    \end{enumerate}
-\end{ptask}
-
-\begin{ptask}{55}
-    Покажите, что существует такой оракул $A$ и язык $L \in \NP^A$, что $L$ не
-    сводится по Тьюрингу к $3\SAT$, даже если сведение может использовать оракул $A$.
-\end{ptask}
-
-\begin{ptask}{57}
-    Покажите, что $\AM = \AM_1$.
-\end{ptask}
-
-\begin{ptask}{59}
-    Покажите, что если $\PSpace \subseteq \Ppoly$, то $\PSpace = \MA$ (подсказака: используйте $\IP = \PSpace$).
-\end{ptask}
-
-\begin{ptask}{65}
-    Докажите, что $\MAM = \AM$ (и $\MAM_1 = \AM_1$, данный факт можно использовать в задаче 57).
-\end{ptask}
-
-\begin{ptask}{66}
-    Покажите, что $\AM \subseteq \Pi_2$.
-\end{ptask}
-
-\begin{ptask}{67}
-    Пусть есть оракул, который считает перманент матрицы $n \times n$ над полем $\mathbb{F}$ верно для доли матриц
-    $1 - \frac{1}{3n}$. Пусть $|\mathbb{F}| > 3n$). Докажите, что используя этот оракул можно построить вероятностный
-    полиномиальный по времени алгоритм, который для каждой матрицы с большой вероятностью находит ее перманент.
-\end{ptask}
-
-
-\begin{ptask}{69}
-    Пусть $\lang{GI}$~--- $\NP$-полный язык. Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\coNP \in \AM$;
-        \item [б)] $\Sigma_2 \in \MAM$
-        \item [в)] $\PH = \Sigma_2 \cap \Pi_2$.
-    \end{enumerate}
-\end{ptask}
+\end{document}

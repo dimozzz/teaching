@@ -1,48 +1,26 @@
+\input{../main.tex}
+
 \setmathstyle{АУ}{Серия 6. 23.03}{2 курс}
+\setcounter{curtask}{32}
 
-\begin{task}
-    Докажите, что $\NC^1 \subseteq \Ll$.
-\end{task}
 
-\begin{task}
-    Докажите, что задача $\lang{CircuitEval}$ $\P$-полная.
-\end{task}
+\begin{document}
 
-\begin{task}
-    Пусть $L$~--- $\P$-полный язык. Докажите, что $L \in \Ll \Leftrightarrow \Ll = \P$.
-\end{task}
+\libproblem{struct-complexity}{nc-in-logspace}
+\libproblem{struct-complexity}{ckteval-p-complete}
+\libproblem{struct-complexity}{logspace-in-p}
+\libproblem{struct-complexity}{nc-in-p}
+\libproblem{struct-complexity}{nc1-neq-pspace}
+\libproblem{complexity}{formula-balancing}
 
-\begin{task}
-    Пусть $L$~--- $\P$-полный язык. Докажите, что $L \in \NC \Leftrightarrow \NC = \P$.
-\end{task}
-
-\begin{task}
-    Докажите, что $\NC^1 \neq \PSpace$.
-\end{task}
-
-\begin{task} (подсказка: представьте формулу, как дерево и найдите ``среднюю'' вершину)
-    Покажите, что язык можно разрешить булевой формулой размера $s$ тогда и только тогда, когда этот язык можно разрешить булевой
-    схемой глубина $O(\log(s))$.
-\end{task}
+\dzcomment{
+    \textit{Подсказка:} представьте формулу, как дерево и найдите <<среднюю>> вершину.
+}
 
 \breakline
 
-\begin{ptask}{31}
-	Обозначим $\lang{UCYCLE}$ множество всех неориентрованных графов, в которых есть цикл. Докажите, что $\lang{UCYCLE}$
-    принадлежит классу $\Ll$. 
-\end{ptask}
+\libproblem[24]{struct-complexity}{strong-conn-in-nl}
+\libproblem[26]{struct-complexity}{p-np-hard-function}
+\libproblem[31]{struct-complexity}{ucycle-logspace}
 
-
-\begin{ptask}{24}
-    Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] задача проверки графа на сильную связность лежит в $\NL$;
-        \item [б)] задача проверки графа на сильную связность является полной в классе $\NL$ (относительно сведений по Карпу,
-            использующих логарифмическую память).
-	\end{enumerate}
-\end{ptask}
-
-\begin{ptask}{26}(подсказка: $\NEXP^{\NP} vs. \NEXP$)
-    Докажите, что если $\P = \NP$, то существует язык из $\EXP$, схемная сложность которого не меньше $\frac{2^n}{10 n}$.
-\end{ptask}
-
+\end{document}

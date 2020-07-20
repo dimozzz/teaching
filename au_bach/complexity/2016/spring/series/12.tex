@@ -1,86 +1,26 @@
+\input{../main.tex}
+
 \setmathstyle{АУ}{Серия 12. 04.05}{2 курс}
+\setcounter{curtask}{60}
 
-\begin{task}
+\begin{document}
+
+\task{
     Докажите, что $\MAM = \AM$ (и $\MAM_1 = \AM_1$, данный факт можно использовать в задаче 57).
-\end{task}
+}
 
-\begin{task}
-    Покажите, что $\AM \subseteq \Pi_2$.
-\end{task}
-
-\begin{task}
-    Пусть есть оракул, который считает перманент матрицы $n \times n$ над полем $\mathbb{F}$ верно для доли матриц
-    $1 - \frac{1}{3n}$. Пусть $|\mathbb{F}| > 3n$). Докажите, что используя этот оракул можно построить вероятностный
-    полиномиальный по времени алгоритм, который для каждой матрицы с большой вероятностью находит ее перманент.
-\end{task}
-
-\begin{task}
-	Докажите, что если $\NP \subseteq \PCP(o(\log n), 1)$, то $\P = \NP$.    
-\end{task}
-
-
-\begin{task}
-    Пусть $\lang{GI}$~--- $\NP$-полный язык. Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\coNP \in \AM$;
-        \item [б)] $\Sigma_2 \in \MAM$
-        \item [в)] $\PH = \Sigma_2 \cap \Pi_2$.
-    \end{enumerate}
-\end{task}
-
+\libproblem{struct-complexity}{am-in-pi-2}
+\libproblem{struct-complexity}{permanent-oracle-rand}
+\libproblem{struct-complexity}{pcp-o-log}
+\libproblem{struct-complexity}{gni-npc-collapse}
 
 \breakline
 
+\libproblem[46]{struct-complexity}{bpl-in-p-hard}
+\libproblem*[49]{complexity}{kasteleyn-matrix}
+\libproblem[54]{struct-complexity}{usat-up}
+\libproblem[55]{struct-complexity}{reduction-oracle-3-sat}
+\libproblem[57]{struct-complexity}{am-perfect-compl}
+\libproblem[59]{struct-complexity}{pspace-collapse-ma}
 
-\begin{ptask}{44}
-    Покажите, что:
-	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] если $\BPTime[f(n)] = \BPTime[g(n)]$, то $\BPTime[f(h(n))] = \BPTime[g(h(n))]$, где $f, g, h$~---
-			конструктивные по времени, $f(n), g(n) \ge \log n$, $h(n) \ge n$~--- возрастающая функция;
-        \item [б)] $\DTime[f(n)] \subseteq \BPTime[f(n)] \subseteq \DTime[2^{O(f(n))}]$;
-        \item [в)] $\BPP \subseteq \BPTime[n^{\log n}] \subsetneq \BPTime[2^n]$.
-    \end{enumerate}
-\end{ptask}
-
-\begin{ptask}{45}
-    Определим язык $\lang{QNR} = \{(y, m) \mid \text{$y$ не является квадратичным вычетом по модулю $m$}\}$, докажите, что
-    $\lang{QNR} \in \IP$.
-\end{ptask}
-
-\begin{ptask}{46}
-    $\BPL_H$~--- это класс языков, для которых существует вероятностная машина Тьюринга $M$, которая использует логарифмическую
-    память, останавливается с вероятностью $1$, и для всех $x$ выполняется, что $\Pr[M(x) = L(x)] \ge \frac{2}{3}$. Покажите, что
-    $\BPL_H \subseteq \P$.
-\end{ptask}
-
-\begin{ptask}{49}
-    Покажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [в)] если граф представляет собой шахматную доску с выбитыми клетками
-            (вершины~--- клетки, ребра соединяют соседние клетки), то существует
-            полиномиальный алгоритм, который считает число полных паросочетаний
-            (подсказка: иногда вес ребра удобно взять комплексным).
-    \end{enumerate}
-\end{ptask}
-
-
-\begin{ptask}{54}
-    Докажите, что: 
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] язык простых чисел лежит в классе $\UP$;
-        \item [б)] если $\USAT \in \UP$, то $\NP = \coNP$.
-    \end{enumerate}
-\end{ptask}
-
-\begin{ptask}{55}
-    Покажите, что существует такой оракул $A$ и язык $L \in \NP^A$, что $L$ не
-    сводится по Тьюрингу к $3\SAT$, даже если сведение может использовать оракул $A$.
-\end{ptask}
-
-\begin{ptask}{57}
-    Покажите, что $\AM = \AM_1$.
-\end{ptask}
-
-\begin{ptask}{59}
-    Покажите, что если $\PSpace \subseteq \Ppoly$, то $\PSpace = \MA$ (подсказака: используйте $\IP = \PSpace$).
-\end{ptask}
+\end{document}

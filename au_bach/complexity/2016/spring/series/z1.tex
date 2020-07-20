@@ -1,36 +1,32 @@
-\setcounter{curtask}{1}
+\input{../main.tex}
 
-\begin{task}
-    Изменится ли класс $\widetilde{P}$, если из определения убрать условие ``$\widetilde{P} \subseteq \widetilde{NP}$''. Если да,
-    от приведите пример задачи на которой они разделяются.
-\end{task}
+\setmathstyle{АУ}{}{2 курс}
 
-\begin{task}
-    Докажите, что язык $L = \{(\phi, 1^k) \mid$ функция, заданная формулой $\phi$, не может быть посчитана формулой размера $k$ $\}$
-    лежит в $PH$.
-\end{task}
+\begin{document}
+
+\libproblem{struct-complexity}{tilde-p-in-np}
+\libproblem{struct-complexity}{unary-mfsp}
+
+\task{
+    Докажите, что существует такая аффинная функция $f\colon \{0, 1\}^{n} \to \{0, 1\}^{n}$, что ее
+    схемная сложность не менее $\frac{n^2}{100 \log n}$.  
+}
+
+\task{
+    Пусть $\P = \NP$, докажите, что $\P \notin \PSIZE[n^{100}]$.
+}
+
+\libproblem{struct-complexity}{sat-not-complete-reduction}
+\libproblem{struct-complexity}{exactly-one-sat-npc}
+
+\task{
+    Пусть $\SAT[2]$ является $\P$-полной. Докажите, что $\Lclass = \P$.
+}
+
+\dzcomment{
+    Проверить!
+}
 
 
-\begin{task}
-    Докажите, что существует такая аффинная функция $f: \{0, 1\}^{n} \to \{0, 1\}^{n}$, что ее схемная сложность не менее
-    $\frac{n^2}{100 \log(n)}$.  
-\end{task}
 
-
-\begin{task}
-    Пусть $\P = \NP$, докажите, что $\P \notin \Size[n^{100}]$.
-\end{task}
-
-\begin{task}
-	Докажите, что $\SAT$ не является $\NP$-полной задачей относительно сведений, сохраняющих размер входа.
-\end{task}
-
-\begin{task}
-    Рассмотрим язык $\lang{EO}\text{-}3\text{-}\SAT$, который состоит из таких булевых формул в $3$-КНФ, что существует такой
-    выполняющий набор, что в каждом клозе выполнен равно один литерал. Докажите, что $\lang{EO}\text{-}3\text{-}\SAT$ является
-    $\NP$~полным.
-\end{task}
-
-\begin{task}{????? проверить}
-	Пусть $2\text{-}\SAT$ является $\P$-полной. Докажите, что $\Ll = \P$.
-\end{task}
+\end{document}

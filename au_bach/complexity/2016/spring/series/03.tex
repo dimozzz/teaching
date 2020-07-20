@@ -1,57 +1,41 @@
-\setmathstyle{АУ}{Серия 2. 02.03}{2 курс}
+\input{../main.tex}
+
+\setmathstyle{АУ}{Серия 3. 02.03}{2 курс}
+\setcounter{curtask}{17}
 
 
-\begin{task}
-	Докажите, что если язык $A$ сводится за полиномиальное время по Тьюрингу (оракульно) к $B \in \Sigma_i^P$, то $A \in
-    \Sigma_{i + 1}^P$.    
-\end{task}
+\begin{document}
 
+\libproblem{struct-complexity}{hierarchy-oracle}
 
-$\PSpace$~--- класс языков, разрешимых на ДМТ с использованием полиномиальной памяти.
+\begin{definition*}
+    $\PSPACE$~--- класс языков, разрешимых на ДМТ с использованием полиномиальной памяти.
 
-\begin{task}
-    Докажите, что $\PH \subseteq \PSpace$.
-\end{task}
+    $\DTIME[f(n)], \NTIME[f(n)]$~--- классы языков, разрешимых на ДМТ и НМТ соответственно за
+    $\bigO{f(n)}$ шагов на словах длины $n$.
+\end{definition*}
 
-\begin{task}
-    Пусть $\P^{A} = \NP^{A}$. Докажите, что $\PH^{A} = \P^{A}$.
-\end{task}
+\libproblem{struct-complexity}{ph-in-pspace}
+\libproblem{struct-complexity}{ph-collapse-relativization}
+\libproblem{struct-complexity}{ne-complete}
+\libproblem{struct-complexity}{hierarchy-quasipoly}
 
-$\DTime[f(n)]~~(\NTime[f(n)]) $~--- класс языков, разрешимых на ДМТ(НМТ) за $O(f(n))$ шагов на словах длины $n$.
+\dzcomment{
+    \textit{Подсказка:} вспомните задачу $\P = \NP \Rightarrow \EXP = \NEXP$.
+}
 
-\begin{task}
-	Постройте примеры полных задач относительно сведений по Карпу в классах:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\EXP, \NEXP$;
-        \item [б)] $\class{NE} = \bigcup\limits_{c > 0} \NTime[2^{cn}]$.
-	\end{enumerate}
-\end{task}
-
-\begin{task}(подсказка: вспомните задачу $\P = \NP \Rightarrow \EXP = \NEXP$)
-    Пусть $\NP \subseteq \DTime[n^{\log(n)}]$, докажите, что $\PH \subseteq \bigcup\limits_{k} \DTime[n^{\log^k(n)}]$.
-\end{task}
-
-\begin{task}
-    Докажите, что существует такой язык $L$, что $\P^{L} = \NP^{L}$.
-\end{task}
-
-
-
+\libproblem{struct-complexity}{baker-gill-solovay-easy}
 
 \breakline
 
+\libproblem[10]{struct-complexity}{prime-np}
+\libproblem[16]{struct-complexity}{p-exp-time-hierarchy}
 
-\begin{ptask}{10}
-    Докажите, что:
-   	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] что число $n$ простое тогда и только тогда, когда для каждого простого делителя $q$ числа $n - 1$ существует $a
-            \in {2, 3, \dots, n - 1}$ при котором $a^{n - 1} = 1~mod~n$, а $a^{\frac{n - 1}{q}} \ne 1~mod~n$;
-        \item [б)] язык простых чисел лежит в $\NP$.
-	\end{enumerate}
-\end{ptask}
+\dzcomment{
+    \textit{Подсказка:} вспомните прошлый семестр.
+    
+    \textit{Подсказка:} а можно ли придумать язык, чтобы обмануть конкретный алгоритм?
+}
 
 
-\begin{ptask}{16} (подсказка: вспомните прошлый семестр, подсказка: а можно ли придумать язык, чтобы обмануть конкретный алгоритм)
-    Докажите, что $\P \neq \EXP$.
-\end{ptask}
-
+\end{document}

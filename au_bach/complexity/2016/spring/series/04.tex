@@ -1,62 +1,47 @@
-\setmathstyle{АУ}{Серия 2. 09.03}{2 курс}
+\input{../main.tex}
+
+\setmathstyle{АУ}{Серия 4. 09.03}{2 курс}
+\setcounter{curtask}{23}
 
 
-$\Ll (\NL)$~--- класс языков для которых существует ДМТ (НМТ), которая использует $O(\log(n))$ памяти.
+\begin{document}
 
-\begin{task}
+
+\begin{definition*}
+    $\Lclass (\NL)$~--- класс языков для которых существует ДМТ (НМТ), которая использует $\bigO{\log n}$
+    памяти.
+\end{definition*}
+
+\task{
     Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\Ll \subseteq \P$;
-        \item [б)] если $\SAT \in \Ll$, то $\NP \subseteq \Ll$.
-	\end{enumerate}
-\end{task}
+    \begin{enumcyr}
+        \item $\Lclass \subseteq \P$;
+        \item если $\SAT \in \Lclass$, то $\NP \subseteq \Lclass$.
+	\end{enumcyr}
+}
 
-\begin{task}
-    Докажите, что:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] задача проверки графа на сильную связность лежит в $\NL$;
-        \item [б)] задача проверки графа на сильную связность является полной в классе $\NL$ (относительно сведений по Карпу,
-            использующих логарифмическую память).
-	\end{enumerate}
-\end{task}
+\libproblem{struct-complexity}{strong-conn-in-nl}
 
+\task{
+    Приведите пример языка из $\Ppoly$, который не лежит в $\P$.
+}
 
-\begin{task}
-	Приведите пример языка из $\Ppoly$, который не лежит в $\P$. 
-\end{task}
+\libproblem{struct-complexity}{ppoly-notin-p}
+\libproblem{struct-complexity}{p-np-hard-function}
 
-\begin{task}(подсказка: $\NEXP^{\NP} vs. \NEXP$)
-    Докажите, что если $\P = \NP$, то существует язык из $\EXP$, схемная сложность которого не меньше $\frac{2^n}{10 n}$.
-\end{task}
+\dzcomment{
+    \textit{Подсказка:} $\NEXP^{\NP} vs. \NEXP$.
+}
 
-\begin{task}
-	Докажите, что существует язык, для которого любой алгоритм, работающий время $O(n^2)$ решает его правильно на менее, чем на
-    половине входов какой-то длины, но этот язык распознается алгоритмом, работающим время $O(n^3)$.
-\end{task}
+\libproblem{struct-complexity}{diagonalization-half}
 
 
 
 \breakline
 
-
-\begin{ptask}{10}
-    Докажите, что:
-   	\begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] что число $n$ простое тогда и только тогда, когда для каждого простого делителя $q$ числа $n - 1$ существует $a
-            \in {2, 3, \dots, n - 1}$ при котором $a^{n - 1} = 1~mod~n$, а $a^{\frac{n - 1}{q}} \ne 1~mod~n$;
-        \item [б)] язык простых чисел лежит в $\NP$.
-	\end{enumerate}
-\end{ptask}
+\libproblem[10]{struct-complexity}{prime-np}
+\libproblem[20]{struct-complexity}{ne-complete}
+\libproblem[21]{struct-complexity}{hierarchy-quasipoly}
 
 
-\begin{ptask}{20}
-	Постройте примеры полных задач относительно сведений по Карпу в классах:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $\EXP, \NEXP$;
-        \item [б)] $\class{NE} = \bigcup\limits_{c > 0} \NTime[2^{cn}]$.
-	\end{enumerate}
-\end{ptask}
-
-\begin{ptask}{21}(подсказка: вспомните задачу $\P = \NP \Rightarrow \EXP = \NEXP$)
-    Пусть $\NP \subseteq \DTime[n^{\log(n)}]$, докажите, что $\PH \subseteq \bigcup\limits_{k} \DTime[n^{\log^k(n)}]$.
-\end{ptask}
+\end{document}
