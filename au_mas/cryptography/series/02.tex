@@ -1,0 +1,40 @@
+\input{../main.tex}
+
+\setmathstyle{АУ}{Задание 2}{26.02}
+\setcounter{curtask}{9}
+
+\begin{document}
+
+\libproblem{inf-theory}{standard-interval-alg}
+
+\begin{definition*}
+    Семейство распределений $\mathcal{D}_n$ будем называть \deftext{вычислимым за полиномиальное время},
+    если функция распределения ($F_{\mathcal{D}_n}(x) \coloneqq \sum\limits_{y < x} \mathcal{D}_n(x)$,
+    где $<$~--- лексикографический порядок) вычислима за полиномиальное время.
+
+    Пусть $S$~--- это сэмплер для некоторого распределения. Если $S$, используя случайную строку $r$,
+    выдает $x$, то будем считать, что сэмплер отображает множество строк $[0.r0, 0.r1)$ в $x$. Семейство
+    распределений $\mathcal{D}_n$ будем называть \deftext{обратимым}, если сэмплер для этого семейства
+    распределений обладает следующим свойством: прообраз каждой строки~--- это отрезок, концы которого
+    вычисляются за полиномиальное от $|x|$ время.
+\end{definition*}
+
+\libproblem{avg-case-complexity}{computable-dist-inv}
+\libproblem{avg-case-complexity}{heurbpp-joint-prob}
+\libproblem{cryptography}{prime-not-owf}
+\libproblem{cryptography}{cycles-in-owf}
+
+
+\breakline
+
+\libproblem[3]{cryptography}{owf-poly-image}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
