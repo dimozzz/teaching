@@ -1,0 +1,15 @@
+Пусть $\distrib{A}_n, \distrib{B}_n$~--- семейства распределений. Верно ли, что если для любого
+полиномиального семейства схем $C_n\colon \{0, 1\}^{n} \to \{0, 1\}$ и любого полинома $p$ выполнено
+свойство:
+$$
+    \abs{\Pr\limits_{x \gets \distrib{A}_n}[C_n(x) = 1] - \Pr\limits_{x \gets \distrib{B}_n}[C_n(x) = 1]}
+    \le \frac{1}{p(n)}, 
+$$
+то и для любого полиномиального семейства схем $C_n'\colon \{0, 1\}^{n} \to \{0, 1\}^{n}$ будет верно:
+$$
+    \forall a,
+    \abs{
+        \Pr\limits_{x \gets \distrib{A}_n}[C_n'(x) = a] -
+        \Pr\limits_{x \gets \distrib{B}_n}[C_n'(x) = a]
+    } \le \frac{1}{p(n)}?
+$$

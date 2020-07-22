@@ -1,0 +1,52 @@
+\input{../main.tex}
+
+\setmathstyle{АУ}{Зачет}{}
+
+\begin{document}
+
+\libproblem{cryptography}{owf-nonuniversal-hardcore}
+\libproblem{cryptography}{stat-dist-comp-indist}
+\libproblem{cryptography}{noninjective-prg}
+\libproblem{cryptography}{prg-composition-comp}
+
+\begin{definition*}
+    Пусть $\alpha_n$~--- случайная величина со значениями в $\{0, 1\}^{p(n)}$, где $p$~---
+    полином. Говорят, что $\alpha_n$ \deftext{псевдослучайна по Яо}, если для всех $0 \le i \le p(n) - 1$
+    бит $(\alpha_n)_{i + 1}$ нельзя предсказать по префиксу $(\alpha_n)_{\le i}$, т.е. для любого
+    полиномиально вероятностного алгоритма $A$ и для любого полинома $q$ выполнено:
+    $$
+        \Pr[A((\alpha_n)_{\le i}) = (\alpha_n)_{i + 1}] \le \frac{1}{2} + \frac{1}{q(n)}.
+    $$
+\end{definition*}
+
+\libproblem{cryptography}{yao-comp-indist-uniform}
+\libproblem{cryptography}{comp-indist-uniform-yao}
+
+\begin{definition*}
+    Полиномиально вычислимую функцию $f\colon \{0, 1\}^* \to \{0, 1\}^*$ будем называть распределенной
+    односторонней, если существует такой полином $p$, что для всех полиномиальных по времени
+    вероятностных алгоритмов $A$ и для всех достаточно больших $n$, статистическое расстояние между
+    распределениями $(\distrib{U}_n, f(\distrib{U}_n))$ и $(A(1^n, f(\distrib{U}_n)), \distrib{U}_n)$
+    больше, чем $1 / p(n)$.
+\end{definition*}
+
+\libproblem{cryptography}{weak-owf-distrib-owf}
+\libproblem{cryptography}{one-bit-indist-mbits}
+\libproblem{cryptography}{strong-owf-inv-density}
+\libproblem{cryptography}{bit-commitment-to-owf}
+\libproblem{cryptography}{owf-without-hardcore-bit}
+\libproblem{cryptography}{public-key-one-bit-mbits}
+\libproblem{cryptography}{prg-composition-prg}
+\libproblem{avg-case-complexity}{avg-delta-notin-avgp}
+\libproblem{avg-case-complexity}{avgp-notin-np}
+\libproblem{avg-case-complexity}{bh-u-avgp-np-u}
+\libproblem{avg-case-complexity}{np-pisamp-in-heurp}
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
