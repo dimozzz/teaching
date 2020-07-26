@@ -1,0 +1,70 @@
+\input{../main.tex}
+
+\setmathstyle{17.09}{Задание 2}{АУ. 5 курс}
+\setcounter{curtask}{8}
+
+\begin{document}
+
+\begin{definition*}
+    Будем говорить, что множества $A$ и $B$ \deftext{равны} и обозначать $A \sim B$, если $A \le B$ и $B
+    \le A$. 
+\end{definition*}
+
+\libproblem{set-theory}{basic-isomorphic-real-point}
+
+\task{
+    Докажите, что $\mathbb{R}^{\mathbb{N}} \le \mathbb{R}$.
+}
+
+\task{
+    Докажите, что $\mathbb{N}^{\mathbb{R}} \le 2^{\mathbb{R}}$.
+}
+
+\libproblem{proof-complexity}{res-soundness}
+
+\task{
+    Какое минимальное количество булевых функций от $n~ (n > 1)$
+    переменных составляют полный базис?
+}
+
+\libproblem{discrete-math}{polynomial-representation}
+
+\begin{definition*}
+    Пусть $f(x_1, \dots, x_n)$~--- булева функция от булевых аргументов. Будем называть функцию $f$:
+    \begin{itemtask}
+        \item \deftext{сохраняющей ноль}, если $f(0, 0, \dots, 0) = 0$;
+        \item \deftext{сохраняющей единицу}, если $f(1, 1, \dots, 1) = 1$;
+        \item \deftext{самодвойственной}, если $f(x_1, x_2, \dots, x_n) = \neg f(\neg x_1, \neg x_2,
+            \dots, \neg x_n)$;
+        \item \deftext{монотонной}, если
+            $$
+                f(x_1, x_2, \dots, x_{i - 1}, 1, x_{i + 1}, \dots,  x_n) \ge
+                f(x_1, x_2, \dots, x_{i - 1}, 0, x_{i + 1}, \dots,  x_n)
+            $$
+            для всех $i \in [n]$;
+        \item \deftext{линейной}, если $f(x_1, x_2, \dots, x_n) = a_0 \oplus a_1x_1 \oplus \dots \oplus
+            a_nx_n$, где $a_i$~--- булевы константы.
+    \end{itemtask}
+\end{definition*}
+
+\libproblem{discrete-math}{basis-post-criteria}
+
+\breakline
+
+
+\libproblem[1]{set-theory}{real-not-countable}
+\libproblem[2]{set-theory}{nn-equiv-n}
+\libproblem[3]{set-theory}{basic-isomorphic-sets}
+\libproblem[4]{complexity}{cnf-dnf-size-easy}
+\libproblem[5]{proof-complexity}{res-correctness}
+\libproblem[6]{math-logic}{propositional-common-vars}
+\libproblem[7]{math-logic}{propositional-compactness}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

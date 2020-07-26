@@ -59,13 +59,13 @@
     Полагая $x = y = \frac{1}{2}$, получаем:
     $$
         P^L\left(\frac{1}{2},\frac{1}{2}\right) \le \sum_{i = L}^{L \cdot \max |c_i|}(2^i \cdot 2^{-i})
-        \le O(L).
+        \le \bigO{L}.
     $$
     Теперь предположим, что неравенство Крафта--Макмиллана не выполнено для данного кода. Тогда 
     $$
         \sum_i p_i\left(\frac{1}{2},\frac{1}{2}\right) = \sum 2^{-\abs{c_i}} = 1 + \varepsilon > 1.
     $$
-    Значит, $P^L = (1 + \varepsilon)^{L} > O(L)$, что противоречит предыдущему рассуждению о линейности
+    Значит, $P^L = (1 + \varepsilon)^{L} > \bigO{L}$, что противоречит предыдущему рассуждению о линейности
     роста.
 \end{proof}
 
@@ -126,7 +126,7 @@ $$
 \begin{exercise}
     Для кода Шеннона--Фано выполнено равенство:
     $$
-    \sum_{i = 1}^n p_i\abs{c_i} = \entropy(p) + O(1), \qquad n \to \infty.
+        \sum_{i = 1}^n p_i\abs{c_i} = \entropy(p) + \bigO{1}, \qquad n \to \infty.
     $$
 \end{exercise}
 

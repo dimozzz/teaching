@@ -1,0 +1,42 @@
+\input{../main.tex}
+
+\setmathstyle{10.09}{Задание 1}{АУ. 5 курс}
+
+\begin{document}
+
+\libproblem{set-theory}{real-not-countable}
+
+\begin{definition*}
+    Будет говорить, что множество $A$ \deftext{не больше} множества $B$, если существует биективное
+    отображение из $A$ в подмножество $B$, и \deftext{строго меньше}, если не существует биекции из $B$ в
+    $A$. Под степенью будем подразумевать декартову степень.
+\end{definition*}
+
+\libproblem{set-theory}{nn-equiv-n}
+\libproblem{set-theory}{basic-isomorphic-sets}
+\libproblem{complexity}{cnf-dnf-size-easy}
+
+\begin{definition*}
+    \deftext{Методом резолюций} будем называть метод доказательства противоречивости множества
+    дизъюнктов. Данный метод содержит единственное правило вывода:
+    $$
+        \frac{x \vee \alpha \ \ \ \neg x \vee \beta}{\alpha \vee \beta}.
+    $$
+
+    Множество дизъюнктов считается противоречивым (имеет вывод в резолюции), если из него можно вывести
+    пустой дизъюнкт.
+\end{definition*}
+
+\libproblem{proof-complexity}{res-correctness}
+\libproblem{math-logic}{propositional-common-vars}
+\libproblem{math-logic}{propositional-compactness}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

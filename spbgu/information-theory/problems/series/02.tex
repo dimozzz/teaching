@@ -11,10 +11,10 @@
 
 \begin{definition*}
     \deftext{Взаимной информацией} между случайными величинами $\alpha$ и $\beta$ будем называть функцию
-    $I(\alpha : \beta) \coloneqq h(\alpha) - h(\alpha \mid \beta)$.
+    $I(\alpha : \beta) \coloneqq \entropy(\alpha) - \entropy(\alpha \mid \beta)$.
 
     Также определим взаимную информацию в $\alpha$ и $\beta$ при условии $\gamma$.
-    $I(\alpha : \beta \mid \gamma) = h(\alpha \mid \gamma) - h(\alpha \mid \beta, \gamma)$.
+    $I(\alpha : \beta \mid \gamma) = \entropy(\alpha \mid \gamma) - \entropy(\alpha \mid \beta, \gamma)$.
 \end{definition*}
 
 \libproblem{inf-theory}{information-properties}

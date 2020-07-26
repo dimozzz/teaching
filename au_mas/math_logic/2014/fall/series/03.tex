@@ -1,0 +1,54 @@
+\input{../main.tex}
+
+\setmathstyle{01.10}{Задание 3}{АУ. 5 курс}
+\setcounter{curtask}{15}
+
+\begin{document}
+
+\libproblem{set-theory}{continous-r-r-card}
+\libproblem{set-theory}{monotone-r-r-card}
+
+\task{
+    Пусть $S = {S_{\alpha} \subseteq 2^{\mathbb{N}}}$, для любых $\alpha, \beta$ либо
+    $S_{\alpha} \subset S_{\beta}$, либо $S_{\beta} \subset S_{\alpha}$. Докажите,
+    что может быть верно неравенство $\mathbb{N} < S$. (подсказка: придумайте
+    адаптивную кодировку (т.е. кодировка символа зависит от предыдущих символов)
+    вещественных чисел). 
+}
+
+\dzcomment{
+    Не понял что написано было, не добавлял в базу.
+}
+
+\task{
+    Приведите пример трех неизоморфных линейных порядка на счетном множестве.
+}
+
+\begin{definition*}
+    Доказательство противоречивости множества дизъюнктов в системе Cutting Planes. Представляет собой
+    последовательность линейных неравенств:
+    $C_1 \ge c_1, C_2 \ge c_2, \dots, C_{m - 1} \ge c_{m - 1}, 0 \ge 1$.
+
+    $j$-ое неравенство получено по одному из следующих правил:
+    \begin{itemize}
+        \item аксиомы: $x \ge 0$, $1 - x \ge 0$,
+	    \item $(x_1 \lor \neg x_2 \lor \dots)$~--- исходный дизъюнкт, тогда
+    		$C_j = x_1 + (1 - x_2) + \dots, c_j = 1$;
+        \item $С_j = C_i + C_k, c_j = c_i + c_k$, где $i, k < j$;
+		\item $C_j = k C_i, c_j = k c_i$, где $i < j$, $k \in \mathbb{N}$;
+        \item Пусть $C_i = k a_1 x_1 + k a_2 x_2 + \dots$, тогда $C_j = a_1 x_1 +
+    		a_2 x_2 + \dots, c_j =  \lceil c_i \rceil$.
+    \end{itemize}
+\end{definition*}
+
+\libproblem{proof-complexity}{cp-corr-sound-formula}
+\libproblem{math-logic}{prop-substitution-and-ded}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
