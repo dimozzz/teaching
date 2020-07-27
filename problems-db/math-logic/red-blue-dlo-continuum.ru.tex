@@ -1,0 +1,10 @@
+Пусть $\PrSys{T}$ теория следующего языка: $\{<, R, B\}$, где $R$ (red) и $B$ (blue) унарные предикаты.
+    
+$\PrSys{T}$ содержит все аксиомы плотного линейного порядка, а также:
+\begin{itemtask}
+    \item $\forall x, y \; \exists z, w \; (x < z < w < y \; \wedge \; R(z) \; \wedge \; B(w))$;
+    \item $\forall x \; (R(x)\; \vee \; B(x))$;
+    \item $\forall x \; (R(x) \leftrightarrow \neg B(x))$.
+\end{itemtask}
+    
+Докажите, что $\PrSys{T}$ имеет модель мощности континуум.
