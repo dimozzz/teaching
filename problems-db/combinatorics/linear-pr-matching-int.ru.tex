@@ -1,0 +1,14 @@
+Пусть дан граф $G \coloneqq (V, E)$, $|V| = n$, $|E| = m$, $x \in \mathbb{R}^m$. Рассмотрим следующую
+задачу линейного программирования:
+\begin{itemtask}
+    \item $\sum\limits_{e \in E} x_e \rightarrow \max$;
+    \item $\forall e \in E ~~ x_e \ge 0$;
+    \item $\forall v \in V ~~ \sum\limits_{e \in E_v} x_e \le 1$, где $E_v$~--- множество ребер,
+        инцидентных вершине $v$.        
+\end{itemtask}
+
+\begin{enumcyr}
+	\item Какой <<физический>> смысл у данной задачи? А если вектор $x$ имеет целочисленные координаты?
+    \item Докажите, что если граф $G$ двудольный, то оптимум достигается в вершине с целочисленными
+	    координатами.
+\end{enumcyr}

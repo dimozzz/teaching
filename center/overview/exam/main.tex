@@ -1,25 +1,51 @@
-\documentclass[a4paper, 12pt]{article}
-% math symbols
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{mathrsfs}
-\usepackage{mathseries}
+\input{../../../../main.tex}
 
-
-\usepackage[margin = 2cm]{geometry}
-
-\tolerance = 1000
-\emergencystretch = 0.74cm
-
-\renewcommand{\coursetitle}{CC}
-
-
-\pagestyle{empty}
-\parindent = 0mm
+\renewcommand{\coursetitle}{}
+\setcounter{curtask}{1}
 
 \begin{document}
 
-	\input{curseries.tex}
+\libproblem[\textbf{10}]{computability}{enum-uncomp-numbers}
+\libproblem[\textbf{10}]{computability}{prime-div}
+\libproblem[\textbf{10}]{computability}{poly-time}
 
-    
+\task[\textbf{5}]{
+    Докажите, что если $\NP \neq \coNP$, то $\P \neq \NP$.
+}
+
+\libproblem[\textbf{10}]{struct-complexity}{subgraph-isomorphism}
+\libproblem[\textbf{5}]{struct-complexity}{pcp-log-p}
+\libproblem[\textbf{5}]{struct-complexity}{pspace-in-exp}
+
+\task{
+    Пусть дан граф $G \coloneqq (V, E)$, $|V| = n$, $|E| = m$, $x \in \mathbb{R}^m$. Рассмотрим следующую
+    задачу линейного программирования. $\sum\limits_{e \in E} x_e \rightarrow \max$, $\forall e \in E ~~
+    x_e \ge 0$, $\forall v \in V ~~ \sum\limits_{e, v \in \delta(e)} x_e \le 1$, где $\delta(e)$~---
+    множество концов ребра $e$.
+    \begin{enumcyr}
+        \item ($\mathbf{10}$) Докажите, что если граф $G$ двудольный, то оптимум достигается в вершине с
+            целочисленными координатами.
+        \item ($\mathbf{5}$) Предъявите пример, когда $G$ не является двудольным и максимум не
+            целочисленный.
+    \end{enumcyr}
+}
+
+\task[15]{
+    Докажите, что существует такая функция $f\colon \{0, 1\}^{n} \rightarrow \{0, 1\}^n$, которая задает
+    аффинное преобразование, что ее схемная сложность не менее $\frac{n^2}{100 \log n}$.
+}
+
+\libproblem[\textbf{20}]{cc}{clique-ind}
+\libproblem[\textbf{25}]{cc}{median-hard}
+
+\task[\textbf{5}]{
+    Рассмотрим функцию $f(x_1, \dots, x_n) = x_1 \oplus x_2 \oplus \dots \oplus x_n$. Докажите, что $D(f)
+    = n$ (детерминированная запросовая сложность).
+}
+
+\libproblem[\textbf{15}]{error-correcting}{BCH-distance}
+\libproblem[\textbf{20}]{computability}{non-separable}
+\libproblem[\textbf{10}]{cc}{rand-eq}
+
+
 \end{document}
