@@ -1,0 +1,49 @@
+\input{../main.tex}
+
+\setmathstyle{14.11}{Задание 10}{CS Center}
+\setcounter{curtask}{51}
+
+\begin{document}
+
+\libproblem{inf-theory}{find-n-200}
+\libproblem{error-correcting}{the-hat}
+\libproblem{error-correcting}{hamming-parity}
+\libproblem{error-correcting}{systematic-code}
+
+\breakline
+
+\libproblem[39]{struct-complexity}{pcp-o-log}
+\task[41]{
+    Докажите, что язык $\SAT[2]$ лежит в $\DSPACE[\log^2 n]$.\\
+    \hinttext{Подсказка:} какие есть способы проверки того, что в графе есть путь из одной вершины до
+    другой?
+}
+
+\task[42]{
+    Определим кванторную пропозициональную формулу: она имеет вид:
+    $$
+        Q_1 x_1 Q_2 x_x \dots Q_n x_n \varphi(x_1, x_2, \dots, x_n),
+    $$
+    где $\varphi$~--- пропозициональная формула от переменных $x_1, \dots, x_n$, а $Q_i \in \{\exists,
+    \forall\}$~--- кванторы. Переменные $x_i$ принимают значения $\{0, 1\}$, истинность формулы
+    определяется естественным образом. Обозначим $\langcplx{QBF}$~--- это множество истинных кванторных
+    пропозициональных формул. Докажите, что $\langcplx{QBF}$ лежит в $\PSPACE$.
+}
+
+\libproblem[43]{struct-complexity}{ucycle-logspace}
+
+\task[45]{
+    Рассмотрим функцию $\Maj(x_1, x_2, x_3)$, которая возвращает бит, который чаще
+    встречается на входе. Докажите, что $R(\Maj) \le \frac{8}{3}$.
+}
+
+\libproblem[47]{complexity}{decision-depth-bound}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

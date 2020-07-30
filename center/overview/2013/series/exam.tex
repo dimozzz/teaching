@@ -1,0 +1,79 @@
+\input{../main.tex}
+
+\setmathstyle{}{Контрольная работа}{CS Center}
+\setcounter{curtask}{55}
+
+\begin{document}
+
+Каждая задача контрольной может быть либо решена, либо не решена. За каждую решенную
+задачу вы получаете указанное число баллов.  Если Вы заработали $A$ баллов за работу
+в течение семестра и $B$ баллов за контрольную работу, то ваш итоговый балл за
+практику $\min \{A + B, 80\}$.
+
+Вы можете самостоятельно выбирать, какие задачи решать, исходя из того, сколько вам
+нужно набрать баллов. Задачи следует записать и послать Д.О. Соколову по электронной
+почте sokolov.dmt@gmail.com не позже среды 4-го декабря. В четверг 5-го декабря на
+занятии можно будет получить результаты и исправить ошибки.
+
+
+\libproblem[\textbf{15}]{computability}{enum-uncomp-numbers}
+\libproblem[\textbf{10}]{computability}{prime-div}
+\libproblem[\textbf{10}]{computability}{poly-time}
+
+\task[\textbf{5}]{
+    Докажите, что если $\NP \neq \coNP$, то $\P \neq \NP$.
+}
+
+\libproblem[\textbf{5}]{struct-complexity}{subgraph-isomorphism}
+\libproblem[\textbf{5}]{struct-complexity}{pcp-log-p}
+\libproblem[\textbf{5}]{struct-complexity}{pspace-in-exp}
+\libproblem[\textbf{15}]{combinatorics}{infeasible-dual-lp}
+
+\task{
+    Пусть дан граф $G \coloneqq (V, E)$, $|V| = n$, $|E| = m$, $x \in \mathbb{R}^m$. Рассмотрим следующую
+    задачу линейного программирования. $\sum\limits_{e \in E} x_e \rightarrow \max$, $\forall e \in E ~~
+    x_e \ge 0$, $\forall v \in V ~~ \sum\limits_{e, v \in \delta(e)} x_e \le 1$, где $\delta(e)$~---
+    множество концов ребра $e$.
+    \begin{enumcyr}
+        \item ($\mathbf{10}$) Докажите, что если граф $G$ двудольный, то оптимум достигается в вершине с
+            целочисленными координатами.
+        \item ($\mathbf{5}$) Предъявите пример, когда $G$ не является двудольным и максимум не
+            целочисленный.
+    \end{enumcyr}
+}
+
+\task[\textbf{15}]{
+    Докажите, что существует такая функция $f\colon \{0, 1\}^{n} \rightarrow \{0, 1\}^n$, которая задает
+    аффинное преобразование, что ее схемная сложность не менее $\frac{n^2}{100 \log n}$.
+}
+
+\libproblem[\textbf{25}]{cc}{clique-ind}
+\libproblem[\textbf{30}]{cc}{median-hard}
+
+\task[\textbf{10}]{
+    Рассмотрим функцию $f(x_1, \dots, x_n) = x_1 \oplus x_2 \oplus \dots \oplus x_n$. Докажите, что $D(f)
+    = n$ (детерминированная запросовая сложность).
+}
+
+\task[\textbf{20}]{
+    Докажите, что для достаточно больших $n$ $R(Maj(x_1, x_2, \dots, x_n)) \le n - \frac{1}{4}$
+    (вероятностная запросовая сложность).
+}
+
+\task[\textbf{10}]{
+	Пусть пара случайных величин $X, Y$ совместно распределена на некотором конечном
+    множестве. Докажите, что $\entropy(X, Y) \le \entropy(X) + \entropy(Y)$.
+}
+
+
+\libproblem[\textbf{15}]{error-correcting}{BCH-distance}
+\libproblem[\textbf{5}]{error-correcting}{reed-solomon-erasure}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

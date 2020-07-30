@@ -1,0 +1,51 @@
+\input{../main.tex}
+
+\setmathstyle{26.09}{Задание 3}{CS Center}
+\setcounter{curtask}{13}
+
+\begin{document}
+
+\libproblem{discrete-math}{turing-example-xx}
+
+\task{
+    Пусть $\langcplx{LINEQ}$~--- язык выполнимых систем рациональных линейный
+    уравнений. $\langcplx{LINEQ}$ состоит из пар $(A, b)$, где $A$~--- матрица $m \times n$, а $b$~---
+    такой рациональный вектор размерности $m$, что система $Ax = b$ имеет решения. Докажите, что язык
+    $\langcplx{LINEQ}$ лежит в классе $\NP$.
+}
+
+\libproblem{struct-complexity}{exactly-one-sat-npc}
+
+\task{
+    Пусть $L_1, L_2 \in \NP$. Принадлежит ли объединение этих языков $\NP$, а пересечение?
+}
+
+\dzcomment{
+    Плохая задача.
+}
+
+\task{
+    Пусть $\P = \NP$, докажите, что $\NP = \coNP$. ($\coNP$~--- класс языков, дополнение которых лежит в
+    классе $\NP$).
+}
+
+%\libproblem{struct-complexity}{2-sat-p}
+
+\breakline
+
+\libproblem[9]{computability}{hor-ver-cuts}
+\libproblem[10]{computability}{subset-split}
+\task[12]{
+    Рассмотрим пары $(S, k)$, где $S$~--- множество точек на плоскости, $k \in \mathbb{N}$, что выпуклая
+    оболочка множества $S$ состоит из не более $k$ точек. Предъявите доказательство того, что выпуклая
+    оболочка множества $S$ состоит из не более $k$ точек, которое можно проверить за $\bigO{|S|}$.
+}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

@@ -1,0 +1,49 @@
+\input{../main.tex}
+
+\setmathstyle{21.11}{Задание 11}{CS Center}
+\setcounter{curtask}{55}
+
+\begin{document}
+
+\libproblem{cc}{det-gt}
+\libproblem{cc}{avg-det}
+\libproblem{cc}{median-easy}
+
+\task{
+    Докажите, что если матрицу $A \in \{0, 1\}^{n \times m}$ можно разбить на $k$ одноцветных
+    прямоугольников, то ранг данной матрицы (над полем $\mathbb{Z}_2$) не превосходит
+    $k$. \hinttext{Подсказка:} ранг суммы не превосходит суммы рангов).
+}
+
+\breakline
+
+\task[41]{
+    Докажите, что язык $\SAT[2]$ лежит в $\DSPACE[\log^2 n]$.\\
+    \hinttext{Подсказка:} какие есть способы проверки того, что в графе есть путь из одной вершины до
+    другой?
+}
+
+\task[42]{
+    Определим кванторную пропозициональную формулу: она имеет вид:
+    $$
+        Q_1 x_1 Q_2 x_x \dots Q_n x_n \varphi(x_1, x_2, \dots, x_n),
+    $$
+    где $\varphi$~--- пропозициональная формула от переменных $x_1, \dots, x_n$, а $Q_i \in \{\exists,
+    \forall\}$~--- кванторы. Переменные $x_i$ принимают значения $\{0, 1\}$, истинность формулы
+    определяется естественным образом. Обозначим $\langcplx{QBF}$~--- это множество истинных кванторных
+    пропозициональных формул. Докажите, что $\langcplx{QBF}$ лежит в $\PSPACE$.
+}
+
+\libproblem[43]{struct-complexity}{ucycle-logspace}
+\libproblem[51]{inf-theory}{find-n-200}
+\libproblem[52]{error-correcting}{the-hat}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

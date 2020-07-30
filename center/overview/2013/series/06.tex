@@ -1,0 +1,42 @@
+\input{../main.tex}
+
+\setmathstyle{17.10}{Задание 6}{CS Center}
+\setcounter{curtask}{31}
+
+\begin{document}
+
+\libproblem{combinatorics}{total-unimod-crit}
+
+\task{
+    Пусть дан граф $G \coloneqq (V, E)$, $|V| = n$, $|E| = m$, $x \in \mathbb{R}^m$. Рассмотрим следующую
+    задачу линейного программирования. $\sum_{e \in E} x_e \rightarrow max$, $\forall e \in E ~~ x_e \ge
+    0$, $\forall v \in V ~~ \sum\limits_{e, v \in \delta(e)} x_e \le 1$, где $\delta(e)$~--- множество концов
+    ребра $e$.\\
+    Докажите, что если граф $G$ двудольный, то матрица данной задачи является тотально унимодулярной.
+}
+
+\libdefinition{decision-tree}
+
+\task{
+    Рассмотрим функцию $\Maj(x_1, x_2, x_3)$, которая возвращает бит, который чаще
+    встречается на входе. Докажите, что $D(\Maj) = 3$.
+}
+
+\libproblem{complexity}{decision-or-det-lower}
+
+
+\breakline
+
+\libproblem[24]{struct-complexity}{unary-np-complete}
+\libproblem[25]{combinatorics}{polyhedron-vertices-num}
+\libproblem[26]{combinatorics}{polyhedron-rank-nonempty}
+\libproblem[27]{combinatorics}{convex-set-combination}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
