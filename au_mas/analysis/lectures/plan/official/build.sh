@@ -1,8 +1,10 @@
-mkdir tmp
-pdflatex --output-directory tmp main.tex
-cp main.bib tmp
-cd tmp
-bibtex main
+dir=pdf
+compiler=xelatex
+mkdir $dir
+$compiler --output-directory $dir main.tex
+cp main.bib $dir
+cd $dir
+biber main
 cd ..
-pdflatex --output-directory tmp main.tex
-pdflatex --output-directory tmp main.tex
+$compiler --output-directory $dir main.tex
+$compiler --output-directory $dir main.tex

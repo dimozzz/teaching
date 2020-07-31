@@ -7,27 +7,27 @@
     \item Deterministic protocols. Trivial bounds ($\log |X| + \log |Z|, \dots$) $f: X \times Y \to Z$.
     \item Examples:
         \begin{itemize}
-            \item $D(\Parity) = 2$;
-            \item Pointer Chasing. $D \le k \log n$.
-            \item Clique and Ind. Set. $D \le \log^2 n$ (important problem!) [Yan. 91].
-            \item \skp Median of multiset. $D \le \log^2 n$ (Can you do better?).
-            \item Equality. $D \le n + 1$.
-            \item Greater Than. $D \le n + 1$.
-            \item Disjointness. $D \le n + 1$.                
+            \item $\DCC(\Parity) = 2$;
+            \item Pointer Chasing. $\DCC \le k \log n$.
+            \item Clique and Ind. Set. $\DCC \le \log^2 n$ (important problem!) [Yan. 91].
+            \item Median of multiset. $\DCC \le \log^2 n$ (Can you do better?).
+            \item Equality. $\DCC \le n + 1$.
+            \item Greater Than. $\DCC \le n + 1$.
+            \item Disjointness. $\DCC \le n + 1$.                
         \end{itemize}
     \item Randomized protocols. Two and one-sided errors. Public and private randomness (focus on public
         bits). (Can we consider worst-case on random bits?)
     \item Error reduction.
     \item Examples:
         \begin{itemize}
-            \item Equality. $R \le O\left(\log \frac{1}{\varepsilon}\right)$. One-sided!
-            \item Greater Than. $R \le O(\log n \log\log n)$. Better? (Nissan?)
-            \item Disjointness. $R \le O(n)$.      
+            \item Equality. $\Rpub \le O\left(\log \frac{1}{\varepsilon}\right)$. One-sided!
+            \item Greater Than. $\Rpub \le O(\log n \log\log n)$. Better? (Nissan?)
+            \item Disjointness. $\Rpub \le O(n)$.      
         \end{itemize}
     \item Applications ($\Search_{\varphi}$):
         \begin{itemize}
             \item $\DPLL$ algorithms;
-            \item \skp $\DPLL(\oplus)$ algorithms.
+            \item $\DPLL(\oplus)$ algorithms.
         \end{itemize}
 \end{enumerate}
 
@@ -40,7 +40,7 @@
         Discussion about $\Search_{\varphi}$.
     \item Balancing protocols.
     \item $\EQ, \GT$ lower bounds.
-    \item $D \le O(\log^2 \chi)$ (covering!).
+    \item $\DCC \le \bigO{\log^2 \chi}$ (covering!).
 \end{enumerate}
 
 
@@ -58,25 +58,25 @@
     \item Fooling sets. $\chi$.
         \begin{itemize}
             \item $\GT$.
-            \item $\DISJ$. $\{x, \bar{x}\}$.
+            \item $\Disj$. $\{x, \bar{x}\}$.
         \end{itemize}
     \item Rectangle size. $\mu(R) \le \delta \Rightarrow \chi \ge \frac{1}{\delta}$.
         \begin{itemize}
             \item $\IP$. ($|A| \times |B| \le 2^n$).
-            \item $\DISJ$. ($|A| + |B| \le n$).
+            \item $\Disj$. ($|A| + |B| \le n$).
         \end{itemize}
     \item Fooling set of a random function.
     \item Rank technique (over $\mathbb{R}$). $\log(2 \rk(M_f) - 1)$ ($M$ and $\bar{M}$).
         \begin{itemize}
             \item $\IP$. ($M_f^2$).
-            \item $\DISJ$.
+            \item $\Disj$.
                 $\begin{pmatrix}
                     1 & 1\\
                     1 & 0
                 \end{pmatrix}^{\oplus n}$
         \end{itemize}
     \item Rank of random function.
-    \item $D(f) \le \rk(M_f)$.
+    \item $\DCC(f) \le \rk(M_f)$.
     \item Rank over any field $\Rightarrow$ Fooling set. ($A \bigodot A^T$). No fooling set for $\IP$.
 \end{enumerate}
 
@@ -88,17 +88,17 @@
     \item Non-deterministic communication. Three definitions and equivalence.
     \item $\P = \NP \cap \coNP$.
     \item $C^a(f) = O\left(\frac{n}{RS^a(f)}\right)$.
-    \item $\DISJ^k$.
+    \item $\Disj^k$.
 
 \end{enumerate}
 
 \centerline{\textsc{Lecture 6}}
 
 \begin{enumerate}
-    \item $\DISJ^k$.
+    \item $\Disj^k$.
     \item Randomized protocols.
     \item $\EQ$. Public and private random bits.
-    \item $D(f) \le 2^{R_{\varepsilon}(f)} \left( \log(\frac{1}{2} - \varepsilon)^{-1} +
+    \item $\DCC(f) \le 2^{R_{\varepsilon}(f)} \left( \log(\frac{1}{2} - \varepsilon)^{-1} +
         R_{\varepsilon}(f) \right)$ (private).
     \item Newman's Theorem. 
 \end{enumerate}
@@ -108,7 +108,7 @@
 \centerline{\textsc{Lecture 7}}
 
 \begin{enumerate}
-    \item Efficient randomized protocol for $\DISJ^k$.
+    \item Efficient randomized protocol for $\Disj^k$.
     \item The notion of ``critical block sensensitivity''.
     \item Critical block sensitivity of Tseitin formulas.
 \end{enumerate}
@@ -131,5 +131,5 @@
 \begin{enumerate}
     \item Disjoines over product distributions. Upper bound.
     \item Corruption bound.
-    \item Corruption of $\DISJ$.
+    \item Corruption of $\Disj$.
 \end{enumerate}
