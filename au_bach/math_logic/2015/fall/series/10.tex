@@ -1,55 +1,22 @@
-\mytitle{10 (на 16.11)}
+\input{../main.tex}
 
-\begin{task}
-    Можно ли в данной интерпретации провести элиминацию кванторов $(Z, =, <, +, 0, 1)$?
-\end{task}
+\setmathstyle{16.11}{Задание 10}{АУ}
+\setcounter{curtask}{49}
 
-\begin{task}
-    Пусть $T$ теория следующего языка: $\{<, R, B\}$, где $R$ (red) и $B$ (blue)
-    унарные предикаты.
-    
-	$T$ содержит все аксиомы плотного линейного порядка без первого и последнего элемента, а также:
-	\[ \forall xy \exists zw (x < z < w < y \; \wedge \; R(z) \; \wedge \; B(w)) \]
-	\[ \forall x \; (R(x)\; \vee \; B(x)) \]
-	\[ \forall x \; (R(x) \leftrightarrow \neg B(x). \]
-    
-	Докажите, что любые интерпретации данной теории на счетном множестве изоморфны.
-\end{task}
+\begin{document}
 
+\libproblem{math-logic}{z-less-plus-0-1-elim}
+\libproblem{math-logic}{red-blue-dlo-count}
 
-Две интерпретации одной сигнатуры называются элементарно
-эквивалентными, если каждая замкнутая формула в первой интерпретации
-верна тогда и только тогда, когда она верна во второй.
+\libdefinition{elem-equiv-models}
 
-\begin{task}
-    Будет ли интерпретация $(\mathbb{N}, =, <)$ элементарно эквивалентна: $(\mathbb{N} + \mathbb{N}, =, <)$. (Две копии
-    нат. чисел, все элементы из второй копии больше элементов из первой).
-\end{task}
-
-\begin{task}
-    Будет ли интерпретация $(\mathbb{N}, =, <)$ элементарно эквивалентна: $(\mathbb{N} + \mathbb{Z}, =, <)$. А будут ли эти
-    интерпретации изоморфны?
-\end{task}
-
-\begin{task}
-    Будет ли интерпретация $(\mathbb{Q}, =, <)$ элементарно эквивалентна:
-    \begin{enumerate}[topsep = 0pt, itemsep = -1ex]
-        \item [а)] $(\mathbb{Q} + \mathbb{Q}, =, <)$;
-        \item [б)] $(\mathbb{Q} + \mathbb{R}, =, <)$.
-    \end{enumerate}
-\end{task}
-
-
+\libproblem{math-logic}{n-less-equiv-n-plus-n}
+\libproblem{math-logic}{n-equiv-n-plus-z}
+\libproblem{math-logic}{q-equiv-q-plus-r}
 
 \breakline
 
+\libproblem[46]{math-logic}{predicates-descr-q-plus-hint}
+\libproblem[47]{math-logic}{predicates-descr-n-succ-hint}
 
-\begin{ptask}{46}
-    Можно ли в данной интерпретации провести элиминацию кванторов $(\mathbb{Q}, =, +)$? Если нет, то можно ли добавить
-    какой-нибудь выразимый предикат так, чтобы с новым предикатом элиминация квантором стала возможной.
-\end{ptask}
-
-\begin{ptask}{47}
-    Можно ли в данной интерпретации провести элиминацию кванторов $(\mathbb{Q}, =, S)$, где $S$~--- прибавление единицы? Если нет,
-    то можно ли добавить какой-нибудь выразимый предикат так, чтобы с новым предикатом элиминация кванторов стала возможной.
-\end{ptask}
+\end{document}
