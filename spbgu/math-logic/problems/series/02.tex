@@ -1,89 +1,223 @@
 \input{../main.tex}
 
-\setmathstyle{}{Теория множеств}{1 курс}
+\setmathstyle{}{Мат. логика}{3 курс}
 
 
 \begin{document}
 
-\begin{definition*}
-    Определим \deftext{упорядоченную пару} $X_1$ и $X_2$ как
-    $$
-        \left( X_1, X_2 \right) \coloneqq \{\{ X_1 \}, \{ X_1, X_2 \}\}.
-    $$
-        
-    Заметим, что такие пары обладают следующим свойством:
-    \begin{equation*}
-        (X_1, X_2) = (Y_1, Y_2) \quad \text{тогда и только тогда, когда} \quad
-        X_1 = Y_1~\, \text{и}~\, X_2 = Y_2.
-    \end{equation*}
+\section*{Решетки}
 
-    Далее, для любых $X$ и $Y$ выражение
+\begin{definition*}
+    Рассмотрим сигнатуру
+    $$
+        \sigma \coloneqq \avg{\land, \lor; =}.
+    $$
+
+    Обозначим за $\PrSys{Lat}$ множество, состоящее из универс. замыканий следующих $\sigma$-формул:
+    \begin{itemize}
+        \item $x \land y = y \land x$;
+        \item $x \lor y = y \lor x$;
+        \item $x \land (y \land z) = (x \land y) \land z$;
+        \item $x \lor (y \land z) = (x \land y) \land z$;
+        \item $x \lor (x \land y) = x$ \hfill (закон поглощения);
+        \item $x \land (x \lor y) = x$ \hfill (закон поглощения).
+    \end{itemize}
+
+    Под \deftext{решётками} будем понимать модели $\PrSys{Lat}$.
+\end{definition*}
+
+
+\libproblem{math-logic}{lattice-idempotency}
+
+\begin{definition*}
+    Введём обозначения:
     \begin{align*}
-      {X \times Y}\
-      :=&\ {\left\{ \left( x, y \right) \mid {x \in X \wedge y \in Y} \right\}}\\
-      =&\ {\left\{ u \mid {\exists x}\, {\exists y}\, {\left( u = \left( x, y \right) \wedge x \in X
-         \wedge y \in Y \right)} \right\}}\\
-      =&\ {\left\{ u \in \mathcal{P} \left( \mathcal{P} \left( X \cup Y \right) \right) \mid {\exists
-         x}\, {\exists y}\, {\left( u = \left( x, y \right)
-         \wedge x \in X \wedge y \in Y \right)} \right\}}
+      x \leq y &\coloneqq x \land y = x;\\
+      \funcmath{Inf}(x, y, z) &\coloneqq z \leq x \wedge z \leq y \wedge \forall u\, (u \leq x \wedge u
+                                \leq y \rightarrow u \leq z);\\
+      \funcmath{Sup}(x, y, z) &\coloneqq x \leq z \wedge x \leq z \wedge \forall u\, (x \leq u \wedge y
+                                \leq u \rightarrow z \leq u).
     \end{align*}
-    задаёт множество, которое мы будем называть \deftext{прямым} (или \deftext{декартовым})
-    \deftext{произведением} $X$ и $Y$. Под \deftext{бинарными отношениями на} $X$ будем понимать
-    произвольные подможества $X \times X$. Бинарное отношение $R \subseteq X \times X$ на $X$ будем
-    называть:
-    \begin{itemize}
-        \item \deftext{рефлексивным}, если ${\forall x}\, {\left( {x \in X} \rightarrow {xRx} \right)}$;
-        \item \deftext{иррефлексивным}, если $\neg {\exists x}\, {\left( {x \in X} \wedge {xRx}
-            \right)}$;\
-        \item \deftext{транзитивным}, если ${\forall x}\, {\forall y}\, {\forall z}\, {\left( \left( {x R
-            y} \wedge {y R z} \right) \rightarrow {x R z} \right)}$;
-        \item \deftext{симметричным}, если ${\forall x}\, {\forall y}\, {\left( {x R y} \rightarrow {y R
-            x} \right)}$;
-        \item \deftext{антисимметричным}, если ${\forall x}\, {\forall y}\,
-            {\left( \left( {x R y} \wedge {y R x} \right) \rightarrow {x = y} \right)}$.
-    \end{itemize}
-    Здесь для удобства мы пишем $xRy$ вместо $\left( x, y \right) \in R$.
-
-    Будем говорить, что отношение $R$ является:
-    \begin{itemize}
-        \item \deftext{предпорядком} на $X$, если $R$ рефлексивно и транзитивно;
-        \item \deftext{строгим частичным порядком} на $X$, если $R$ иррефлексивно и транзитивно;
-        \item \deftext{частичным порядком} на $X$, если $R$ рефлексивно, антисимметрично и транзитивно;
-        \item \deftext{эквивалентностью} на $X$, если $R$ рефлексивно, симметрично и транзитивно.
-    \end{itemize}
-    Данные базовые понятия играют весьма важную роль в математике.
+    Интуитивно: если $\leq$ определяет частичный порядок, то $\funcmath{Inf}$ определяет инфимум
+    относительно $\leq$, а $\funcmath{Sup}$~--- супремум.
 \end{definition*}
+
+\task{
+    Выведите в $\PrSys{Lat}$: $x \leq y \leftrightarrow x \lor y = y$.
+}
+
+\task{
+    Выведите в $\PrSys{Lat}$:
+    \begin{enumcyr}
+        \item $x \leq x$;
+        \item $x \leq y \rightarrow (y \leq z \rightarrow x \leq z)$;
+        \item $x \leq y \rightarrow (y \leq x \rightarrow x \leq y)$.
+    \end{enumcyr}
+}
+
+
+\task{
+    Выведите в $\PrSys{Lat}$:
+    \begin{enumcyr}
+        \item $x \wedge y = z \leftrightarrow \funcmath{Inf}(x, y, z)$;
+        \item $x \vee y = z \leftrightarrow \funcmath{Sup}(x, y, z)$.
+    \end{enumcyr}
+}
+
+\vspace{0.5cm}
+
+Для каждой решётки $\mathfrak{L}$ возьмём
+$$
+    \leq_{\mathfrak{L}} \coloneqq \{(a, b) \in L^2 \mid \mathfrak{L} \Vdash {a \leq b}\}
+$$
+и обозначим за $\mathrm{O}(\mathfrak{L})$ ч.у.м. $\avg{L; \leqslant_{\mathfrak{L}}}$. Мы будем называть
+ч.у.м. $\avg{A; \leq_A}$ \deftext{решёточным}, если у всякого конечного подмножества $A$ есть инфимум и
+супремум относительно $\leq_A$.\footnote{Достаточно
+потребовать, чтобы у всякого $\{a, b\} \subseteq A$ были инфимум и супремум относительно $\leq_A$.}
+
+\task{
+    Покажите, что:
+    \begin{enumcyr}
+        \item для любых решёток $\mathfrak{L}_1$ и $\mathfrak{L}_2$,
+            $$
+                \mathfrak{L}_1 = \mathfrak{L}_2 \quad \Longleftrightarrow \quad
+                \mathrm{O}(\mathfrak{L}_1) = \mathrm{O}(\mathfrak{L}_2);
+            $$
+        \item для каждого решёточного ч.у.м. $\mathfrak{A}$ найдётся такая решётка $\mathfrak{L}$, что
+            $\mathrm{O}(\mathfrak{L}) = \mathfrak{A}$.
+    \end{enumcyr}
+}
+
 
 \begin{definition*}
-    Пусть $\approx$~--- эквивалентность на $X$. Для каждого $x \in X$ под \deftext{классом
-        эквивалентности $x$ по $\approx$} понимается множество
-    $$
-    {\left[ x \right]}_{\approx} \coloneqq {\left\{ u \in X \mid {x \approx u} \right\}}.
-    $$
+    Будем называть решётку:
+    \begin{itemize}
+        \item \deftext{дистрибутивной}, если в ней истинны
+            \begin{itemize}
+                \item $\forall x\, \forall y\, \forall z\, (x \land (y \lor z) = (x \land y) \lor (x
+                    \land z))$;
+                \item $\forall x\, \forall y\, \forall z\, (x \lor (y \land z) = (x \lor y) \land (x \lor
+                    z))$;
+            \end{itemize}
+        \item \deftext{ограниченной}, если в ней истинны
+            \begin{itemize}
+                \item $\exists u\, \forall x\, (u \land x = u)$; \hfill $(\exists u\, \forall x\, (u \leq
+                    x))$
+                \item $\exists u\, \forall x\, (x \vee u = u)$. \hfill $(\exists u\, \forall x\, (x \leq
+                    u))$
+            \end{itemize}
+    \end{itemize}
 
-    \deftext{Фактор-множество $X$ по $\approx$} будем определять как
-    $$
-        X_{/\approx} \coloneqq {\left\{ {\left[ x \right]}_{\approx} \mid x \in X \right\}},
-    $$
-    т.е.\ как множество всех классов эквивалентности элементов $X$ по $\approx$.
+    Пусть $\mathfrak{L}$~--- ограниченная дистрибутивная решётка. Возьмём
+    \begin{align*}
+      0 \coloneqq \inf_{\leq_{\mathfrak{L}}} L \quad \text{и} \quad 1 \coloneqq
+      \sup_{\leq_{\mathfrak{L}}} L.
+    \end{align*}
+
+    Под \deftext{дополнением $a \in L$ в $\mathfrak{L}$} будем понимать такой $b \in L$, что ${a \land b}
+    = 0$ и ${a \lor b} = 1$. Дополнение может и не существовать.
 \end{definition*}
 
 
-Для отношений эквивалентности имеется простая характеризация. Чтобы её сформулировать, давайте введём
-пару вспомогательных понятий.
+\task{
+    Пусть $\mathfrak{L}$~--- ограниченная дистрибутивная решётка. Покажите, что для любых $a, b, c \in
+    L$,
+    $$
+        a \land b = a \land c = 0 \quad \text{и} \quad a \lor b = a \lor c = 1 \quad \Longrightarrow
+        \quad b = c.
+    $$
+    Здесь и далее мы пишем $\land$ и $\lor$ вместо $\land^{\mathfrak{L}}$ и $\lor^{\mathfrak{L}}$ во
+    избежание загромождения текста.
+}
+
+
 \begin{definition*}
-    Будем называть $Y$ (\deftext{взаимно}, или \deftext{попарно}) \deftext{дизъюнктным}, если оно
-    удовлетворяет условию
-    \[
-        {\forall u}\, {\forall v}\, {\left( \left( {u \in Y} \wedge {v \in Y} \wedge {u \ne v} \right)
-              \rightarrow {u \cap v = \varnothing} \right)} .
-    \]
-    Будем говорить, что $Y$ является \deftext{разбиением} $X$, если $Y$ дизъюнктно, $\varnothing \not \in Y$
-    и $\bigcup Y = X$. Очевидно, элементы всякого разбиения $X$ обязаны быть подмножествами $X$.
+    Будем говорить, что ч.у.м. $\avg{A; \leqslant_A}$ \deftext{решёточно полон}, если у всякого
+    подмножества $A$ есть инфимум и супремум относительно $\leq_A$.
 \end{definition*}
 
+\task{
+    Пусть $\mathfrak{A}$~--- решёточно полный ч.у.м., а $f$~--- гомоморфизм из $\mathfrak{A}$ в
+    $\mathfrak{A}$. Возьмём $F \coloneqq \{a \in A \mid f(a) = a\}$. Покажите, что индуцированный ч.у.м.\
+    $\mathfrak{F}$ с носителем $F$ также решёточно полон.
+}
 
-\libproblem{set-theory}{basic-operations}
+
+\begin{remark*}
+    Соответственно решётку $\mathfrak{L}$ называют \deftext{полной}, если у каждого подмножества $L$ есть
+    инфимум и супремум относительно $\leq_{\mathfrak{L}}$. Это упражнение можно переформулировать в
+    терминах решёток. Этот результат играет важную роль в теоретической информатике.
+\end{remark*}
+
+
+\section*{Булевы алгебры}
+
+Рассмотрим расширенную сигнатуру:
+$$
+    \sigma' \coloneqq \avg{0, 1; \land, \lor, \neg; =}.
+$$
+
+Обозначим за $\PrSys{BA}$ множество, состоящее из элементов $\PrSys{Lat}$, а также универсальных
+замыканий следующих $\sigma'$-формул:
+\begin{itemize}
+    \item $x \land (y \lor z) = (x \land y) \lor (x \land z)$;
+    \item $x \lor (y \land z) = (x \lor y) \land (x \lor z)$;
+    \item $0 \land x = 0$;
+    \item $x \lor 1 = 1$;
+    \item $x \land \neg x = 0$; \hfill \hinttext{аксиома дополнения}
+    \item $x \lor \neg x = 1$. \hfill \hinttext{аксиома дополнения}
+\end{itemize}
+Под \deftext{булевыми алгебрами} понимаются модели $\PrSys{BA}$. Значит, $\sigma'$-структура
+$\mathfrak{B}$ является булевой алгеброй тогда и только тогда, когда $\sigma$-обеднение
+$\mathfrak{B}$~--- ограниченная дистрибутивная решётка, в которой у каждого элемента есть дополнение,
+причём: 
+\begin{itemize}
+    \item $0^{\mathfrak{B}}$~--- наименьший элемент, а $1^{\mathfrak{B}}$~--- наибольший элемент;
+    \item $\neg^{\mathfrak{B}}$~--- функция, сопоставляющая всякому элементу $B$ его
+        дополнение.\footnote{Как мы знаем, это дополнение единственно.}
+\end{itemize}
+Разумеется, так как в теории решёток $x \land y = x$ равносильно $x \lor y = y$, аксиомы для наименьшего
+и наибольшего элементов можно переформулировать следующим образом:
+\begin{itemize}
+    \item $0 \lor x = x$;
+    \item $x \land 1 = x$.
+\end{itemize}
+Они в некотором смысле чуть сильнее, чем исходные аксиомы.
+
+
+\task{
+    Обозначим за $\PrSys{BA}^{\star}$ множество, состоящее из универс. замыканий следующих
+    $\sigma'$-формул:
+    \begin{itemtask}
+        \item законы коммутативности;
+        \item законы дистрибутивности;
+        \item $0 \lor x = x$;
+        \item $x \land 1 = x$;
+        \item аксиомы дополнения.
+    \end{itemtask}
+    Покажите, что $[\PrSys{BA}^{\star}] = [\PrSys{BA}]$, т.е. $\PrSys{BA}^{\star}$ дедуктивно
+    эквивалентно $\PrSys{BA}$. Таким образом, в $\PrSys{BA}^{\star}$ выводимы законы ассоциативности и
+    законы поглощения.
+}
+
+\task{
+    Выведите в $\PrSys{BA}$: $\neg 0 = 1$ и $\neg 1 = 0$. \hinttext{Комментарий:} $\neg$~---
+    функциональный символ.
+}
+
+\task{
+    Выведите в $\PrSys{BA}$: $\neg\neg x = x$. \hinttext{Комментарий:} $\neg$~---
+    функциональный символ.
+}
+
+\task{
+    Выведите в $\PrSys{BA}$ \emph{законы де Моргана}:
+    \begin{enumcyr}
+        \item $\neg (x \land y) = \neg x \lor \neg y$;
+        \item $\neg (x \lor y) = \neg x \land \neg y$.
+    \end{enumcyr}
+}
+
 
 \end{document}
 

@@ -20,41 +20,18 @@
 %\parindent = 0mm
 
 
-\setmathstyle{2020}{Теория информации}{С.А. Лучинин, М.С. Опанасенко}
-
-
-\newtheorem{problem}{Задача}[section]
-\newtheorem{examples}{Задача}[section]
-\makeatletter
-\renewtcolorbox[use counter = theorem, number within = section]{problem}[1][]{
-    enhanced,
-    theo = {blue},
-    title = {Задача \thetcbcounter\ #1},
-    before upper = {\protected@edef\@currentlabel{\csname p@theorem\endcsname\csname thetcbcounter\endcsname}}
-}
-\makeatother
-\makeatletter
-\renewtcolorbox[use counter = theorem, number within = section]{examples}[1][]{
-    enhanced,
-    theo = {blue},
-    title = {Пример \thetcbcounter\ #1},
-    before upper = {\protected@edef\@currentlabel{\csname p@theorem\endcsname\csname thetcbcounter\endcsname}}
-}
-\makeatother
-
-
-%\let\M\undefined
-\let\IP\undefined
-\newlang{\IP}{\lang{IP}}
 
 \newauthor{ds}{Dmitry}{red!20}
+
+\notesmode
 
 \begin{document}
     \input{parts/titlepage.tex}
 
     \tableofcontents
     \clearpage
-    
+
+    \setmathstyle{2020}{Теория информации}{\thepage}
     \input{parts/intro.tex}
     \input{parts/hartley.tex}
     \input{parts/entropy.tex}

@@ -1,0 +1,130 @@
+\input{../main.tex}
+
+\setmathstyle{}{Теория множеств}{1 курс}
+
+
+\begin{document}
+
+Определим \deftext{упорядоченную пару} $X_1$ и $X_2$ как
+$$
+    \left( X_1, X_2 \right) \coloneqq \{\{ X_1 \}, \{ X_1, X_2 \}\}.
+$$
+        
+Заметим, что такие пары обладают следующим свойством:
+\begin{equation*}
+    (X_1, X_2) = (Y_1, Y_2) \quad \text{тогда и только тогда, когда} \quad
+    X_1 = Y_1~\, \text{и}~\, X_2 = Y_2.
+\end{equation*}
+
+Далее, для любых $X$ и $Y$ выражение
+\begin{align*}
+  {X \times Y} \coloneqq&
+                          \{ (x, y) \mid x \in X \wedge y \in Y \}\\
+  =& \{ u \mid \exists x\, \exists y\, (u = (x, y) \wedge x \in X \wedge y \in Y)\}\\
+  =& \{ u \in \mathcal{P} (\mathcal{P} (X \cup Y)) \mid \exists x\, \exists y\, (u = (x, y)) \wedge x \in
+     X \wedge y \in Y)\}
+\end{align*}
+задаёт множество, которое мы будем называть \deftext{прямым} (или \deftext{декартовым})
+\deftext{произведением} $X$ и $Y$. Под \deftext{бинарными отношениями на} $X$ будем понимать произвольные
+подможества $X \times X$. Бинарное отношение $R \subseteq X \times X$ на $X$ будем называть:
+\begin{itemize}
+    \item \deftext{рефлексивным}, если $\forall x\, (x \in X \rightarrow xRx)$;
+    \item \deftext{иррефлексивным}, если $\neg \exists x\, (x \in X \wedge xRx)$;
+    \item \deftext{транзитивным}, если $\forall x\, \forall y\, \forall z\, ((xRy \wedge yRz) \rightarrow
+        xRz)$;
+    \item \deftext{симметричным}, если $\forall x\, \forall y\, (xRy \rightarrow yRx)$;
+    \item \deftext{антисимметричным}, если $\forall x\, \forall y\, ((xRy \wedge yRx) \rightarrow x =
+        y)$.
+\end{itemize}
+Здесь для удобства мы пишем $xRy$ вместо $(x, y) \in R$.
+
+Будем говорить, что отношение $R$ является:
+\begin{itemize}
+    \item \deftext{предпорядком} на $X$, если $R$ рефлексивно и транзитивно;
+    \item \deftext{строгим частичным порядком} на $X$, если $R$ иррефлексивно и транзитивно;
+    \item \deftext{частичным порядком} на $X$, если $R$ рефлексивно, антисимметрично и транзитивно;
+    \item \deftext{эквивалентностью} на $X$, если $R$ рефлексивно, симметрично и транзитивно.
+\end{itemize}
+Данные базовые понятия играют весьма важную роль в математике.
+
+\begin{definition*}
+    Пусть $\approx$~--- эквивалентность на $X$. Для каждого $x \in X$ под \deftext{классом
+        эквивалентности $x$ по $\approx$} понимается множество:
+    $$
+        [x]_{\approx} \coloneqq \{u \in X \mid x \approx u\}.
+    $$
+
+    \deftext{Фактор-множество} $X$ по $\approx$ будем определять как
+    $$
+        X_{/\approx} \coloneqq \{ [x]_{\approx} \mid x \in X\},
+    $$
+    т.е. как множество всех классов эквивалентности элементов $X$ по $\approx$.
+\end{definition*}
+
+
+Для отношений эквивалентности имеется простая характеризация. Чтобы её сформулировать, давайте введём
+пару вспомогательных понятий.
+\begin{definition*}
+    Будем называть $Y$ (\deftext{взаимно}, или \deftext{попарно}) \deftext{дизъюнктным}, если оно
+    удовлетворяет условию
+    $$
+        \forall u\, \forall v\, ((u \in Y \wedge v \in Y \wedge u \ne v) \rightarrow u \cap v = \emptyset).
+    $$
+    Будем говорить, что $Y$ является \deftext{разбиением} $X$, если $Y$ дизъюнктно, $\emptyset \not \in
+    Y$ и $\bigcup Y = X$. Элементы всякого разбиения $X$ обязаны быть подмножествами $X$.
+\end{definition*}
+
+
+\libproblem{set-theory}{partition-equivalence}
+\libproblem{set-theory}{preorder-equivalence}
+\libproblem{set-theory}{partial-order-and-id}
+\libproblem{set-theory}{ordered-pair-prod-subset}
+\libproblem{set-theory}{relation-basic}
+\libproblem{set-theory}{relation-func-crit}
+
+
+\task{
+    Если $f\colon X \rightarrow Y$ и $g\colon Y \rightarrow Z$, то $f \circ g\colon X \rightarrow Z$,
+    причём $(f \circ g)(x) = g(f(x))$ для всех $x \in X$.
+}
+
+\begin{definition}
+    Пусть $f\colon X \rightarrow Y$. Говорят, что на $f$ можно \deftext{сокращать справа}, если для любых
+    $g_1\colon Z_1 \rightarrow X$ и $g_2\colon Z_2 \rightarrow X$,
+    $$
+        g_1 \circ f = g_2 \circ f \quad \text{влечёт} \quad g_1 = g_2.
+    $$
+
+    По аналогии, на $f$ можно \deftext{сокращать слева}, если для любых $g_1\colon Y \rightarrow Z_1$ и
+    $g_2\colon Y \rightarrow Z_2$,
+    $$
+        f \circ g_1 = f \circ g_2 \quad \text{влечёт} \quad g_1\ =\ g_2.
+    $$
+\end{definition}
+
+\libproblem{set-theory}{reduce-left-right}
+
+\begin{definition*}
+    Пусть $f\colon X \rightarrow Y$. Под \deftext{правой обратной} к $f$ понимают любую такую $g\colon Y
+    \rightarrow X$, что:
+    $$
+        f \circ g = \mathrm{id}_X.
+    $$
+
+    По аналогии, под \deftext{левой обратной} к $f$ понимают любую такую $g\colon Y \rightarrow X$, что:
+    $$
+        g \circ f = \mathrm{id}_Y.
+    $$
+\end{definition*}
+
+\libproblem{set-theory}{inverse-left-right}
+\libproblem{set-theory}{choice-equiv-c-prime}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
