@@ -1,0 +1,21 @@
+Рассмотрим сигнатуру упорядоченных колец/полей:
+$$
+    \sigma \coloneqq \avg{0, 1; +, -, \,\cdot\,; <, =}.
+$$
+    
+Пусть $\mathfrak{R}$~--- стандартная $\sigma$-структура с носителем $\mathbb{R}$. Обозначим
+$\PrSys{RCF}$ множество формул, состоящее из:
+\begin{itemize}
+    \item аксиом линейно упорядоченных полей;
+    \item $\sigma$-предложения:
+        $$
+            \forall x\, (0 < x \rightarrow \exists u\, x = u \cdot u)
+        $$
+    \item всех $\sigma$-формул вида:
+        $$
+        \forall \overline{u}\, (u_n \ne 0 \rightarrow \exists x\, \mathrm{p}_n(x; \overline{u}) = 0,
+        $$
+        где $n$ нечётно и $\mathrm{p}_n(x; \overline{u}) \coloneqq \sum\limits_{i = 0}^n u_i x^i$.
+\end{itemize}
+
+Модели $\PrSys{RCF}$ будем называть \deftext{вещественно замкнутыми полями}.

@@ -1,0 +1,52 @@
+\input{../main.tex}
+\setcounter{curtask}{24}
+
+\setmathstyle{30.10}{Дискретная математика}{CS Центр}
+
+
+\begin{document}
+
+\libproblem{discrete-math}{vertex-del-connectivity}
+\libproblem{discrete-math}{graph-2-points-deg}
+
+\task{
+    Докажите, что если в неориентированном графе $n - k$ ребер, то в нем не менее $k$
+    компонент связности.
+}
+
+\libproblem{discrete-math}{grid-connectivity}
+
+\task{
+    В связном графе на каждом ребре написали положительное число. Весом остовного
+    дерева назовем сумму весов, входящих в него ребер. Докажите, что одно из
+    ребер с минимальным весом входит в минимальное остовное дерево.
+}
+
+\breakline
+
+\task[17]{
+    Пусть $K$~--- линейное пространство над $\mathbb{R}$ размерности $n$.
+    $f\coloneqq K^m \to \mathbb{R}$~--- полилинейная форма, т.е.:
+    \begin{itemize}
+	    \item $\forall i \in \mathbb{N}, \alpha, \beta \in K ~~ f(x_1, \dots, \alpha x_i + \beta y_i,
+            \dots, x_m) = \alpha f(x_1, \dots, x_i, \dots, x_m) + \beta f(x_1, \dots, y_i, \dots, x_m)$.
+    \end{itemize}
+    Какова размерность линейного пространства:
+    \begin{enumcyr}
+        \item всех полилинейных форм;
+        \item антисимметричных полилинейных форм (от перестановки соседних аргументов значение меняется
+            на противоположное);
+        \item симметричных полилинейных форм (от перестановки аргументов значение не меняется).
+    \end{enumcyr}
+}
+
+\libproblem[18]{combinatorics}{binom-sum-three}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
