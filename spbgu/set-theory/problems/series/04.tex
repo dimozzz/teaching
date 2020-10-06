@@ -1,0 +1,88 @@
+\input{../main.tex}
+
+\setmathstyle{}{Теория множеств}{1 курс}
+
+
+\begin{document}
+
+\task{
+    Выведите принцип возвратной индукции из принципа минимального элемента.
+}
+
+\begin{definition*}
+    Пусть $X \subseteq \mathbb{N}$ и $X \ne \emptyset$. Будем называть $X$ \deftext{ограниченным}, если
+    $\exists n \in \mathbb{N}\, \forall u \in X\, (u \leq n)$. Будем говорить, что $x \in X$ является
+    \deftext{наибольшим} в $X$, если $\forall u \in X\, (u \leq x)$. 
+\end{definition*}
+
+\task{
+    покажите, что если непустое множество натуральных чисел ограничено, то оно содержит наибольший
+    элемент, причём такой элемент единственнен.
+}
+
+\task{
+    Покажите, что для всех $k, m, n \in \mathbb{N}$ верно следующее:
+    \begin{enumcyr}
+        \item $(k + m) + n = k + (m + n)$;
+        \item $m + n = n + m$.
+    \end{enumcyr}
+}
+
+%\task{
+%    Докажите теорему о возвратной рекурсии.
+%}
+
+\task{
+    Покажите, что для любых $X$, $Y$ и $Z$ верно следующее:
+    \begin{enumcyr}
+        \item $\abs{X \times Y} = \abs{Y \times X}$;
+        \item $\abs{(X \times Y) \times Z} = \abs{X \times (Y \times Z)}$;
+        \item если $\abs{X} = \abs{Y}$, то $\abs{X \times Z} = \abs{Y \times Z}$.
+    \end{enumcyr}
+}
+
+
+\task{
+    Пусть $\abs{X} \leq \abs{Y}$ и $X \ne \emptyset$. Покажите, что существует сюрьекция из $Y$ на $X$.
+}
+
+\task{
+    Пусть существует сюрьекция из $Y$ на $X$. Покажите, что $\abs{X} \leq \abs{Y}$.
+}
+
+\breakline
+
+\libproblem[6][02]{set-theory}{relation-func-crit}
+\task[7][02]{
+    Если $f\colon X \rightarrow Y$ и $g\colon Y \rightarrow Z$, то $f \circ g\colon X \rightarrow Z$,
+    причём $(f \circ g)(x) = g(f(x))$ для всех $x \in X$.
+}
+\libproblem[8][02]{set-theory}{reduce-left-right}
+\libproblem[9][02]{set-theory}{inverse-left-right}
+\libproblem[10][02]{set-theory}{choice-equiv-c-prime}
+
+\task[4][03]{
+    Покажите, что:
+    \begin{enumcyr}
+        \item для любого $n \in \mathbb{N}$ не существует инъекции из $n + 1$ в $n$;
+        \item для любых $n, m \in \mathbb{N}$, если $m < n$, то не существует инъекции из $n$ в $m$.
+        \item для любых $n, m \in \mathbb{N}$, если $n \ne m$, то не существует биекции между $n$ и $m$.
+    \end{enumcyr}
+}
+
+
+\task[7][03]{
+    Покажите, что множество конечно тогда и только тогда, когда оно $\mathrm{T}$-конечно.
+}
+
+\task[8][03]{
+    Используя лишь обычную индукцию, докажите, что для любого $n \in \mathbb{N}$:
+    $$
+        \forall X\, ((X \subseteq n \wedge X \ne \emptyset) \rightarrow \funccplx{Min}(X) \ne \emptyset).
+    $$
+    Выведите отсюда принцип минимального элемента.
+}
+
+
+
+\end{document}

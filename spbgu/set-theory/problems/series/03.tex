@@ -1,0 +1,94 @@
+\input{../main.tex}
+
+\setmathstyle{}{Теория множеств}{1 курс}
+
+
+\begin{document}
+
+\task{
+    Покажите, что для любого $n \in \mathbb{N}$ верно $n \subseteq n + 1 \wedge \neg \exists x\, n
+    \subsetneq x \subsetneq n + 1$.
+}
+
+
+\task{
+    Покажите, что для любых $m, n \in \mathbb{N}$,
+    $$
+        m < n \quad \text{тогда и только тогда, когда} \quad m \subsetneq n.
+    $$
+}
+
+\task{
+    Покажите, что для всех $n, m \in \mathbb{N}$ верно следующее:
+    \begin{enumcyr}
+        \item $n \ne 0 \leftrightarrow \exists k \in \mathbb{N}\, n = k + 1$;
+        \item $n + 1 = m + 1 \leftrightarrow n = m$.
+    \end{enumcyr}
+}
+
+\task{
+    Покажите, что:
+    \begin{enumcyr}
+        \item для любого $n \in \mathbb{N}$ не существует инъекции из $n + 1$ в $n$;
+        \item для любых $n, m \in \mathbb{N}$, если $m < n$, то не существует инъекции из $n$ в $m$.
+        \item для любых $n, m \in \mathbb{N}$, если $n \ne m$, то не существует биекции между $n$ и $m$.
+    \end{enumcyr}
+}
+
+
+\begin{definition*}
+    Будем говорить, что \deftext{$X$ содержит $n$ элементов}, где $n \in \mathbb{N}$, и писать $\abs{X} =
+    n$, если существует биекция между $n$ и $X$. Далее, $X$ будем называть \deftext{конечным}, если
+    $\abs{X} = n$ для некоторого $n \in \mathbb{N}$, и \deftext{бесконечным}, если оно не конечно.
+
+    Свойство <<быть конечным>> можно определять по-разному. Для произвольного $Y$ обозначим
+    $$
+        \funccplx{Max}(Y) \coloneqq
+        \{u \in Y \mid \neg \exists v\, (v \in Y \wedge u \subsetneq v)\}.
+    $$
+
+    Элементы $\funccplx{Max}(Y)$ будем называть \deftext{$\subsetneq$-максимальными} в $Y$. Также будем
+    говорить, что $X$ \deftext{конечно по Тарскому}, или \deftext{$\mathrm{T}$-конечно}, если оно
+    удовлетворяет условию:
+    $$
+        \forall Y\, ((Y \subseteq \mathcal{P}(X) \wedge Y \ne \emptyset) \rightarrow \funccplx{Max}(Y)
+        \ne \emptyset),
+    $$
+    и \deftext{бесконечно по Тарскому}, или \deftext{$\mathrm{T}$-бесконечно}, если оно не
+    $\mathrm{T}$-конечно.
+\end{definition*}
+
+\task{
+    Покажите, что каждое натуральное число $\mathrm{T}$-конечно.
+}
+
+\task{
+    Покажите, что множество всех натуральных чисел $\mathrm{T}$-бесконечно.
+}
+
+\task{
+    Покажите, что множество конечно тогда и только тогда, когда оно $\mathrm{T}$-конечно.
+}
+
+\task{
+    Используя лишь обычную индукцию, докажите, что для любого $n \in \mathbb{N}$:
+    $$
+        \forall X\, ((X \subseteq n \wedge X \ne \emptyset) \rightarrow \funccplx{Min}(X) \ne \emptyset).
+    $$
+    Выведите отсюда принцип минимального элемента.
+}
+
+\breakline
+
+\libproblem[6][02]{set-theory}{relation-func-crit}
+\task[7]{
+    Если $f\colon X \rightarrow Y$ и $g\colon Y \rightarrow Z$, то $f \circ g\colon X \rightarrow Z$,
+    причём $(f \circ g)(x) = g(f(x))$ для всех $x \in X$.
+}
+\libproblem[8][02]{set-theory}{reduce-left-right}
+\libproblem[9][02]{set-theory}{inverse-left-right}
+\libproblem[10][02]{set-theory}{choice-equiv-c-prime}
+
+
+
+\end{document}

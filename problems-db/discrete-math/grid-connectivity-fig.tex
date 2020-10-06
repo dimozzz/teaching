@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+    \tikzset{
+        vert/.style = {
+            draw,
+            thick,
+            circle,
+            inner sep = 0pt,
+            minimum size = 0.15cm,
+            fill = #1
+        }
+    }
+
+    \node[criminal, sword, minimum size = 2cm] at (0, 0) {};
+
+    \foreach \x in {1, 2, ..., 5}{
+        \foreach \y in {1, ..., 5}{
+            \pgfmathparse{int(mod(\x + \y, 2))}
+            \ifnum \pgfmathresult=0{
+                \node[vert = {blue!40}] (\x\y) at (\x + 0.7, {(\y - 2) / 1.5 - 0.3}) {};
+            }\else{
+                \node[vert = {green!40}] (\x\y) at (\x + 0.7, {(\y - 2) / 1.5 - 0.3}) {};
+            }\fi
+        }
+    }
+
+    \foreach \x [evaluate = \x as \i using {int(\x - 1)}] in {2, 3, ..., 5}{
+        \draw[thick] (\x1) -- (\i1);
+        \draw[thick] (1\x) -- (1\i);
+        \foreach \y [evaluate = \x as \j using {int(\y - 1)}] in {2, 3, ..., 5}{
+            \draw[thick] (\x\y) -- (\x\j);
+            \draw[thick] (\x\y) -- (\i\y);
+        }
+    }
+    
+\end{tikzpicture}
