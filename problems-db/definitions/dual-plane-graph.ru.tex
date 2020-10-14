@@ -1,0 +1,72 @@
+Пусть $G$~--- связный плоский граф. Определим \deftext{двойственный граф} $G^*$ следующим
+образом. Вершины $G^∗$ будут соответствовать граням графа $G$, внутри каждой грани $a$ графа $G$ мы
+отметим соответствующую ей вершину $a^*$ графа $G^∗$. Будем говорить, что вершина $a^*$ двойственна грани
+$a$.
+
+Пусть $e \in E(G)$~--- ребро, по которому граничат две грани $a$ и $b$ графа $G$ (возможно, $a =
+b$). Поставим в соответствие ребру $e$ ребро $e^∗$ двойственного графа $G^∗$, соединяющее $a^*$ и $e^*$.
+
+Например: если $a$ совпадает с $b$ (или, что равносильно, ребро $e$~--- мост), то двойственное ребро
+$e^*$ оказывается петлёй.
+
+\vspace{0.5cm}
+
+\begin{center}
+    \begin{tikzpicture}
+        \def\r{1}
+        \foreach \a in {0, 1, 2, 3}{
+            \node[g-vert] (v\a) at (90 * \a:\r) {};
+        }
+
+        \draw[thick] (v0) -- (v1) -- (v2) -- (v3) -- (v0);
+        \draw[thick] (v1) -- (v3);
+
+        \draw[
+            very thick,
+            red,
+            ->,
+            decorate,
+            decoration = {snake, pre length = 1pt, post length = 5pt}]
+                (1.74, 0) -- ++(1.52, 0);
+
+        \begin{scope}[shift = {(5, 0)}]
+            \foreach \a in {0, 1, 2, 3}{
+                \node[g-vert] (v\a) at (90 * \a:\r) {};
+            }
+    
+            \draw[thick] (v0) -- (v1) -- (v2) -- (v3) -- (v0);
+            \draw[thick] (v1) -- (v3);
+            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o1) at (\r / 2, 0) {};
+            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o2) at (-\r / 2, 0) {};
+            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o3) at (0, -3 * \r / 2) {};
+
+            \draw[thick, green!50!black] (o1) -- (o2);
+            \draw[thick, green!50!black] (o1) to[out = -90, in = 60] (o3);
+            \draw[thick, green!50!black] (o2) to[out = -90, in = 120] (o3);
+            \draw[thick, green!50!black] (o1) to[out = 60, in = 90] ++(0.85 * \r, 0)
+                to[out = -90, in = 60] (o3);
+            \draw[thick, green!50!black] (o2) to[out = 120, in = 90] ++(-0.85 * \r, 0)
+                to[out = -90, in = 120] (o3);
+        \end{scope}
+
+        \draw[
+            very thick,
+            red,
+            ->,
+            decorate,
+            decoration = {snake, pre length = 1pt, post length = 5pt}]
+            (6.74, 0) -- ++(1.52, 0);
+
+        \begin{scope}[shift = {(9.3, \r / 2)}]
+            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o1) at (\r / 2, 0) {};
+            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o2) at (-\r / 2, 0) {};
+            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o3) at (0, -3 * \r / 2) {};
+
+            \draw[thick, green!50!black] (o1) -- (o2);
+            \draw[thick, green!50!black] (o1) -- (o3);
+            \draw[thick, green!50!black] (o2) -- (o3);
+            \draw[thick, green!50!black] (o1) to[bend left] (o3);
+            \draw[thick, green!50!black] (o2) to[bend right] (o3);
+        \end{scope}
+\end{tikzpicture}    
+\end{center}
