@@ -1,0 +1,61 @@
+\input{../../../../main.tex}
+\usepackage{dashrule}
+
+\renewcommand{\coursetitle}{\textsc{StT}}
+
+
+\begin{document}
+
+\setmathstyle{}{Правила проведения экзамена}{}
+
+Экзамен проводится в форме опроса без времени на подготовку ответов, включающего $9$ вопросов по всему курсу.
+
+Здесь участвуют: 
+\begin{itemize}
+    \item все определения (в том числе из упражнений);
+    \item все формулировки утверждений;
+    \item все простые доказательства;
+    \item идеи всех доказательств;        
+    \item решения сравнительно простых упражений.
+\end{itemize}
+
+За каждый ответ ставится
+$$
+    + [5 \text{ баллов}] \qquad \pm [4 \text{ балла}] \qquad
+    \mp [3 \text{ балла}] \qquad - [0 \text{ баллов}]
+$$
+
+Обозначим за $\Sigma$ сумму балов, набранных данным студентом.
+
+\begin{enumerate}[label = {\realasbuk*)}, ref = \realasbuk*]
+    \item Если $\Sigma < 22$, то ставится <<неудовлетворительно>>.
+    \item Если $22 \le \Sigma < 30$, то ставится <<удовлетворительно>>.
+    \item Если $30 \le \Sigma < 35$, то ставится <<хорошо>>.
+    \item Если $\Sigma \ge 35$, то ставится <<отлично>>.
+\end{enumerate}
+
+
+По усмотрению принимающего в пограничных ситуациях может быть задан ровно один
+дополнительный вопрос.
+
+\vspace{0.1cm}
+
+\hdashrule{1.01\textwidth}{1pt}{3pt}
+
+\vspace{0.05cm}
+
+\begin{flushright}
+    17.10.2020
+\end{flushright}
+
+\vspace{2cm}
+
+\begin{center}
+    \begin{tikzpicture}
+        \node[graduate, shield, minimum size = 3cm] at (0, 0) {};
+        \node[graduate, sword, minimum size = 3cm, mirrored] at (8, 0) {};
+    \end{tikzpicture}    
+\end{center}
+
+
+\end{document}

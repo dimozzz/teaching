@@ -1,0 +1,21 @@
+Consider some computational model $\mathfrak{C}$ that computes boolean functions on some set: $f\colon X
+\to \{0, 1\}$. If model $\mathfrak{C}$ is powerful, for example: boolean circuits, Turing machines, or
+almost any \emph{natural} computational model, then at this time we do not know how to present functions
+that are \emph{hard} for the model $\mathfrak{C}$. The notable exceptions to this ``rule'' are monotone
+computations (for example boolean circuits with only monotone gates), of which lower bounds are known.
+
+Monotone computation are important from the practical point of view, since we have some control on relative
+error in these computations. But these computational models are heavily related to:
+\begin{itemize}
+    \item proof complexity, and allow to transfer lower bounds from one area to another;
+    \item algorithms for satisfiability problem;
+    \item communication complexity in standard models (and not only).
+\end{itemize}
+
+In this course we will try to understand the techniques for proving lower bounds in the monotone
+computations: classical approximation method, and new ``lifting'' technique. Also we will try to analyse
+the connections between monotone computations and other areas of computational complexity.
+
+
+It is not necessary to know proof complexity and communication complexity for this course (all required
+statement will be given with the proofs), however these courses may help to understand some results.

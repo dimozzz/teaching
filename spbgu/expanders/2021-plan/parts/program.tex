@@ -1,0 +1,151 @@
+\centerline{\textsc{Lecture 1}}
+
+\begin{enumerate}
+    \item Зачем нужны экспандеры? Задача о суперконцентраторе. Задача о понижении ошибки в
+        $\RP$. Случайные блуждания.
+    \item Двудольные и общие экспандеры.
+%    \item Magical graphs (параметры).
+%    \item Хранение множества $S \subseteq [n]$ размера $n$ с запросом в $1$ бит.
+    \item Понижение ошибки в $\RP$ без доп. случайных битов. Явные и сильно явные конструции.
+    \item $\Search_{\varphi}$ и деревья решений.
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 2} \mater{L-20. Видео 2}}
+
+\begin{enumerate}
+    \item Magical graphs. Конструкция суперконцентратора.
+        \mater{
+            HLW 1.2, 1.3
+            CSC-N
+        }
+    \item Матрица смежности графа. Лапласиан графа (хотим полином $x^T M x = \sum\limits_{(i, j) \in E}
+        (x_i - x_j)^2$).
+        \mater{
+            LT-N. 3.1
+        }
+    \item Свойства матрицы смежности:
+        \begin{itemize}
+            \item симм., следовательно есть собственный базис над $\mathbb{R}$;
+            \item $(1, \dots, 1)$~--- максимальный собственный вектор.
+            \item $\lambda_k = 1$ тогда и только тогда, когда есть $k$ комп. связности.
+            \item $\lambda_n = -1$ тогда и только тогда, когда есть двудольная компонента.
+            \item $\sum \lambda_i$~--- число петель.
+        \end{itemize}
+        \mater{
+            Только видео.
+        }
+    \item Собственные числа, как оптимизационная задача. $\lambda_2 = \max\limits_{...} \frac{|x^T A
+        x|}{\norm{x}^2}$.
+        \mater{
+            LT-N. 3.2
+        }
+    \item Cheeger's inequality. $\frac{1 - \alpha}{2} \le \varphi(S) \le \sqrt{2 (1 - \alpha)}$
+        \begin{itemize}
+            \item Док-во. Рассмотрим $x = |\bar{S}| 1_S - |S| 1_{\bar{S}}$.
+        \end{itemize}
+        \mater{
+            CSC-N.
+            Доказываем только нижнюю оценку.
+        }
+\end{enumerate}
+
+\centerline{\textsc{Lecture 3} \mater{L-20. Видео 3}}
+
+\begin{enumerate}
+    \item Mixing Lemma. \mater{CSC-N, HLW 2.4}
+    \item Нижние оценки на собсвенные числа для графов константной степени. \mater{CSC-N стр. 11}
+    \item Существование экспандеров (вероятностная кострукция). \mater{CSC-N стр. 12-14}
+\end{enumerate}
+
+\centerline{\textsc{Lecture 4} \mater{L-20. Видео 4 (конец) и 5}}
+
+\begin{enumerate}
+    \item Zig-zag и сбалансированное подстановочное произведение. \mater{CSC-N}
+    \item Явная и сильно-явная конструкция экспандеров. \mater{CSC-N}
+    \item Zig-zag произведение, оценка на собственные числа. $\alpha + 2 \beta + \alpha \beta$. \mater{CSC-N}
+\end{enumerate}
+
+\centerline{\textsc{Lecture 5 \mater{L-20. Видео 5}}} (будет уточнение)
+
+\begin{enumerate}
+    \item Cбалансированное подстановочное произведение, оценка на собственные числа. $\left(1 -
+        \frac{\varepsilon \delta^2}{24}\right)$. \mater{CSC-N}
+    \item Любой граф --- экспандер. \mater{CSC-N раздел 5, часть, как упражнения;}        
+    \item Случайные блуждания и вероятностный алгоритм для $\UPATH$. Схема. \mater{CSC-N раздел 5}
+    \item Алгоритм Рейнгольда.
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 6} (HLW Раздел 3)}
+
+\begin{enumerate}
+    \item Случайные блуждания и расстояние до равномерного распределения.
+    \item Случайные блуждания и вероятность выхода из подмножества вершин $\Pr[B_t] \le (\alpha +
+        \beta)^t$.
+    \item Случайные блуждания и вероятностный алгоритм для $\UPATH$, завершение.
+    \item Понижение ошибки в классе $\RP$.
+    \item Обобщение задачи выхода из подмножества. Понижение ошибки в классе $\BPP$.
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 7}}
+
+\begin{enumerate}
+    \item Применения случайных блужданий. \mater{продолжение лекции 6}
+    \item Графы Кэли. \mater{HLW, CSC-N, LT-N}
+    \item Собственные числа графов Кэли. \mater{HLW, CSC-N, LT-N}
+    \item Примеры: куб, цикл. \mater{HLW, CSC-N, LT-N}
+    \item Cобственные числа пути. \mater{CG}
+    \item Случайные генераторы. \mater{CG. 5.8}
+    \item Конструкция графов Рамануджана (без доказательства). \mater{CSC-N}
+\end{enumerate}
+
+\centerline{\textsc{Lecture 8} \mater{SH. 1-6}}
+
+\begin{enumerate}
+    \item Коды, исправляющие ошибки.
+    \item Граница Хемминга.
+    \item Жадный алгоритм, граница Гилберта.
+    \item Код Хемминга.
+    \item Задача о шляпах. \mater{См. таблицу}
+    \item Вероятностная конструкция кодов.
+    \item Линейные коды.
+    \item Жадный алгоритм для линейных кодов.
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 10}}
+
+\begin{enumerate}
+    \item Граница Синглтона.
+    \item Код Рида--Соломона.
+\end{enumerate}
+
+\centerline{\textsc{Lecture 11}}
+
+\begin{enumerate}
+    \item Ошибки и стирания, еще раз о кодах Рида--Соломона.
+    \item Композиция кодов. Каскадные коды.
+    \item Расстояние каскадного кода. Наивный алгоритм декодирования.
+    \item Каскадный код со стираниями. Алгоритм декодирования.
+    \item Код Адамара.
+\end{enumerate}
+
+\centerline{\textsc{Lecture 12}}
+
+\begin{enumerate}
+    \item Если хочется побыстрее: коды Земора.
+    \item Оценка Плоткина.
+    \item Усиление оценки Синглтона.
+    \item Коды БЧХ.
+\end{enumerate}
+
+
+\centerline{\textsc{Lecture 13}}
+
+\begin{enumerate}
+    \item Код Адамара 2.
+    \item Вероятностное декодирование кода Адамара.
+    \item Списочное декодирование.
+\end{enumerate}

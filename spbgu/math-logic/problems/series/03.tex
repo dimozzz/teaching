@@ -1,0 +1,172 @@
+\input{../main.tex}
+
+\setmathstyle{}{Мат. логика}{3 курс}
+
+
+\begin{document}
+
+Введём обозначения:
+$$
+    x \oplus y \coloneqq (x \land \neg y) \lor (y \land \neg x) \quad \text{и} \quad
+    x \odot y \coloneqq x \land y.
+$$
+На булевы алгебры можно смотреть как на особого рода кольца:
+
+\task{
+    Выведите в $\PrSys{BA}$:
+    \begin{enumcyr}
+        \item $x \oplus (y \oplus z) = (x \oplus y) \oplus z$;
+        \item $x \oplus y = y \oplus x$;
+        \item $x \oplus 0 = x$;
+        \item $x \oplus x = 0$;
+        \item $x \odot (y \odot z) = (x \odot y) \odot z$;
+        \item $x \odot y = y \odot x$;
+        \item $x \odot 1 = x$;
+        \item $x \odot (y \oplus z) = (x \odot y) \oplus (x \odot z)$;
+        \item $x \odot x = x$.
+    \end{enumcyr}
+}
+
+\task{
+    Выведите в $\PrSys{BA}$:
+    \begin{enumcyr}
+        \item $x \wedge y = x \odot y$;
+        \item ${x \lor y} = x \oplus y \oplus (x \odot y)$;
+        \item $\neg x = x \oplus 1$.
+    \end{enumcyr}
+}
+
+\begin{definition*}
+    Обозначим через $\PrSys{BR}$ множество, состоящее из:
+    \begin{itemize}
+        \item аксиом теории колец (не обязательно коммутативных, но с единицей);
+        \item $\forall x\, (x \cdot x = x)$.
+    \end{itemize}
+    Под \deftext{булевыми}~--- или \deftext{идемпотентными}~--- \deftext{кольцами} будем понимать модели
+    $\PrSys{BR}$.
+\end{definition*}
+
+
+\task{
+    Выведите в $\PrSys{BR}$:
+    \begin{enumcyr}
+        \item $x + x = 0$;
+        \item $x \cdot y = y \cdot x$.
+    \end{enumcyr}
+}
+
+\task{
+    Пусть $\mathfrak{A}$~--- булево кольцо и $\abs{A} \geq 3$. Покажите, что в $\mathfrak{A}$ есть
+    ненулевые делители нуля.
+}
+
+\task{
+    Будем называть группу \deftext{булевой}, если в ней истинно $\forall x\, (x \circ x = e)$, т.е. все
+    её элементы имеют порядок $2$. Покажите, что всякая булева группа коммутативна.
+}
+
+
+
+\vspace{0.3cm}
+
+Для каждой булевой алгебры $\mathfrak{B}$ обозначим через $\mathrm{R}(\mathfrak{B})$ булево кольцо с
+носителем $B$, в котором:
+\begin{align*}
+  0^{\mathrm{R}(\mathfrak{B})} &\coloneqq 0,\\
+  1^{\mathrm{R}(\mathfrak{B})} &\coloneqq 1,\\
+  +^{\mathrm{R}(\mathfrak{B})} &\coloneqq \lambda a.\lambda b. [a \oplus b],\\
+  \cdot^{\mathrm{R}(\mathfrak{B})} &\coloneqq \lambda a.\lambda b. [a \odot b],\\
+  -^{\mathrm{R}(\mathfrak{B})} &\coloneqq \lambda a. [a],
+\end{align*}
+где $0$, $1$, $\oplus$ и $\odot$ в правых частях интерпретируются как в $\mathfrak{B}$.
+
+\vspace{0.3cm}
+
+
+\task{
+    Покажите, что:
+    \begin{enumcyr}
+        \item для любых булевых алгебр $\mathfrak{B}_1$ и $\mathfrak{B}_2$,
+            $$
+            \mathfrak{B}_1\ =\ \mathfrak{B}_2 \Longleftrightarrow \mathrm{R}(\mathfrak{B}_1) =
+                \mathrm{R}(\mathfrak{B}_2);
+            $$
+        \item для каждого булева кольца $\mathfrak{A}$ найдётся такая булева алгебра $\mathfrak{B}$, что
+            $\mathrm{R}(\mathfrak{B}) = \mathfrak{A}$.
+    \end{enumcyr}
+}
+
+
+\libdefinition{real-closed-field}
+
+\task{
+    Выведите в теории линейно упорядоченных колец:
+    $$
+        x \ne 0 \longrightarrow 0 < x \cdot x.
+    $$
+}
+
+\task{
+    Выведите в теории линейно упорядоченных полей:
+    $$
+        x < y \longrightarrow \exists u\, x < u < y.
+    $$
+}
+
+\task{
+    Покажите, что для любого бескванторного $\sigma$-предложения $\Phi$:
+    \begin{enumcyr}
+        \item если $\mathfrak{R} \Vdash \Phi$, то в теории линейно упорядоченных полей выводимо $\Phi$;
+        \item если $\mathfrak{R} \nVdash \Phi$, то в теории линейно упорядоченных полей выводимо $\neg
+            \Phi$.
+    \end{enumcyr}
+}
+
+
+\task{
+    Покажите, что для любого линейно упорядоченного поля $\mathfrak{F}$ следующие условия эквивалентны:
+    \begin{enumcyr}
+        \item $\mathfrak{F}$ вещественно замкнуто;
+        \item в $\mathfrak{F}$ истинно $\forall x\, (0 < x \rightarrow \exists u\, x = u \cdot u)$, а
+            также все $\sigma$-формулы вида:
+            $$
+                \forall \overline{u}\, \forall x\, \forall y\,
+                (\mathrm{p}_n(x; \overline{u}) \cdot \mathrm{p}_n(y; \overline{u}) < 0 \rightarrow
+                \exists z\, (x < z < y \wedge \mathrm{p}_n(z; \overline{u}) = 0)),
+            $$
+            т.е.\ для $\mathfrak{F}$ верна <<полиномиальная версия>> теоремы о среднем значении.
+    \end{enumcyr}
+}
+
+\dzcomment{
+    Можно пользоваться задачей 11.
+}
+
+
+\begin{remark*}
+    Отсюда получается альтернативная аксиоматизация класса всех вещественно замкнутых полей. Нетрудно
+    убедиться, что дедуктивное замыкание каждой из эти аксиоматизаций совпадает с
+    $\Theory(\mathfrak{R})$, в силу элиминации кванторов.
+\end{remark*}
+
+\breakline
+
+Данная задача является бонусной и разбираться не будет.
+
+\task{
+    Покажите, что для любого линейно упорядоченного поля $\mathfrak{F}$ следующие условия эквивалентны:
+    \begin{enumcyr}
+        \item $\mathfrak{F}$ вещественно замкнуто;
+        \item $F$ как поле не является алгебраически замкнутым, но его расширение $F[\sqrt{-1}]$
+            алгебраически замкнуто.
+    \end{enumcyr}
+}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
