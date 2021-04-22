@@ -58,7 +58,7 @@ $\mu$ будет задаваться уже не на множестве, а н
     $$
         \entropy(\alpha) \coloneqq \sum p_i \log \frac{1}{p_i}.
     $$
-    мы будем называть \deftext{энтропия} и обозначать $h$ (иногда $H$).
+    мы будем называть \deftext{энтропия} и обозначать $\entropy$ (иногда $h$).
 \end{definition}
 
 Рассмотрим простые примеры.
@@ -152,7 +152,7 @@ $\mu$ будет задаваться уже не на множестве, а н
 
 \begin{proposition}
     \begin{enumerate}
-        \item $\entropy(\alpha X \mid \beta) \ge 0$, $\entropy(f(\alpha) \mid Y) = 0$.
+        \item $\entropy(\alpha \mid \beta) \ge 0$, $\entropy(f(\alpha) \mid Y) = 0$.
         \item $\entropy(\alpha, \beta) = \entropy(\alpha) + \entropy(\beta \mid \alpha)$.
         \item $\entropy(\alpha) \ge \entropy(\alpha \mid \beta)$.
     \end{enumerate}
@@ -207,7 +207,7 @@ $$
 
 Скомбинируем все вместе:
 $$
-    3\log 3 = \entropy(\ell) \le \entropy(q_1, q_2, q_3) +\entropy(\ell \mid q_1, q_2, q_3) =
+    3\log 3 = \entropy(\ell) \le \entropy(q_1, q_2, q_3) + \entropy(\ell \mid q_1, q_2, q_3) =
     \entropy(q_1, q_2, q_3) \le \entropy(q_1) + \entropy(q_2) + \entropy(q_3).
 $$
     
@@ -238,7 +238,7 @@ $$
     Рассмотрим $n$ объектов, из них выберем не более, чем $k$ штук. Пусть $X$ соответствует равномерному
     распределению по таким множествам. Как следствие $\entropy(X) = \log C$. При этом:
     $$
-        \entropy(X) \le \entropy\left(\sum X_i\right) \le \sum \entropy(X_i),
+        \entropy(X) \le \entropy\left(X_1, X_2, X_3, \dots, X_i\right) \le \sum \entropy(X_i),
     $$
     где $X_i$~--- вероятность того, что мы выбрали $i$-ый элемент (проекция распределения $X$ на $i$
     координату). По построению все эти распределения одинаковы, таким образом $\entropy(X) \le
