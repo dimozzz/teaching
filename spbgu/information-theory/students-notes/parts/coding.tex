@@ -40,7 +40,7 @@
     Для любого однозначно декодируемого кода c кодовыми словами $c_1, c_2, \dots, c_n$ выполнено
     неравенство
     $$
-        \sum_{i = 1}^n 2^{-\abs{c_i}}\le 1.
+        \sum\limits_{i = 1}^n 2^{-\abs{c_i}}\le 1.
     $$ 
 \end{proposition}
 
@@ -51,7 +51,8 @@
     $c_i$ (например, коду $010$ соответствует моном $xyx$); $L$~--- большое натуральное число. Рассмотрим
     следующий полином:
     $$
-        P^L(x, y) = \left(\sum_{i} p_i(x, y) \right)^L \le \sum_{i = L}^{L \cdot \max |c_i|} M_{i}(x, y),
+        P^L(x, y) = \left(\sum\limits_{i} p_i(x, y) \right)^L \le \sum_{i = L}^{L \cdot \max |c_i|}
+        M_{i}(x, y),
     $$
     где $M_i$~--- это сумма всевозможных мономов степени $i$. Неравенство выполнено, так как код
     однозначно декодируемый, а значит каждый моном в левой части есть и в правой.
@@ -239,7 +240,7 @@ $
     будем называть \deftext{$\delta$-типичным}, если это неравенство выполняется для всех букв
     $i$. Зафиксируем $\delta \coloneqq n^{-0.49}$ и рассмотрим случайную величину $X_{ij}$~---
     характеристическую функцию того, что в позиции $j$ находится буква $i$. Тогда для случайной величины:
-    $X_i \coloneqq \sum_j X_{ij}$ мы можем написать неравенство Чебышёва:
+    $X_i \coloneqq \sum\limits_j X_{ij}$ мы можем написать неравенство Чебышёва:
     $$
         \Pr[\abs{X_i - \mu} \ge \delta n] \le \frac{\operatorname{Var}[X_i]}{(\delta n)^2} =
         \frac{n p_i (1 - p_i)}{(\delta n)^2} = \bigO{n^{-0.02}},
@@ -250,13 +251,11 @@ $
     
     Число слов с заданным количеством вхождений каждой буквы равно:
     $$
-        N = \frac{n!}{n_1!n_2!\dots n_k!} = \entropy(p) \cdot n + o(n),
+        N_{n_1, n_2, \dots, n_k} = \frac{n!}{n_1!n_2!\dots n_k!}.
     $$
-    где $n_i = p_in$.\footnote{Это тождество было на практике.}
-    
     Применим оценку $n! = \poly(n) \cdot (n / e)^n$. Тогда:
     $$
-        \log{N} =
+        \log{N_{n_1, n_2, \dots, n_k}} =
         \log\left(\left(\frac{n}{n_1}\right)^{n_1} \left(\frac{n}{n_2}\right)^{n_2} \!\ldots\;
           \left(\frac{n}{n_k}\right)^{n_k} \right)
         + \bigO{\log n}.
@@ -267,14 +266,21 @@ $
         \log\left(\left(\frac{n}{n_1}\right)^{n_1} \left(\frac{n}{n_2}\right)^{n_2}
           \!\ldots\;\left(\frac{n}{n_k}\right)^{n_k} \right)
         = \sum n(p_i + \delta_i) \log\frac{1}{p_i + \delta_i}\\
-        \le n \entropy(p) + \bigO{\delta_i n} < h \cdot n.
+        \le n \entropy(p) + \bigO{\max\limits_{i} \delta_i n}.
     \end{multline*}
     
-    Так как это типичное слово, то $|\delta_i| = |n_i - np_i| \le \delta n$ и следовательно количество
-    типичных слов не превосходит
+    Есло слово, типично, то $|\delta_i| = |n_i - np_i| \le \delta n$ и следовательно в таком случае:
     $$
-        2^{n \entropy(p) + \bigO{\delta n} + \bigO{\log n}} < 2^{h \cdot n}.
+        \log{N_{n_1, n_2, \dots, n_k}} \le n \entropy(p) + \bigO{\delta n}.
     $$
+    И таким образом количество типичных слов не превосходит:
+    $$
+        \sum\limits_{n_i \in [n (p_i - \delta), n (p_i + \delta)]} N_{n_1, n_2, \dots, n_k} \le n^k 2^{n
+            \entropy(p) + \bigO{\delta n}} < 2^{h \cdot n}.
+    $$
+
+    Поскольку типичных слов мало, кодер может инъективно закодировать типичные слова и
+    ``проигнорировать'' все остальные.
 
     Теперь перейдем к доказательству второго случая: $h < \entropy(p)$.
     
@@ -288,10 +294,13 @@ $
         = 2^{-\sum n_i \log\frac{1}{p_i}} \le 2^{-\sum (p_i + \delta_i) \log\frac{1}{p_i} \cdot n}.
     $$
 
-    Всего мы можем корректно закодировать не более $2^{L_n}$ различных $\delta$-типичных слов,
-    т.е. вероятность корректно декодировать $\delta$-типичное слово
-    $$
-        1 - \varepsilon'_n \le 2^{L_n} \cdot 2^{-\entropy(\alpha) \cdot n + \bigO{\delta \cdot n}} \le
-        2^{h \cdot n - \entropy(\alpha) \cdot n + \bigO{\delta \cdot n}} \to 0.
-    $$
+    Поскольку декодер $D$ --- детерминированный алгоритм принимающий на вход строку $x \in \{0,
+    1\}^{L_n}$, то область значения $D$ имеет размер не более $2^{L_n}$. Заметим, что $D(E(w)) = w$
+    означает, что $w$ принадлежит области значений $D$. Таким образом:
+    \begin{align*}
+      \Pr\limits_{w}[D(E(w)) = w] &\le \\
+      \Pr\limits_{w}[w \in \Img(D)] \le 2^{L_n} \max_{w} \Pr[w] &\le \\
+      2^{-\entropy(\alpha) \cdot n + \bigO{\delta \cdot n}} &\le \\
+      2^{h \cdot n - \entropy(\alpha) \cdot n + \bigO{\delta \cdot n}} &\to 0.
+    \end{align*}
 \end{proof}
