@@ -29,9 +29,9 @@ $$
 $$ 
 По \textit{chain rule} мы получаем, что:
 \begin{align*}
-    I(M:y) &= \sum_i I(M:y_i \mid y_{x_{< i}})\\
-           &= \sum_i \entropy(y_i \mid y_{x_{< i}}) - \entropy(y_i \mid M, y_{x_{\le i}})\\
-           &= \sum_i \entropy(y_i) - \entropy(y_i \mid M, y_{x < i}) & \text{так как все $y_i$ независимы}\\
+    I(M:y) &= \sum_i I(M:y_i \mid y_{< i})\\
+           &= \sum_i \entropy(y_i \mid y_{< i}) - \entropy(y_i \mid M, y_{\le i})\\
+           &= \sum_i \entropy(y_i) - \entropy(y_i \mid M, y_{< i}) & \text{так как все $y_i$ независимы}\\
            &\ge \sum_i \entropy(y_i) - \entropy(y_i \mid M)\\
            &\ge \sum_i I(M : y_i).
 \end{align*}
@@ -102,16 +102,21 @@ $\Exp\limits_{i, m}[r_i^m] \le \frac{1}{2} - \delta$.
         I(\pi_i : Y \mid X, \pi_{< i}),
     $$
 
-    Для доказательства мы заметим, что:
+    Для доказательства заметим, что для любого $m \in \{0, 1\}^{i - 1}$:
     \begin{align*}
-      I(\pi_i : X, Y \mid \pi_{< i}) &\ge I(\pi_i : X \mid Y, \pi_{< i}) \\
-      I(\pi_i : X, Y \mid \pi_{< i}) &\ge I(\pi_i : Y \mid X, \pi_{< i})
+      I(\pi_i : X, Y \mid \pi_{< i} = m) &\ge I(\pi_i : X \mid Y, \pi_{< i} = m) \\
+      I(\pi_i : X, Y \mid \pi_{< i} = m) &\ge I(\pi_i : Y \mid X, \pi_{< i} = m)
     \end{align*}
-    Так как по $\pi_{< i}$ мы знаем в какой вершине протокола мы находимся после $i$ шагов, то в этой
+    Так как по $m$ мы знаем в какой вершине протокола мы находимся после $i$ шагов, то в этой
     вершине либо Алиса либо Боб посылают бит и $\pi_i$ будет определяться однозначно либо по $X$, либо по
-    $Y$. Откуда следует, что одна из величин $I(\pi_i : X \mid Y, \pi_{< i})$, $I(\pi_i : Y \mid X,
-    \pi_{< i})$ равна $0$. А поскольку $I(\pi_i : X, Y \mid \pi_{< i})$ не меньше второй величины, то мы
-    получили требуемое неравенство.
+    $Y$. Откуда следует, что одна из величин $I(\pi_i : X \mid Y, \pi_{< i} = m)$, $I(\pi_i : Y \mid X,
+    \pi_{< i} = m)$ равна $0$. А поскольку $I(\pi_i : X, Y \mid \pi_{< i} = m)$ не меньше второй величины, то мы
+    получаем, что:
+    $$
+        I(\pi_i : X, Y \mid \pi_{< i} = m) \ge I(\pi_i : X \mid Y, \pi_{< i} = m) +
+        I(\pi_i : Y \mid X, \pi_{< i} = m),
+    $$
+    откуда требуемое неравенство получается усреднением $m$ по мере $\mu$.
 
     По chain rule получаем, что:
     $$
@@ -130,7 +135,7 @@ $\Exp\limits_{i, m}[r_i^m] \le \frac{1}{2} - \delta$.
 \end{theorem}
 
 \begin{proof}
-    Рассмотрим $\KW_{\oplus_n}$. Покажем, что $\ICint[\mu](\KW_{\oplus_n}) \ge 2 \log n$, откуда будет
+    Рассмотрим $\KW[\oplus_n]$. Покажем, что $\ICint[\mu](\KW[\oplus_n]) \ge 2 \log n$, откуда будет
     следовать, что $\DCC(\oplus_n) \ge 2 \log n$ и по теореме \ref{th:KW-theorem} мы получим $L(\oplus_n)
     \ge n^2$.
 
