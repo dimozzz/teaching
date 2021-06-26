@@ -1,0 +1,134 @@
+\input{../main.tex}
+
+\setmathstyle{}{Теория множеств}{1 курс}
+
+
+\begin{document}
+
+\begin{definition*}
+    Пусть дано л.у.м. $\mathfrak{A} = \avg{A, \leq}$. Будем называть $S \subseteq A$
+    \deftext{начальным сегментом $\mathfrak{A}$}, если для любых $a_1, a_2 \in A$:
+    $$
+        a_1 \leq a_2 \quad \text{и} \quad a_2 \in S \quad \Longrightarrow \quad a_1 \in S.
+    $$
+
+\end{definition*}
+
+На лекции это определение было дано для в.у.м., но можно и для л.у.м..
+
+\task{
+    Пусть $\avg{A, \leq}$~--- л.у.м.. Покажите, что:
+    \begin{enumcyr}
+        \item если $S$~--- начальный сегмент $\avg{A, \leq}$, а $T$~--- начальный сегмент
+            $\avg{S, \leq_S}$, то $T$~--- начальный сегмент $\avg{A, \leq}$;
+        \item если $S \subseteq A$, а $T$~--- начальный сегмент $\avg{A, \leq}$, то $S \cap T$~---
+            начальный сегмент $\avg{S, \leq_S}$,
+    \end{enumcyr}
+    где $\leq_S$ обозначает $\leq \cap (S \times S)$.
+}
+
+\task{
+    Пусть $\avg{A, \leq}$~--- л.у.м.. Покажите, что:
+    \begin{enumcyr}
+        \item если $S$ и $T$~--- начальные сегменты $\mathfrak{A}$, то $S \subseteq T$ или $T \subseteq
+            S$;
+        \item если $\mathscr{S}$~--- некоторое множество начальных сегментов $\mathfrak{A}$, то
+            $\bigcup \mathscr{S}$ и $\bigcap \mathscr{S}$ окажутся начальными сегментами $\mathfrak{A}$.
+    \end{enumcyr}
+}
+
+
+\task{
+    Покажите, что для всякого ч.у.м. $\avg{A, \leq}$ следующие условия эквивалентны:
+    \begin{enumcyr}
+        \item $\leq$~--- полный порядок на $A$;
+        \item в каждом непустом подмножестве $A$ есть наименьший элемент.            
+    \end{enumcyr}
+}
+
+
+\task{
+    Покажите, что ч.у.м.\ $\avg{A, \leq}$ фундировано тогда и только тогда, когда не существует
+    инъективной функции $f$ из $\mathbb{N}$ в $A$ такой, что $f(n + 1) < f(n)$ для всех $n \in
+    \mathbb{N}$.
+}
+
+\breakline
+
+
+\task[7][03]{
+    Покажите, что множество конечно тогда и только тогда, когда оно $\mathrm{T}$-конечно.
+}
+
+\task[8][03]{
+    Используя лишь обычную индукцию, докажите, что для любого $n \in \mathbb{N}$:
+    $$
+        \forall X\, ((X \subseteq n \wedge X \ne \emptyset) \rightarrow \funccplx{Min}(X) \ne \emptyset).
+    $$
+    Выведите отсюда принцип минимального элемента.
+}
+
+\task[2][04]{
+    Покажите, что если непустое множество натуральных чисел ограничено, то оно содержит наибольший
+    элемент, причём такой элемент единственнен.
+}
+
+\task[3][04]{
+    Покажите, что для всех $k, m, n \in \mathbb{N}$ верно следующее:
+    \begin{enumcyr}
+        \item $(k + m) + n = k + (m + n)$;
+        \item $m + n = n + m$.
+    \end{enumcyr}
+}
+
+\task[4][04]{
+    Покажите, что для любых $X$, $Y$ и $Z$ верно следующее:
+    \begin{enumcyr}
+        \item $\abs{X \times Y} = \abs{Y \times X}$;
+        \item $\abs{(X \times Y) \times Z} = \abs{X \times (Y \times Z)}$;
+        \item если $\abs{X} = \abs{Y}$, то $\abs{X \times Z} = \abs{Y \times Z}$.
+    \end{enumcyr}
+}
+
+
+\task[5][04]{
+    Пусть $\abs{X} \leq \abs{Y}$ и $X \ne \emptyset$. Покажите, что существует сюрьекция из $Y$ на $X$.
+}
+
+\task[6][04]{
+    Пусть существует сюрьекция из $Y$ на $X$. Покажите, что $\abs{X} \leq \abs{Y}$.
+}
+
+
+\task[2][05]{
+    Покажите, что если множество конечно, то оно конечно по Дедекинду.
+}
+
+
+\task[3][05]{
+    Пусть $f\colon X \rightarrow \mathbb{R}$ такая функция, что множество:
+    $$
+        \left\{\sum_{s \in S} f(s) \mid S \subseteq X \text{ и } S \text{ конечно} \right\}
+    $$
+    ограничено, т.е. существует такое $N \in \mathbb{N}$, что для любого конечного $S \subseteq X$,
+    $$
+        \abs{\sum_{s \in S} f(s)} \leq N.
+    $$
+    Покажите, что $\{x \in X \mid f(x) \neq 0\}$ не более чем счётно.
+}
+
+\task[4][05]{
+    $\mathbb{R} \times \mathbb{R}$, $\mathbb{R} \times \mathbb{R} \times \mathbb{R}$ и т.д. континуальны.
+}
+
+
+\task[5][05]{
+    Множество всех трансцендентных чисел континуально.
+}
+
+
+\task[6][05]{
+    Пусть $X \cup Y = \mathbb{R}$. Тогда хотя бы одно из $X$ и $Y$ континуально.
+}
+
+\end{document}
