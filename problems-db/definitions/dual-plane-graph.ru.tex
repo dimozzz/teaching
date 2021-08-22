@@ -15,7 +15,7 @@ $e^*$ оказывается петлёй.
     \begin{tikzpicture}
         \def\r{1}
         \foreach \a in {0, 1, 2, 3}{
-            \node[g-vert] (v\a) at (90 * \a:\r) {};
+            \node[graph-vert] (v\a) at (90 * \a:\r) {};
         }
 
         \draw[thick] (v0) -- (v1) -- (v2) -- (v3) -- (v0);
@@ -31,14 +31,14 @@ $e^*$ оказывается петлёй.
 
         \begin{scope}[shift = {(5, 0)}]
             \foreach \a in {0, 1, 2, 3}{
-                \node[g-vert] (v\a) at (90 * \a:\r) {};
+                \node[graph-vert] (v\a) at (90 * \a:\r) {};
             }
     
             \draw[thick] (v0) -- (v1) -- (v2) -- (v3) -- (v0);
             \draw[thick] (v1) -- (v3);
-            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o1) at (\r / 2, 0) {};
-            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o2) at (-\r / 2, 0) {};
-            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o3) at (0, -3 * \r / 2) {};
+            \node[graph-vert = {green!50}{0.15cm}, draw = green!50!black] (o1) at (\r / 2, 0) {};
+            \node[graph-vert = {green!50}{0.15cm}, draw = green!50!black] (o2) at (-\r / 2, 0) {};
+            \node[graph-vert = {green!50}{0.15cm}, draw = green!50!black] (o3) at (0, -3 * \r / 2) {};
 
             \draw[thick, green!50!black] (o1) -- (o2);
             \draw[thick, green!50!black] (o1) to[out = -90, in = 60] (o3);
@@ -58,9 +58,9 @@ $e^*$ оказывается петлёй.
             (6.74, 0) -- ++(1.52, 0);
 
         \begin{scope}[shift = {(9.3, \r / 2)}]
-            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o1) at (\r / 2, 0) {};
-            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o2) at (-\r / 2, 0) {};
-            \node[g-vert = {green!50}{0.15cm}, draw = green!50!black] (o3) at (0, -3 * \r / 2) {};
+            \node[graph-vert = {green!50}{0.15cm}, draw = green!50!black] (o1) at (\r / 2, 0) {};
+            \node[graph-vert = {green!50}{0.15cm}, draw = green!50!black] (o2) at (-\r / 2, 0) {};
+            \node[graph-vert = {green!50}{0.15cm}, draw = green!50!black] (o3) at (0, -3 * \r / 2) {};
 
             \draw[thick, green!50!black] (o1) -- (o2);
             \draw[thick, green!50!black] (o1) -- (o3);

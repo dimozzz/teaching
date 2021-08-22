@@ -2,8 +2,8 @@
     \def\R{2.1}
     \def\r{1}
     \foreach \a in {0, 1, ..., 4}{
-        \node[g-vert] (a\a) at (90 - \a * 360 / 5:\R) {};
-        \node[g-vert] (b\a) at (90 - \a * 360 / 5:\r) {};
+        \node[graph-vert] (a\a) at (90 - \a * 360 / 5:\R) {};
+        \node[graph-vert] (b\a) at (90 - \a * 360 / 5:\r) {};
 
         \draw[thick] (a\a) -- (b\a);
 
