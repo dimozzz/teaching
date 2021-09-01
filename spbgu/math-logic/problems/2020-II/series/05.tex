@@ -1,0 +1,129 @@
+\input{../main.tex}
+
+\setmathstyle{}{Мат. логика}{3 курс}
+
+\begin{document}
+
+Пусть $R \subseteq N^{\ell}$. Возьмём $\sigma^{R}_A \coloneqq \sigma_A \cup \{\underline{R}\} =
+\avg{0; s; +; \cdot; <; =; \underline{R}}$,
+где $\underline{R}$~--- новый $\ell$-местный предикатный символ. Обозначим стандартную
+$\sigma^{R}_A$-структуру с носителем $\mathbb{N}$ через $\mathfrak{N}^R$ (здесь $\underline{R}$
+интерпретируется как $R$).
+
+\task{
+    Пусть $R \subseteq N^{\ell}$ является $\Delta_0$-определимым в $\mathbb{N}$. Покажите, что если
+    множество $\Delta_0$-определимо в $\mathfrak{N}^R$, то оно $\Delta$-определимо в $\mathfrak{N}$.
+}
+
+
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    \begin{enumcyr}
+        \item $x \cdot (y + z) = x \cdot y + x \cdot z$;
+        \item $(x + y) \cdot z = x \cdot z + y \cdot z$.
+    \end{enumcyr}
+}
+
+
+\task{
+    Выведите в $\PrSys{PA}$: $(x \cdot y) \cdot z = x \cdot (y \cdot z)$.
+}
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    \begin{enumcyr}
+        \item $0 \cdot x = 0$;
+        \item $x \cdot y + y = \mathsf{s}(x) \cdot y$;
+        \item $x \cdot y + y = \mathsf{s}(x) \cdot y$;
+        \item $x \cdot y = y \cdot x$.
+    \end{enumcyr}
+}
+
+\task{
+    Выведите в $\PrSys{PA}$: $z \ne 0 \rightarrow (x < y \leftrightarrow x \cdot z < y \cdot z)$.
+}
+
+\task{
+    Выведите в $\PrSys{PA}$: $y \ne 0 \rightarrow x \leq x \cdot y$.
+}
+
+\task{
+    Под \deftext{принципом возвратной индукции} будем понимать совокупность всех формул вида:
+    $$
+        \forall x\, ((\forall u < )\, \Phi(x / u) \rightarrow \Phi(x / x)) \rightarrow \forall x\, \Phi.
+    $$
+    Покажите, что все такие формулы выводимы в $\PrSys{PA}$.
+}
+
+\footnotetext{Для удобства мы будем нередко писать $\Phi(t)$ вместо $\Phi(x / t)$ (хотя с формальной
+    точки зрения это не вполне корректно).
+}
+
+
+\task{
+    Под \deftext{принципом минимального элемента} будем понимать совокупность всех формул вида:
+    $$
+        \exists x\, \Phi(x / x) \rightarrow \exists x\, (\Phi(x / x) \wedge \neg (\exists u < x)\,
+        \Phi(x / u)).
+    $$
+    Покажите, что все такие формулы выводимы в $\mathsf{PA}$.
+}
+
+
+\task{
+    Пусть $\Gamma$ состоит из универсальных замыканий следующих формул:
+    \begin{enumcyr}
+        \item $x < \mathsf{s}(x)$;
+        \item $x \ne 0 \rightarrow \exists y\, x = \mathsf{s}(y)$;
+        \item всех формул из принципа минимального элемента.
+    \end{enumcyr}
+    Покажите, что схему аксиом (обычной) индукции можно вывести в $\Gamma$.
+}
+
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    ${\forall x}\, {\forall y}\, (y \ne 0 \rightarrow (\exists! u)\, (\exists! v < y)\, x = y \cdot u +
+    v)$.
+}
+
+
+\begin{definition*}
+    Введём следующие обозначения:
+    \begin{align*}
+      x \mid y &\coloneqq \exists u\, x \cdot u = y;\\
+      \funccplx{Irred}(x) &\coloneqq x \ne 0 \wedge x \ne \underline{1} \wedge
+                            \forall u\, (u \mid x \rightarrow u = \underline{1} \vee u = x);\\
+      \funccplx{Prime}(x) &\coloneqq x \ne 0 \wedge x \ne \underline{1} \wedge
+                            \forall u\, \forall v\, (x \mid u \cdot v \rightarrow x \mid u \vee x \mid
+                            v).
+    \end{align*}
+    Здесь используется кольцевая терминология (от англ.\ <<irreducible>> и <<prime>>).
+\end{definition*}
+
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    $\funccplx{Irred}(x) \leftrightarrow \funccplx{Prime}(x)$.
+}
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    $x \ne \underline{1} \rightarrow \exists u\, (\funccplx{Prime}(u) \wedge u \mid x)$.
+}
+
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    $\forall x\, \exists y\, (\funccplx{Prime}(y) \wedge x < y)$.
+}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
