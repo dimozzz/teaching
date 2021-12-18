@@ -1,0 +1,65 @@
+\input{../main.tex}
+
+\setmathstyle{\includegraphics[scale = 0.05]{../pics/utia-rest.png}}{Мат. логика}{3 курс}
+
+
+\begin{document}
+
+\task{
+    Покажите, что в интерпретации $(\mathbb{R}, 0, 1, +,\, \cdot \, , <, =)$ предикат $x = \alpha$, где
+    $\alpha$~--- вещественное число, выразим тогда, и только тогда, когда $\alpha$~--- алгебраическое
+    число.
+}
+
+
+\libdefinition{real-closed-field}
+
+\task{
+    Выведите в теории линейно упорядоченных полей:
+    $$
+        x < y \longrightarrow \exists u\, x < u < y.
+    $$
+}
+
+
+\begin{proposition}
+    Для любого линейно упорядоченного поля $\mathbb{F}$ следующие условия эквивалентны:
+    \begin{enumcyr}
+        \item $\mathbb{F}$ вещественно замкнуто;
+        \item $\mathbb{F}$ как поле не является алгебраически замкнутым, но его расширение
+            $\mathbb{F}[\sqrt{-1}]$ алгебраически замкнуто.
+    \end{enumcyr}
+\end{proposition}
+
+\task{
+    Покажите, что для любого линейно упорядоченного поля $\mathbb{F}$ следующие условия эквивалентны:
+    \begin{enumcyr}
+        \item $\mathbb{F}$ вещественно замкнуто;
+        \item в $\mathbb{F}$ истинно $\forall x\, (0 < x \rightarrow \exists u\, x = u \cdot u)$, а
+            также все $\sigma$-формулы вида:
+            $$
+                \forall \overline{u}\, \forall x\, \forall y\,
+                (\mathrm{p}_n(x; \overline{u}) \cdot \mathrm{p}_n(y; \overline{u}) < 0 \rightarrow
+                \exists z\, (x < z < y \wedge \mathrm{p}_n(z; \overline{u}) = 0)),
+            $$
+            т.е.\ для $\mathbb{F}$ верна <<полиномиальная версия>> теоремы о среднем значении.
+    \end{enumcyr}
+}
+
+\libproblem{math-logic}{rcf-nonstandard-point}
+\libproblem{math-logic}{acf-char-0-big-char}
+
+\libproblem{math-logic}{red-blue-dlo-count}
+\libproblem{math-logic}{predicate-strategy-exists}
+
+
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

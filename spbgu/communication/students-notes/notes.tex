@@ -1,0 +1,63 @@
+\documentclass[a4paper, 12pt]{article}
+% math symbols
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathseries}
+\usepackage[12pt]{moresize}
+\usepackage[style = alphabetic, maxbibnames = 99, backend = biber]{biblatex}
+\addbibresource{references.bib}
+
+\usepackage[margin = 2cm]{geometry}
+
+\tolerance = 1000
+\emergencystretch = 0.74cm
+
+
+
+\pagestyle{empty}
+%\parindent = 0mm
+
+\let\D\undefined
+
+\newauthor{ds}{Dmitry}{red!20}
+
+\notesmode
+
+\begin{document}
+%    \input{parts/titlepage.tex}
+
+    \tableofcontents
+    \clearpage
+
+    \setmathstyle{2020}{Коммуникационная сложность}{\thepage}
+
+    \author{Авторы конспекта: Пётр Смирнов, Анастасия Софронова\\ Лектор: Дмитрий Соколов}
+%{\let\newpage\relax\maketitle}
+
+
+
+
+    \input{parts/abs-temp.tex}
+
+\input{parts/1.tex}
+\input{parts/2.tex}
+\input{parts/3.tex}
+%\input{parts/4.tex}
+%\input{parts/5.tex}
+%\input{parts/6.tex}
+%\input{parts/6_1.tex}
+%\input{parts/7.tex}
+%\input{parts/9.tex}
+%(???) связь недетерминированных и вероятностных
+%\input{parts/10.tex}
+%\input{parts/11.tex}
+%\input{parts/12.tex}
+%\input{parts/13.tex}
+%\input{parts/14.tex}
+%\input{parts/15.tex}
+
+    \selectlanguage{english}
+    \printbibliography[title = \foreignlanguage{russian}{Список литературы}]
+\end{document}

@@ -1,21 +1,23 @@
 Рассмотрим сигнатуру упорядоченных колец/полей:
 $$
-    \sigma \coloneqq \avg{0, 1; +, -, \,\cdot\,; <, =}.
+    \sigma \coloneqq \avg{0, 1, +, \,\cdot\,, <, =}.
 $$
-    
-Пусть $\mathfrak{R}$~--- стандартная $\sigma$-структура с носителем $\mathbb{R}$. Обозначим
-$\PrSys{RCF}$ множество формул, состоящее из:
+
+Теорией \deftext{вещественно замкнутых полей} ($\PrSys{RCF}$, Real Closed Field) будет называть теорию,
+состоящую из следующих формул:
 \begin{itemize}
-    \item аксиом линейно упорядоченных полей;
-    \item $\sigma$-предложения:
+    \item аксиомы поля;
+    \item аксиомы линейного порядка, согласованные со сложением и умножением:
+        \begin{itemize}
+            \item $\forall x, y, z\, (x < y) \rightarrow (x + z < y + z)$;
+            \item $\forall x, y\, (x > 0 \land y > 0) \rightarrow (xy > 0)$;
+        \end{itemize}
+    \item $\forall x\, (0 < x \rightarrow \exists u\, x = u \cdot u)$;
+    \item для всех нечетных $n$:
         $$
-            \forall x\, (0 < x \rightarrow \exists u\, x = u \cdot u)
+            \forall u_1, u_2, \dots, u_n\, (u_n \ne 0 \rightarrow \exists x\, \sum\limits_{i = 0}^n u_i
+            x^i = 0.
         $$
-    \item всех $\sigma$-формул вида:
-        $$
-        \forall \overline{u}\, (u_n \ne 0 \rightarrow \exists x\, \mathrm{p}_n(x; \overline{u}) = 0,
-        $$
-        где $n$ нечётно и $\mathrm{p}_n(x; \overline{u}) \coloneqq \sum\limits_{i = 0}^n u_i x^i$.
 \end{itemize}
 
 Модели $\PrSys{RCF}$ будем называть \deftext{вещественно замкнутыми полями}.

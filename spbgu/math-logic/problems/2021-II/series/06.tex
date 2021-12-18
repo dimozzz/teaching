@@ -1,0 +1,134 @@
+\input{../main.tex}
+
+\setmathstyle{\includegraphics[scale = 0.05]{../pics/utia-rest.png}}{Мат. логика}{3 курс}
+
+
+\begin{document}
+
+\task{
+    Покажите, что для любого натурального числа $n$ множество всех истинных замкнутых арифметических
+    формул, содержащих не более $n$ кванторов, арифметично.
+}
+
+\begin{definition*}
+    \deftext{Сечением} нестандатной модели арифметики Пеано $M$ будем называть непустое подмножество $C
+    \subseteq M$, обладающее следующими свойствами:
+    \begin{itemize}
+        \item $x < y, y \in C \Rightarrow x \in C$;
+        \item $x \in C \Rightarrow S(x) \in C$.
+    \end{itemize}
+    Соответственно \deftext{собственным сечением} будем называть сечение, в котором $С$ является
+    собственным подмножеством $M$.
+\end{definition*}
+
+\task{
+    Пусть $M$~--- нестандартная модель $\PrSys{PA}$ и $C$~--- собственное сечение $M$. Пусть
+    $\bar{a}$~--- кортеж элементов из $M$ и $\varphi(x, \bar{a})$~--- такая формула в сигнатуре
+    $\PrSys{PA}$, что $M \models \varphi(b, \bar{a})$ для всех $b \in C$. Покажите, что существует такой
+    элемент $c \in M$, что:
+    \begin{itemize}
+        \item $c$ больше всех элементов из $C$;
+        \item $M \models \varphi(c, \bar{a})$.
+    \end{itemize}
+}
+
+\dzcomment{
+    В следующих задачах можно пользоваться ассоциативностью и коммутативностью операций в $\PrSys{PA}$.
+}
+
+\task{
+    Выведите в $\PrSys{PA}$: $z \ne 0 \rightarrow (x < y \leftrightarrow x \cdot z < y \cdot z)$.
+}
+
+\task{
+    Выведите в $\PrSys{PA}$: $y \ne 0 \rightarrow x \leq x \cdot y$.
+}
+
+
+\task{
+    Под \deftext{принципом возвратной индукции} будем понимать совокупность всех формул вида:
+    $$
+        \forall x\, ((\forall u < )\, \Phi(x / u) \rightarrow \Phi(x / x)) \rightarrow \forall x\, \Phi.
+    $$
+    Покажите, что все такие формулы выводимы в $\PrSys{PA}$.
+}
+
+\task{
+    Под \deftext{принципом минимального элемента} будем понимать совокупность всех формул вида:
+    $$
+        \exists x\, \Phi(x / x) \rightarrow \exists x\, (\Phi(x / x) \wedge \neg (\exists u < x)\,
+        \Phi(x / u)).
+    $$
+    Покажите, что все такие формулы выводимы в $\mathsf{PA}$.
+}
+
+
+\task{
+    Пусть $\Gamma$ состоит из универсальных замыканий следующих формул:
+    \begin{enumcyr}
+        \item $x < \mathsf{s}(x)$;
+        \item $x \ne 0 \rightarrow \exists y\, x = \mathsf{s}(y)$;
+        \item всех формул из принципа минимального элемента.
+    \end{enumcyr}
+    Покажите, что схему аксиом (обычной) индукции можно вывести в $\Gamma$.
+}
+
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    ${\forall x}\, {\forall y}\, (y \ne 0 \rightarrow (\exists! u)\, (\exists! v < y)\, x = y \cdot u +
+    v)$.
+}
+
+
+\begin{definition*}
+    Введём следующие обозначения:
+    \begin{align*}
+      x \mid y &\coloneqq \exists u\, x \cdot u = y;\\
+      \funccplx{Irred}(x) &\coloneqq x \ne 0 \wedge x \ne \underline{1} \wedge
+                            \forall u\, (u \mid x \rightarrow u = \underline{1} \vee u = x);\\
+      \funccplx{Prime}(x) &\coloneqq x \ne 0 \wedge x \ne \underline{1} \wedge
+                            \forall u\, \forall v\, (x \mid u \cdot v \rightarrow x \mid u \vee x \mid
+                            v).
+    \end{align*}
+    Здесь используется кольцевая терминология (от англ.\ <<irreducible>> и <<prime>>).
+\end{definition*}
+
+
+\task{
+    Выведите в $\PrSys{PA}$:
+    $\funccplx{Irred}(x) \leftrightarrow \funccplx{Prime}(x)$.
+}
+
+\begin{definition}
+    \deftext{Частичным $n$-типом} (или просто $n$-типом) $\sigma$-теории $T$ будем называть любое
+    множество $\sigma$-формул $\Gamma$ со свободными переменными $v_1, v_2, \dots, v_n$, что с новыми
+    константами $c_1, \dots, c_n$ теория $T \cup \{\varphi(c_1, c_2, \dots, c_n) \mid \varphi(v_1, v_2,
+    \dots, v_n) \in \Gamma\}$ совместна.
+    
+    $\Gamma$ будем называть \deftext{полным $n$-типом} теории $T$, если $\Gamma$ является $n$-типом и для
+    любой формулы $\varphi(v_1, \dots, v_n)$ либо $\varphi \in \Gamma$, либо $\neg \varphi \in \Gamma$.
+
+    $n$-тип $\Gamma$ теории $T$ \deftext{реализуется} в модели $M$, если найдется такая
+    последовательность $a_1, \dots, a_n \in M$:
+    $$
+        \varphi(v_1, \dots, v_n) \in \Gamma \Rightarrow M \models \varphi(a_1, a_2, \dots, a_n).
+    $$
+\end{definition}
+
+\task{
+    Рассмотрим теорию плотных линейных порядков без концов и $M$~--- модель данной теории на множестве
+    $\mathbb{Q}$. Пусть $p \coloneqq \{\varphi(v) \mid M \models
+    \varphi\left(\frac{1}{2}\right)\}$. Реализуется ли тип $p$ в модели $M$, если да, то конечно ли число
+    точек реализации?
+}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
