@@ -3,6 +3,8 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{mathrsfs}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathseries}
 \usepackage[12pt]{moresize}
@@ -14,7 +16,11 @@
 \tolerance = 1000
 \emergencystretch = 0.74cm
 
+\newcommand{\One}{\text{\usefont{U}{bbm}{m}{n}1}}
+\newcommand{\NCC}[1]{\mathrm{N}^{#1}}
 
+\newcommand{\RS}{\mathrm{RS}}
+\newcommand{\disc}{\mathrm{disc}}
 
 \pagestyle{empty}
 %\parindent = 0mm
@@ -31,32 +37,30 @@
     \tableofcontents
     \clearpage
 
-    \setmathstyle{2020}{Коммуникационная сложность}{\thepage}
+    \setmathstyle{2020}{Коммуникационная
+        сложность \includegraphics[scale = 0.05]{pics/utia-rest.png}}{\thepage}
 
     \author{Авторы конспекта: Пётр Смирнов, Анастасия Софронова\\ Лектор: Дмитрий Соколов}
-%{\let\newpage\relax\maketitle}
 
 
-
-
-    \input{parts/abs-temp.tex}
-
-\input{parts/1.tex}
+    \input{parts/abstract.tex}
+    \input{parts/intro-upper.tex}
+    
 \input{parts/2.tex}
 \input{parts/3.tex}
-%\input{parts/4.tex}
-%\input{parts/5.tex}
-%\input{parts/6.tex}
-%\input{parts/6_1.tex}
-%\input{parts/7.tex}
-%\input{parts/9.tex}
+\input{parts/4.tex}
+\input{parts/5.tex}
+\input{parts/6.tex}
+\input{parts/6_1.tex}
+\input{parts/7.tex}
+\input{parts/9.tex}
 %(???) связь недетерминированных и вероятностных
-%\input{parts/10.tex}
-%\input{parts/11.tex}
-%\input{parts/12.tex}
-%\input{parts/13.tex}
-%\input{parts/14.tex}
-%\input{parts/15.tex}
+\input{parts/10.tex}
+\input{parts/11.tex}
+\input{parts/12.tex}
+\input{parts/13.tex}
+\input{parts/14.tex}
+\input{parts/15.tex}
 
     \selectlanguage{english}
     \printbibliography[title = \foreignlanguage{russian}{Список литературы}]

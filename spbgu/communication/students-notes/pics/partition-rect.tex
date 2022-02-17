@@ -1,0 +1,11 @@
+\begin{tikzpicture}[>=latex]
+    \def\s{3.5}
+    \def\gap{0.85}
+    \draw[very thick] (-0.04, -0.04) rectangle (\s + 0.04, \s + 0.04);
+    \draw[thick, rounded corners = 3, fill = blue!30] (\gap + 0.02, \gap + 0.02) rectangle
+        (\s - \gap - 0.02, \s - \gap - 0.02);
+    \draw[thick, rounded corners = 3, fill = red!30] (0, 0) rectangle (\gap, \s - \gap - 0.02);
+    \draw[thick, rounded corners = 3, fill = red!30] (0, \s) rectangle (\s - \gap - 0.02, \s - \gap);
+    \draw[thick, rounded corners = 3, fill = red!30] (\gap + 0.02, 0) rectangle (\s, \gap);
+    \draw[thick, rounded corners = 3, fill = red!30] (\s - \gap, \gap + 0.02) rectangle (\s, \s);
+\end{tikzpicture}

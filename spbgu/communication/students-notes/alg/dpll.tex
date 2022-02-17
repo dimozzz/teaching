@@ -1,0 +1,13 @@
+\begin{algorithm}[H]
+    \label{alg:dpll-classic}
+    \caption{$\DPLL$. На вход подается формула $\varphi$}
+    \begin{algorithmic}[1]
+        \State Если $\varphi$ не содержит клозов, то вернуть $1$
+        \State Если $\varphi$ содержит пустой клоз, то вернуть $0$
+        \State $x \coloneqq \alg{A}(\varphi)$
+        \State $b \coloneqq \alg{B}(\varphi, x)$;
+        \State Если $\DPLL_{\alg{A}, \alg{B}}(\varphi|_{x = b}) = 1$, то вернуть $1$.
+        \State Если $\DPLL_{\alg{A}, \alg{B}}(\varphi|_{x = 1 - b}) = 1$, то вернуть $1$.
+        \State Вернуть $0$
+    \end{algorithmic}
+\end{algorithm}
