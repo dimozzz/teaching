@@ -1,0 +1,63 @@
+\input{../main.tex}
+
+\setmathstyle{\includegraphics[scale = 0.05]{../pics/utia-rest.png}}{Information Theory}{2 курс}
+
+\begin{document}
+
+\selectlanguage{english}
+
+\libproblem{inf-theory}{prefix-codes-2}
+
+\begin{definition*}
+    For a random variable $\alpha$ with probabilities of the events $(p_1, p_2, \dots)$ we define a
+    measure:
+    $$
+        \entropy(\alpha) \coloneqq \sum p_i \log \frac{1}{p_i}.
+    $$
+    We call this measure \deftext{entropy} and denote it as $\entropy$ (and sometimes $h$).
+
+    We define \deftext{an entropy of $\alpha$ given $\beta = b$} as an entropy of the distribution
+    $\alpha$ conditioned on $\beta = b$, i.e.:
+    $$
+        \entropy(\alpha \mid \beta = b) \coloneqq \sum_{i} \Pr[\alpha = i \mid \beta = b] \cdot \log
+        \frac{1}{\Pr[\alpha = i \mid \beta = b]}
+    $$ 
+    
+   	We call \deftext{an entropy of $\alpha$ conditioned on $\beta$} an average value of entropy of
+    $\alpha$ given $\beta = b$ over all possible $b$. Hence:
+    $$
+        \entropy(\alpha \mid \beta) \coloneqq
+        \Exp\limits_{b \sim \beta}[\entropy(\alpha \mid \beta = b)] =
+        \sum_b \entropy(\alpha \mid \beta = b) \cdot \Pr[\beta = b].
+    $$
+\end{definition*}
+
+
+\libproblem{inf-theory}{triple-indep}
+
+\begin{definition*}
+    \deftext{Mutual information} of random variables $\alpha$ and $\beta$ is a function
+    $I(\alpha : \beta) \coloneqq \entropy(\alpha) - \entropy(\alpha \mid \beta)$.
+
+    Let us alsoo define mutual information of $\alpha$ and $\beta$ conditioned on $\gamma$.
+    $I(\alpha : \beta \mid \gamma) = \entropy(\alpha \mid \gamma) - \entropy(\alpha \mid \beta,
+    \gamma)$.
+\end{definition*}
+
+
+\libproblem{inf-theory}{information-properties}
+\libproblem{inf-theory}{entropy-2-dim}
+\libproblem{inf-theory}{markov-entropy}
+\libproblem{inf-theory}{stone-lift}
+\libproblem{inf-theory}{entropy-counter}
+
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
