@@ -3,8 +3,8 @@
 mkdir aux
 
 dirs=(I II III IV V)
-bot=(1 1 1 1 1)
-top=(2 2 2 1 3)
+bot=(3 3 1 2 4)
+top=(3 3 2 2 4)
 
 number=50
 

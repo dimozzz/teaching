@@ -1,0 +1,16 @@
+A \deftext{communication protocol} for a function $f\colon X \times Y \to Z$ is a rooted binary tree,
+which describes a cooperative computation of a function $f$ by Alice and Bob. Each internal node $v$ in
+the tree is labeled either by $a$ or $b$, which means that it is either Alive's or Bob's turn
+respectively. For any node labeled by $a$, there is a function $g_v\colon X \to \{0, 1\}$, which helps
+Alice to determine which bit she should send, if the computation is currently in this node.  Analogously,
+for any node $v$ labeled by $b$, there is a function $h_v\colon Y \to \{0, 1\}$, which helps Bob
+determine which bit he should send while in this node. Any internal node also has two descendants. The
+edge to the first descendant is labeled by $0$, and the edge to the second one is labeled by $1$. Any
+leaf is labeled by an element from the set $Z$.
+
+Any pair of inputs $(x, y)$ defines a path from root to the leaf in the tree in a natural way. We say
+that a communication protocol computes a function $f$, if for any pair $(x, y) \in X \times Y$ this path
+ends in a leaf with label $f(x, y)$.
+
+\deftext{Communication complexity} of a function $f$ is the smallest possible depth of a protocol
+computing $f$. We denote it as $\DCC(f)$.
