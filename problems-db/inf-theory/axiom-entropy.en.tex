@@ -1,0 +1,14 @@
+A function $f$, defined on distributions, is called \deftext{a formal measure of information}, if $f$
+satisfies the following properties:
+\begin{enumtask}
+    \item If $X, Y$ are uniform distributions on sets $M$ and $M'$ respectively and $|M| > |M'|$, then
+        $f(X) > f(Y)$.
+    \item If $X, Y$ are independent, then $f(X, Y) = f(X) + f(Y)$.
+    \item Let $B_q$ be a distribution with probabilities: $\Pr[B_q = 1] \coloneqq q$ and $\Pr[B_q = 0]
+        \coloneqq 1 - q$. $f(B_q)$ is continuous as a function of $q$.
+    \item If $B$ is a random variable with values in $\{0, 1\}$, then for any random variable $X$ it
+        holds that $f(BX) = f(B) + \Pr[B = 1] f(X \mid B = 1) + \Pr[B = 0] f(X \mid B = 0)$.
+\end{enumtask}
+
+Show that $f(X) = c \entropy(X)$, where $c$ is an absolute constant.
+\tags{теория информации, энтропия}

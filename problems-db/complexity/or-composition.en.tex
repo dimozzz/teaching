@@ -1,0 +1,8 @@
+Let $f\colon \{0, 1\}^n \to \{0, 1\}$ be a boolean function. Let us define a function
+$\left( \vee \circ f^m \right)\colon \{0, 1\}^{m \times n} \to \{0, 1\}$ in the following way:
+$$
+    \left( \vee \circ f^m \right)(x_1, x_2, \dots, x_m) \coloneqq f(x_1) \lor f(x_2) \lor \dots \lor
+    f(x_m),
+$$
+where $x_i \in \{0, 1\}^n$. Show that $L\left( \vee \circ f^m \right) = m \cdot L(f)$ (where $L$ is a
+formula complexity in De Morgan basis).
