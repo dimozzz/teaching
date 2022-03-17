@@ -1,0 +1,39 @@
+\input{../main.tex}
+
+\setmathstyle{Дедлайн: 19.05}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\libproblem{inf-theory}{secret-not-ideal-2}
+\libproblem{cc}{clique-ind}
+
+\begin{definition*}
+    Let $f\colon X \times Y \to Z$ and $\mu$ be a distribution on $X \times Y$. Note that for any
+    communication protocol $\Pi$ for the function $f$ the distribution $\mu$ induces a distribution on
+    leaves of the protocol in a natural way. We define \deftext{internal information cost} of a protocol
+    $\Pi$ with respect to $\mu$ in the following way:
+    $$\ICint[\mu](\Pi) \coloneqq I(\Pi(X, Y) : X \mid Y) + I(\Pi(X, Y) : Y \mid X).$$
+    
+    We also define the \deftext{external information cost} of a function:
+    $\ICint[\mu](f) \coloneqq \min\limits_{\Pi} \ICint[\mu](\Pi)$.
+\end{definition*}
+
+\libproblem{cc}{inner-inf-upper}
+\libproblem{cc}{fooling-limits}
+
+
+\libproblem{complexity}{or-composition}
+\libproblem{complexity}{maj-lower-formula}
+\libproblem{inf-theory}{find-n-dist-i2}
+\libproblem{cc}{one-way-avg}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
