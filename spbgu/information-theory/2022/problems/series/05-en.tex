@@ -1,0 +1,74 @@
+\input{../main.tex}
+
+\setmathstyle{\includegraphics[scale = 0.05]{../pics/utia-rest.png}}{Information Theory}{2 year}
+
+
+\begin{document}
+
+\selectlanguage{english}
+
+\libproblem*{cc}{chrom-number}
+\libproblem{cc}{KW-hard-exists}
+\dzcomment{
+    \textit{Hint:} formula complexity of such function would be $2^{\Omega(n)}$.
+}
+
+\begin{definition*}
+    \hinttext{Informally.} Probabilistic communication protocol is a protocol $\Pi$, where Alice and Bob
+    have access to common random bits (they both see those bits). Their goal is to compute a function
+    $f(x, y)$ with the condition:
+    $$
+        \forall x, y ~~ \Pr\limits_{r}[\Pi(x, y) \neq f(x, y)] \le \varepsilon,
+    $$
+    for some parameter $\varepsilon$.
+
+    Minimal number of bits that Alice and Bob have to exchange to compute the function with the
+    restriction above we denote as $\Rpub[\varepsilon]$
+\end{definition*}
+
+\libproblem{cc}{rand-eq}
+\libproblem{cc}{balance}
+\libproblem{cc}{clique-ind}
+
+\begin{definition*}
+    Let $f\colon X \times Y \to Z$ and $\mu$ be a distribution on $X \times Y$. Note that for any
+    communication protocol $\Pi$ fr a function $f$ the distribution $\mu$ induces a distribution on
+    leaves of the protocol in a natural way. \deftext{External information cost} of the protocol $\Pi$
+    with respect to $\mu$ is the following value:
+    $$
+        \ICext[\mu](\Pi) \coloneqq I(\Pi(X, Y) : X, Y).
+    $$
+    We also define an external information cost of the function itself
+    $\ICext[\mu](f) \coloneqq \min\limits_{\Pi} \ICext[\mu](\Pi)$.
+
+    \deftext{Internal information cost} of the protocol $\Pi$ with respect to $\mu$ is the following
+    value:
+    $$
+        \ICext[\mu](\Pi) \coloneqq I(\Pi(X, Y) : X \mid Y) + I(\Pi(X, Y) : Y \mid X).
+    $$
+\end{definition*}
+
+
+\libproblem{cc}{inner-inf-upper}
+\libproblem{cc}{rand-gt}
+
+\dzcomment{Point b is a difficult one, point a will be graded separately.}
+
+\begin{definition*}
+    \deftext{An ideal secret sharing scheme} is a perfect secret sharing scheme with an extra requirement
+    of <<economy>>:
+    $$
+        \forall i \in \{1, 2, \dots, n\},\ h(S_i) \le h(S_0).
+    $$
+\end{definition*}
+
+\libproblem{inf-theory}{secret-not-ideal}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
