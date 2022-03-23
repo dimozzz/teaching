@@ -1,0 +1,47 @@
+\input{../main.tex}
+
+\setmathstyle{}{Теория информации}{2 курс}
+
+
+\begin{document}
+
+\libproblem{inf-theory}{entropy-34}
+%\libproblem{inf-theory}{random-find-n}
+
+\libproblem{cc}{one-way-avg}
+
+
+\begin{definition*}
+    Пусть $F\colon \{0, 1\}^* \to \{0, 1\}^*$~--- вычислимая функция. \deftext{Сложность описания} $x$
+    относительно $F$ определим следующим образом: $K_F(x) \coloneqq \min\{|p| \mid F(p) = x\}$.
+
+    Будем говорить, что способ описания $F$ \textit{не хуже} $G$, обозначим $F \prec G$, если существует
+    такая константа $c_G$, что для $\forall x \in \{0, 1\}^*, K_F(x) \le K_G(x) +
+    c_G$.
+
+    \deftext{Оптимальным} будем называть такой способ описания $U$, который не хуже любого
+    другого. \deftext{Колмогоровской сложностью} $x$ будем называть значение $K(x) \coloneqq K_U(x)$.
+\end{definition*}
+
+\libproblem{kolmogorov}{opt-exists}
+\libproblem{kolmogorov}{series-divergent}
+
+\libproblem{kolmogorov}{parity}
+
+\libproblem{kolmogorov}{graph-connectivity}
+
+
+
+\vspace{0.2cm}
+\begin{center}
+    \includegraphics[scale = 0.2]{../pics/utia-fly.png}    
+\end{center}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
