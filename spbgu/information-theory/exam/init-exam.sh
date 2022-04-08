@@ -3,10 +3,10 @@
 mkdir aux
 
 dirs=(I II III IV V)
-bot=(7 6 3 6 7)
-top=(8 7 4 7 7)
+bot=(2 8 5 8 8)
+top=(4 9 5 9 9)
 
-number=17
+number=70
 
 for i in $(seq 1 $number); do
 

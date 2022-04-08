@@ -1,0 +1,50 @@
+\input{../main.tex}
+
+\setmathstyle{}{Information Theory}{2 year}
+
+
+\begin{document}
+
+\selectlanguage{english}
+
+\libproblem{inf-theory}{markov-entropy-34}
+%\libproblem{inf-theory}{random-find-n}
+
+\libproblem{cc}{one-way-avg}
+
+\begin{definition*}
+    Let $F\colon \{0, 1\}^* \to \{0, 1\}^*$ be a computable function.
+    \deftext{The complexity of a description} of $x$ with respect to $F$ is defined in the following way: 
+    $K_F(x) \coloneqq \min\{|p| \mid F(p) = x\}$.
+
+    We say that the decoder function $F$ is \textit{not worse than} $G$, denoted as $F \prec G$, if
+    there exists a constant $c_G$ such that $\forall x \in \{0, 1\}^*, K_F(x) \le K_G(x) + c_G$.
+
+    \deftext{An optimal decoder function} $U$ is a function that is not worse than any
+    other. \deftext{Kolmogorov complexity} of $x$ is defined as the value $K(x) \coloneqq
+    K_U(x)$.
+\end{definition*}
+
+
+\libproblem{kolmogorov}{opt-exists}
+\libproblem{kolmogorov}{series-divergent}
+
+\libproblem{kolmogorov}{parity}
+
+\libproblem{kolmogorov}{graph-connectivity}
+
+
+
+\vspace{0.2cm}
+\begin{center}
+    \includegraphics[scale = 0.2]{../pics/utia-fly.png}    
+\end{center}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
