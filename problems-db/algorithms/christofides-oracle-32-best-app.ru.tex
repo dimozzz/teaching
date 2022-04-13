@@ -1,0 +1,51 @@
+Предположим, что алгоритм Кристофидеса имеет доступ к оракулу, который по полученному алгоритмом эйлерову
+графу выбирает его оптимальный обход и оптимальную последовательность сокращений этого обхода. Докажите,
+что даже в этом случае алгоритм Кристофидеса для задачи коммивояжера с неравенством треугольника~--- не
+$\alpha$-приближённый ни для какого $\alpha < 3 / 2$.
+
+\answer{
+    Пример в евклидовой метрике (число колен $n \to \infty$, наклон ${}\to 0$).
+
+    \begin{adjustbox}{valign = t, minipage = {0.32\textwidth}}
+        \centering
+        \begin{tikzpicture}[black]
+            \def\points{(-0.1, 0), (0.1, 1), (0.9, 1), (1.1, 0), (1.9, 0), (2.1, 1), (2.9, 1), (3.1, 0)}
+            \foreach \coord [count=\i] in \points {
+                 \node[graph-vert, at = \coord] (a\i) {};
+            }
+            \foreach \i [evaluate = \i as \j using int(\i - 1)] in {2, 3, ..., 8} {
+                \draw (a\i) -- (a\j);
+            }
+        \end{tikzpicture}
+    \end{adjustbox}%
+    \begin{adjustbox}{valign = t, minipage = {0.32\textwidth}}
+        \centering
+        \begin{tikzpicture}[black]
+            \def\points{(-0.1, 0), (0.1, 1), (0.9, 1), (1.1, 0), (1.9, 0), (2.1, 1), (2.9, 1), (3.1, 0)}
+            \foreach \coord [count=\i] in \points {
+                 \node[graph-vert, at = \coord] (a\i) {};
+            }
+            \foreach \i [evaluate = \i as \j using int(\i - 1)] in {2, 3, ..., 8} {
+                \draw (a\i) -- (a\j);
+            }
+            \draw (a1) to[bend right] (a8);
+        \end{tikzpicture}
+    \end{adjustbox}%
+    \begin{adjustbox}{valign = t, minipage = {0.32\textwidth}}
+        \centering
+        \begin{tikzpicture}[black]
+            \def\points{(-0.1, 0), (0.1, 1), (0.9, 1), (1.1, 0), (1.9, 0), (2.1, 1), (2.9, 1), (3.1, 0)}
+            \foreach \coord [count=\i] in \points {
+                 \node[graph-vert, at = \coord] (a\i) {};
+            }
+            \draw (a1) -- (a2);
+            \draw (a2) -- (a3);
+            \draw (a3) -- (a6);
+            \draw (a6) -- (a7);
+            \draw (a7) -- (a8);
+            \draw (a8) -- (a5);
+            \draw (a5) -- (a4);
+            \draw (a4) -- (a1);
+        \end{tikzpicture}
+    \end{adjustbox}%
+}
