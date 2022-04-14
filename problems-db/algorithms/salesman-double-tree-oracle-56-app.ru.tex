@@ -8,80 +8,141 @@
     удвоенное MST веса $12n + \bigO{1}$, оптимальное сокращение MST веса $10n + \bigO{1}$, оптимальный
     обход графа веса $6n + \bigO{1}$.
 
-\begin{tikzpicture}[baseline=(base),inner sep=0pt,outer sep=0pt]
-\draw (0,0) coordinate(base)
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
--- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node(a){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(b){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(c){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(d){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(e){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} 
--- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node(f){$\bullet$} 
-(b) -- (c) (d) -- (e) (f) -- (a);
-\end{tikzpicture}
-\qquad
-%
-\begin{tikzpicture}[baseline=(base),inner sep=0pt,outer sep=0pt]
-\draw[double] (0,0) coordinate(base)
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
--- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node(a){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(b){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(c){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(d){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(e){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} 
--- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node(f){$\bullet$};
-\end{tikzpicture}
-\qquad
-%
-\begin{tikzpicture}[baseline=(base),inner sep=0pt,outer sep=0pt]
-\draw[double] (0,0) coordinate(base)
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
--- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node(a){$\bullet$} 
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(b){$\bullet$} 
-(0,0) node{$\bullet$} ++(120:0.5) node{$\bullet$} ++(120:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(c){$\bullet$} 
-(0,0) node{$\bullet$} ++(240:0.5) node{$\bullet$} ++(240:0.5) node{$\bullet$} 
--- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node(f){$\bullet$};
-\draw (0,0)
-(0,0) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(d){$\bullet$}
-(0,0) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(e){$\bullet$} 
-(d) -- (e);
-\end{tikzpicture}
+    \begin{adjustbox}{valign = t, minipage = {0.32\textwidth}}
+        \centering
+        \begin{tikzpicture}[black]
+            \node[graph-vert] at (0, 0) (m) {};
+            \foreach \i in {1, 2, 3}{
+                \node[graph-vert] at ({120 * (\i - 1)}:0.5) (a\i) {};
+                \node[graph-vert] at ({120 * (\i - 1)}:1) (b\i) {};
+                \draw (a\i) -- (m);
+                \draw (b\i) -- (a\i);
+                \foreach \j in {1, 2, 3}{
+                    \path (b\i) ++({120 * (\i - 1) + 60}:{0.5 * \j}) node[graph-vert] (l\i\j) {};
+                    \path (b\i) ++({120 * (\i - 1) - 60}:{0.5 * \j}) node[graph-vert] (r\i\j) {};
+                }
+                \draw (b\i) -- (l\i1);
+                \draw (b\i) -- (r\i1);
+                \foreach \j [evaluate = \j as \k using int(\j - 1)] in {2, 3}{
+                    \draw (l\i\j) -- (l\i\k);
+                    \draw (r\i\j) -- (r\i\k);
+                }
+            }
 
-\begin{tikzpicture}[baseline=(base),inner sep=0pt,outer sep=0pt]
-\draw (0,0) coordinate(base)
-(0,0) node{$\bullet$} ++(0:0.5) node{$\bullet$} ++(0:0.5) node{$\bullet$} 
--- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node{$\bullet$} -- ++(-60:0.5) node(a){$\bullet$} 
-(0,0) node{$\bullet$} ++(0:0.5) node{$\bullet$} ++(0:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(b){$\bullet$} 
-(0,0) node{$\bullet$} ++(120:0.5) node{$\bullet$} ++(120:0.5) node{$\bullet$} 
--- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node{$\bullet$} -- ++(60:0.5) node(c){$\bullet$} 
-(0,0) node{$\bullet$} ++(120:0.5) node{$\bullet$} ++(120:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(d){$\bullet$} 
-(0,0) node{$\bullet$} ++(240:0.5) node{$\bullet$} ++(240:0.5) node{$\bullet$} 
--- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node{$\bullet$} -- ++(180:0.5) node(e){$\bullet$} 
-(0,0) node{$\bullet$} ++(240:0.5) node{$\bullet$} ++(240:0.5) node{$\bullet$} 
--- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node{$\bullet$} -- ++(300:0.5) node(f){$\bullet$} 
-(b) -- (c) (d) -- (e) (f) -- (a);
-\draw[double]
-(0,0) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} -- ++(0:0.5) node{$\bullet$} 
-(0,0) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} -- ++(120:0.5) node{$\bullet$} 
-(0,0) node{$\bullet$} -- ++(240:0.5) node{$\bullet$} -- ++(240:0.5) node{$\bullet$};
-\end{tikzpicture}
+            \foreach \i [evaluate = \i as \j using {int(Mod(\i, 3) + 1)}] in {1, 2, 3}{
+                \draw (l\i3) -- (r\j3);
+            }
+        \end{tikzpicture}
+    \end{adjustbox}%
+    \begin{adjustbox}{valign = t, minipage = {0.32\textwidth}}
+        \centering
+        \begin{tikzpicture}[black]
+            \node[graph-vert] at (0, 0) (m) {};
+            \foreach \i in {1, 2, 3}{
+                \node[graph-vert] at ({120 * (\i - 1)}:0.5) (a\i) {};
+                \node[graph-vert] at ({120 * (\i - 1)}:1) (b\i) {};
+                \draw (a\i) to[bend left] (m);
+                \draw (m) to[bend left] (a\i);
+                \draw (b\i) to[bend left] (a\i);
+                \draw (a\i) to[bend left] (b\i);
+                \foreach \j in {1, 2, 3}{
+                    \path (b\i) ++({120 * (\i - 1) + 60}:{0.5 * \j}) node[graph-vert] (l\i\j) {};
+                    \path (b\i) ++({120 * (\i - 1) - 60}:{0.5 * \j}) node[graph-vert] (r\i\j) {};
+                }
+                \draw (b\i) to[bend left] (l\i1);
+                \draw (l\i1) to[bend left] (b\i);
+                \draw (b\i) to[bend left] (r\i1);
+                \draw (r\i1) to[bend left] (b\i);
+                \foreach \j [evaluate = \j as \k using int(\j - 1)] in {2, 3}{
+                    \draw (l\i\j) to[bend left] (l\i\k);
+                    \draw (l\i\k) to[bend left] (l\i\j);
+                    \draw (r\i\j) to[bend left] (r\i\k);
+                    \draw (r\i\k) to[bend left] (r\i\j);
+                }
+            }
+        \end{tikzpicture}
+    \end{adjustbox}%
+    \begin{adjustbox}{valign = t, minipage = {0.32\textwidth}}
+        \centering
+        \begin{tikzpicture}[black]
+            \node[graph-vert] at (0, 0) (m) {};
+            \foreach \i in {1, 2, 3}{
+                \node[graph-vert] at ({120 * (\i - 1)}:0.5) (a\i) {};
+                \node[graph-vert] at ({120 * (\i - 1)}:1) (b\i) {};
+                \foreach \j in {1, 2, 3}{
+                    \path (b\i) ++({120 * (\i - 1) + 60}:{0.5 * \j}) node[graph-vert] (l\i\j) {};
+                    \path (b\i) ++({120 * (\i - 1) - 60}:{0.5 * \j}) node[graph-vert] (r\i\j) {};
+                }
+            }
+            \draw (m) to[bend left] (a1);
+            \draw (a1) to[bend left] (m);
+            \draw (b1) to[bend left] (a1);
+            \draw (a1) to[bend left] (b1);
+            \draw (b1) to[bend left] (l11);
+            \draw (l11) to[bend left] (b1);
+            \draw (b1) to[bend left] (r11);
+            \draw (r11) to[bend left] (b1);
+            \draw (b2) to[bend left] (r21);
+            \draw (r21) to[bend left] (b2);
+            \draw (b3) to[bend left] (l31);
+            \draw (l31) to[bend left] (b3);
 
-В евклидовой метрике аналогичный пример дает нижнюю оценку 
-$(8 + \sqrt{3})/6 \approx 1.622 < 5/3$.
+            \draw (b2) -- (l21);
+            \draw (b3) -- (r31);
+
+            \draw (l23) -- (r33);
+
+            \foreach \j [evaluate = \j as \k using int(\j - 1)] in {2, 3}{
+                \draw (l1\j) to[bend left] (l1\k);
+                \draw (l1\k) to[bend left] (l1\j);
+
+                \draw (r2\j) to[bend left] (r2\k);
+                \draw (r2\k) to[bend left] (r2\j);
+
+                \draw (r1\j) to[bend left] (r1\k);
+                \draw (r1\k) to[bend left] (r1\j);
+
+                \draw (l3\j) to[bend left] (l3\k);
+                \draw (l3\k) to[bend left] (l3\j);
+
+                \draw (m) -- (a\j);
+                \draw (a\j) -- (b\j);
+
+                \draw (l2\j) -- (l2\k);
+                \draw (r3\j) -- (r3\k);
+            }
+
+        \end{tikzpicture}
+    \end{adjustbox}%
+
+    \begin{center}
+        \begin{tikzpicture}[black]
+            \node[graph-vert] at (0, 0) (m) {};
+            \foreach \i in {1, 2, 3}{
+                \node[graph-vert] at ({120 * (\i - 1)}:0.5) (a\i) {};
+                \node[graph-vert] at ({120 * (\i - 1)}:1) (b\i) {};
+                \draw (a\i) to[bend left] (m);
+                \draw (m) to[bend left] (a\i);
+                \draw (b\i) to[bend left] (a\i);
+                \draw (a\i) to[bend left] (b\i);
+                \foreach \j in {1, 2, 3}{
+                    \path (b\i) ++({120 * (\i - 1) + 60}:{0.5 * \j}) node[graph-vert] (l\i\j) {};
+                    \path (b\i) ++({120 * (\i - 1) - 60}:{0.5 * \j}) node[graph-vert] (r\i\j) {};
+                }
+                \draw (b\i) -- (l\i1);
+                \draw (b\i) -- (r\i1);
+                \foreach \j [evaluate = \j as \k using int(\j - 1)] in {2, 3}{
+                    \draw (l\i\j) -- (l\i\k);
+                    \draw (r\i\j) -- (r\i\k);
+                }
+            }
+
+            \foreach \i [evaluate = \i as \j using {int(Mod(\i, 3) + 1)}] in {1, 2, 3}{
+                \draw (l\i3) -- (r\j3);
+            }
+        \end{tikzpicture}
+    \end{center}
+
+    В евклидовой метрике аналогичный пример дает нижнюю оценку $(8 + \sqrt{3}) / 6 \approx 1.622 < 5 /
+    3$.
 }
