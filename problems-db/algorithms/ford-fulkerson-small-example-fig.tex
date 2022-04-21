@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+    \foreach \i in {0, 1, 2, 3}{
+        \node[graph-vert] (a\i) at (2 * \i, 0) {};
+    }
+
+    \node[graph-vert] (t) at (3, 2) {};
+    \node[graph-vert] (b) at (3, -2) {};
+
+    \foreach \i [evaluate = \i as \j using int(\i + 1)] in {0, 1, 2}{
+        \draw[->] (a\i) -- (a\j) node[midway, above] {$3$};
+    }
+
+    \draw[->] (a0) -- (t) node[midway, above left] {$2$};
+    \draw[->] (a1) -- (t) node[midway, left] {$1$};
+    \draw[->] (t) -- (a3) node[midway, above right] {$4$};
+    \draw[->] (a0) -- (b) node[midway, below left] {$4$};
+    \draw[->] (b) -- (a2) node[midway, left] {$1$};
+    \draw[->] (b) -- (a3) node[midway, below right] {$2$};
+
+    \node[left] at (a0) {$s$};
+    \node[right] at (a3) {$t$};
+\end{tikzpicture}

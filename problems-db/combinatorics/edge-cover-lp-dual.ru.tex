@@ -6,3 +6,28 @@
     \item Постройте двойственную задачу линейного программирования и изучите ее комбинаторный смысл.
 \end{enumcyr}
 \tags{линейное программирование, комбинаторика}
+
+\answer{
+    \begin{enumcyr}
+        \item $\sum\limits_{e \in E} x_e \to \min$,
+            \begin{align*}
+              \sum\limits_{e \ni v} x_e & \ge 1 \\
+              x_e & \ge 0
+            \end{align*}
+        \item Регулярный, следовательно есть паросочетание, его и выдадим.
+        \item $\sum\limits_{v \in V} -y_v \to \min$,
+            \begin{align*}
+              (u, v) \in E: -y_u - y_v & \ge -1 \\
+              y_v & \ge 0
+            \end{align*}
+
+            Перепишем:
+            $\sum\limits_{v \in V} y_v \to \max$,
+            \begin{align*}
+              (u, v) \in E: y_u + y_v & \le 1 \\
+              y_v & \ge 0
+            \end{align*}
+
+            Получилось максимальное независимое множество.
+    \end{enumcyr}    
+}    
