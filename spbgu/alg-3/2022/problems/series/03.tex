@@ -1,0 +1,67 @@
+\input{../main.tex}
+
+\setmathstyle{\includegraphics[scale = 0.05]{../pics/utia-rest.png}}{Приближенные алгоритмы}{1 курс}
+
+
+\begin{document}
+
+%\teachermode
+
+\begin{definition*}
+    Функцию $f\colon 2^{V} \to \mathbb{R}$ будем называть \deftext{субмодулярной}, если для всех $A, B
+    \subseteq V$ выполняется:
+    $$
+        f(A) + f(B) \ge f(A \cup B) + f(A \cap B).
+    $$
+\end{definition*}
+
+\task{
+    Пусть $G \coloneqq (V, E)$~--- неориентированный граф. Для $S \subseteq V$ определим $\delta(S)$ как
+    разрез между $S$ и $V \setminus S$, т.е. $\delta(S) = \{ (u, v) \in E \mid u \in S, v \notin S\}$.
+    Пусть $c$~--- пропускная способность ребер $G$. Покажите, что функция
+    $f(S) \coloneqq \sum\limits_{e \in \delta(S)} c(e)$ субмодулярна.
+}
+
+\task{
+    Пусть $G \coloneqq (V, E)$~--- неориентированный граф, $c$~--- пропускные способности ребер, $T$~---
+    четное множество вершин. Научимся решать следующую задачу (минимальный $T$-нечетный разрез):
+    $$
+        \min\limits_{S \subseteq V : |S \cap T| \text{ нечетно}} \sum\limits_{e \in \delta(S)} c(e).
+    $$
+    Также будем говорить, что $S$ является \deftext{$T$-нечетным}, если $|S \cap T|$ нечетно (что вы
+    можете сказать про $V \setminus S$?). Пусть $|T| = k$.
+    \begin{enumcyr}
+        \item\label{item:cutT} Решите следующую задачу за $\bigO{k \cdot \mathrm{Flow}}$:
+            $$
+                \min\limits_{S \subseteq V : 0 < |S \cap T| < |T|} \sum\limits_{e \in \delta(S)} c(e)
+            $$
+            (т.е. в обеих частях разреза должна быть по крайней мере одна вершина из $T$).
+        \item Пусть $S$~--- из пункта~\ref{item:cutT} и $|S \cap T|$ нечетно. Покажите, что тогда $S$~---
+            искомый разрез.
+        \item Пусть $S$~--- из пункта~\ref{item:cutT} и $|S \cap T|$ четно. Покажите, что тогда
+            существует минимальный $T$-нечетный разрез $A$, такой что $A \subseteq S$ или $A \subseteq
+            V\setminus S$. \hinttext{Подсказака:} предлагается рассмотреть произвольный минимальный
+            $T$-нечетный разрез и, воспользовавшись субмодулярностью, получить из него искомый разрез
+            $A$.
+        \item Придумайте, как, воспользовавшись утверждением предыдущего пункта, свести задачу к
+            рекурсивному вызову для новых $T$ меньшего размера: приведите алгоритм, работающий за время
+            $\bigO{k^2 \cdot \mathrm{Flow}}$.
+    \end{enumcyr}
+    $\mathrm{Flow}$~--- время работы алгоритма поиска максимального потока.
+}
+    
+
+\libproblem{algorithms}{boruvka-time}
+\libproblem{algorithms}{boruvka-time-planar}
+\libproblem{algorithms}{boruvka-improvement}
+\libproblem{algorithms}{maj-tree-calc}
+
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
