@@ -1,0 +1,9 @@
+Prove that the following language is $\NP$-complete
+$$
+    \langcplx{BBS} ~\coloneqq~ \{\avg{G, \ell} : \text{$G$ is a bipartite graph that contains $K_{\ell,
+        \ell}$ as a subgraph}\},
+$$
+where $K_{\ell, \ell}$ is a complete bipartite graph with the size of both parts equals $\ell$. In other
+words, let $G \coloneqq (V \cup U, E)$ then $\avg{G, \ell} \in \langcplx{BBS}$ if and only if there are
+disjoint $S \subseteq U, T \subseteq V$ such that $|S| = |T| = \ell$ and for every pair $u \in S, v \in
+T$ there is an edge $(u, v) \in E$.

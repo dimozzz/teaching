@@ -1,0 +1,11 @@
+Define $\langcplx{Quasi\text{-}NP}$ as the class of languages that can be decided by a quasi-polynomial
+nondeterministic Turing machine. More formally,
+$$
+    \langcplx{Quasi\text{-}NP} \coloneqq \bigcup\limits_{k} \NTIME[n^{\log^k n}].
+$$
+
+Show that $\langcplx{Quasi\text{-}NP}$ contains a complete problem. That is, show that there is some $L
+\in \langcplx{Quasi\text{-}NP}$ such that $A \le_p L$ for every $L \in \langcplx{Quasi\text{-}NP}$.
+
+\hinttext{Hint:} consider the BoundedHalting (aka WitnessExistence) problem seen in class. How can you
+modify that problem so that it becomes $\langcplx{Quasi\text{-}NP}$-complete?)
